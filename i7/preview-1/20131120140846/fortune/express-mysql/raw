@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 18:06:26 PST 2013
+
+  System load:  0.13               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.93ms  326.20us  12.57ms   95.49%
+    Req/Sec     1.14k   151.67     1.55k    64.71%
+  42977 requests in 5.00s, 56.48MB read
+Requests/sec:   8594.67
+Transfer/sec:     11.29MB
+
+---------------------------------------------------------
+ Running Warmup express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.48ms    8.25ms  48.22ms   75.86%
+    Req/Sec     1.76k   142.55     2.10k    72.02%
+  205902 requests in 15.00s, 270.59MB read
+Requests/sec:  13726.75
+Transfer/sec:     18.04MB
+
+---------------------------------------------------------
+ Concurrency: 8 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.90ms  168.24us   6.26ms   74.22%
+    Req/Sec     1.16k   120.23     1.55k    64.38%
+  132216 requests in 15.00s, 173.75MB read
+Requests/sec:   8814.46
+Transfer/sec:     11.58MB
+
+---------------------------------------------------------
+ Concurrency: 16 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.35ms  414.63us  10.57ms   75.49%
+    Req/Sec     1.59k   237.25     2.33k    68.22%
+  180816 requests in 15.00s, 237.62MB read
+Requests/sec:  12054.22
+Transfer/sec:     15.84MB
+
+---------------------------------------------------------
+ Concurrency: 32 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.44ms    1.38ms  12.43ms   77.91%
+    Req/Sec     1.73k   440.16     2.89k    66.92%
+  196324 requests in 15.00s, 258.00MB read
+Requests/sec:  13088.26
+Transfer/sec:     17.20MB
+
+---------------------------------------------------------
+ Concurrency: 64 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.75ms    1.57ms  13.93ms   67.54%
+    Req/Sec     1.78k   346.30     2.67k    64.27%
+  201962 requests in 15.00s, 265.41MB read
+Requests/sec:  13464.50
+Transfer/sec:     17.69MB
+
+---------------------------------------------------------
+ Concurrency: 128 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.41ms    4.13ms  23.63ms   74.18%
+    Req/Sec     1.76k   193.10     2.33k    66.45%
+  203992 requests in 15.00s, 268.08MB read
+Requests/sec:  13599.70
+Transfer/sec:     17.87MB
+
+---------------------------------------------------------
+ Concurrency: 256 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.89ms   10.48ms  68.15ms   78.38%
+    Req/Sec     1.80k   369.82     2.48k    62.49%
+  206018 requests in 15.00s, 270.74MB read
+Requests/sec:  13736.04
+Transfer/sec:     18.05MB

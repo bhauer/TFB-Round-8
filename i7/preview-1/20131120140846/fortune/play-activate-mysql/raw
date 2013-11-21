@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Thu Nov 21 01:22:51 PST 2013
+
+  System load:  0.14               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.47ms    6.24ms  49.49ms   97.77%
+    Req/Sec     1.85k   444.70     2.44k    82.44%
+  67688 requests in 5.00s, 152.73MB read
+Requests/sec:  13537.98
+Transfer/sec:     30.55MB
+
+---------------------------------------------------------
+ Running Warmup play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.51ms   16.30ms 645.24ms   88.46%
+    Req/Sec     2.44k   618.15     5.17k    71.84%
+  284943 requests in 15.00s, 642.94MB read
+Requests/sec:  18996.07
+Transfer/sec:     42.86MB
+
+---------------------------------------------------------
+ Concurrency: 8 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   409.61ms  672.58ms   1.52s    73.02%
+    Req/Sec     1.40k     0.91k    2.44k    70.17%
+  157941 requests in 15.27s, 356.38MB read
+Requests/sec:  10344.75
+Transfer/sec:     23.34MB
+
+---------------------------------------------------------
+ Concurrency: 16 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.37s   524.22ms   1.57s    86.96%
+    Req/Sec   287.72    780.57     3.33k    88.28%
+  33763 requests in 15.12s, 76.18MB read
+Requests/sec:   2232.52
+Transfer/sec:      5.04MB
+
+---------------------------------------------------------
+ Concurrency: 32 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.30s   499.72ms   1.50s    86.77%
+    Req/Sec   324.22      0.88k    4.90k    88.10%
+  37263 requests in 15.02s, 84.08MB read
+Requests/sec:   2481.42
+Transfer/sec:      5.60MB
+
+---------------------------------------------------------
+ Concurrency: 64 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.32s   470.43ms   1.53s    88.21%
+    Req/Sec   282.40    838.68     5.11k    89.72%
+  33489 requests in 15.47s, 75.57MB read
+Requests/sec:   2164.71
+Transfer/sec:      4.88MB
+
+---------------------------------------------------------
+ Concurrency: 128 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.46s   453.91ms   1.81s    90.57%
+    Req/Sec   227.28    764.32     5.70k    91.65%
+  26292 requests in 15.17s, 59.33MB read
+  Socket errors: connect 0, read 0, write 0, timeout 18
+Requests/sec:   1733.66
+Transfer/sec:      3.91MB
+
+---------------------------------------------------------
+ Concurrency: 256 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9000/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.67s   422.31ms   1.81s    92.84%
+    Req/Sec   177.75    684.35     5.44k    93.44%
+  20701 requests in 15.13s, 46.71MB read
+Requests/sec:   1368.24
+Transfer/sec:      3.09MB

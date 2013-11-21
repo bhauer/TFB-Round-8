@@ -1,0 +1,121 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 23:51:30 PST 2013
+
+  System load:  0.15               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/dborm.php?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/dborm.php?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.20ms    3.53ms  27.06ms   73.81%
+    Req/Sec   116.29     28.00   192.00     66.67%
+  4544 requests in 5.01s, 0.91MB read
+  Non-2xx or 3xx responses: 4544
+Requests/sec:    907.80
+Transfer/sec:    187.02KB
+
+---------------------------------------------------------
+ Running Warmup php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dborm.php?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dborm.php?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   273.90ms  169.28ms   1.20s    70.92%
+    Req/Sec   115.13     11.07   171.00     73.53%
+  13715 requests in 15.01s, 2.76MB read
+  Non-2xx or 3xx responses: 13715
+Requests/sec:    913.78
+Transfer/sec:    188.29KB
+
+---------------------------------------------------------
+ Queries: 1 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dborm.php?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dborm.php?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   275.77ms  178.29ms   1.30s    73.16%
+    Req/Sec   116.17     11.22   146.00     72.12%
+  13792 requests in 15.01s, 2.78MB read
+  Non-2xx or 3xx responses: 13792
+Requests/sec:    918.96
+Transfer/sec:    189.36KB
+
+---------------------------------------------------------
+ Queries: 5 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dborm.php?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dborm.php?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   217.52ms  171.18ms   1.47s    78.76%
+    Req/Sec   184.60    102.34   400.00     71.33%
+  21678 requests in 15.08s, 6.40MB read
+  Non-2xx or 3xx responses: 9612
+Requests/sec:   1437.29
+Transfer/sec:    434.34KB
+
+---------------------------------------------------------
+ Queries: 10 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dborm.php?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dborm.php?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   227.80ms  163.08ms   1.06s    76.77%
+    Req/Sec   158.10     63.03   375.00     70.75%
+  18583 requests in 15.03s, 7.11MB read
+  Non-2xx or 3xx responses: 8955
+Requests/sec:   1236.79
+Transfer/sec:    484.35KB
+
+---------------------------------------------------------
+ Queries: 15 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dborm.php?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dborm.php?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   245.84ms  152.58ms   1.20s    77.95%
+    Req/Sec   136.50     36.37   207.00     64.42%
+  16229 requests in 15.04s, 6.75MB read
+  Non-2xx or 3xx responses: 9661
+Requests/sec:   1078.98
+Transfer/sec:    459.26KB
+
+---------------------------------------------------------
+ Queries: 20 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dborm.php?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dborm.php?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   288.57ms  173.82ms   1.06s    70.79%
+    Req/Sec   113.57     14.19   156.00     73.89%
+  13519 requests in 15.04s, 2.72MB read
+  Non-2xx or 3xx responses: 13519
+Requests/sec:    898.86
+Transfer/sec:    185.22KB

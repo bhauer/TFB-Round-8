@@ -1,0 +1,135 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Thu Nov 21 03:23:29 PST 2013
+
+  System load:  0.05               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.12ms   81.85ms 279.14ms   88.41%
+    Req/Sec   172.27     81.51   302.00     73.99%
+  6474 requests in 5.00s, 750.96KB read
+Requests/sec:   1293.92
+Transfer/sec:    150.09KB
+
+---------------------------------------------------------
+ Running Warmup restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   348.42ms  623.52ms   2.37s    87.36%
+    Req/Sec   240.53    191.48   828.00     67.86%
+  29345 requests in 15.06s, 3.46MB read
+  Non-2xx or 3xx responses: 7590
+Requests/sec:   1949.07
+Transfer/sec:    235.55KB
+
+---------------------------------------------------------
+ Concurrency: 8 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.80ms    2.93ms  24.60ms   75.73%
+    Req/Sec   119.16     30.22   222.00     59.60%
+  14024 requests in 15.00s, 1.85MB read
+  Non-2xx or 3xx responses: 14024
+Requests/sec:    934.71
+Transfer/sec:    125.97KB
+
+---------------------------------------------------------
+ Concurrency: 16 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.02ms   69.34ms   1.00s    98.09%
+    Req/Sec   159.67    103.50   630.00     87.57%
+  18869 requests in 15.01s, 2.38MB read
+  Non-2xx or 3xx responses: 13123
+Requests/sec:   1257.43
+Transfer/sec:    162.27KB
+
+---------------------------------------------------------
+ Concurrency: 32 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.41ms   20.15ms 118.43ms   78.69%
+    Req/Sec   204.75    149.81   788.00     83.61%
+  24314 requests in 15.00s, 2.96MB read
+  Non-2xx or 3xx responses: 10999
+Requests/sec:   1620.78
+Transfer/sec:    201.77KB
+
+---------------------------------------------------------
+ Concurrency: 64 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    57.33ms   55.26ms 293.88ms   84.82%
+    Req/Sec   176.85    119.00   603.00     84.62%
+  21107 requests in 15.02s, 2.61MB read
+  Non-2xx or 3xx responses: 12218
+Requests/sec:   1404.96
+Transfer/sec:    178.23KB
+
+---------------------------------------------------------
+ Concurrency: 128 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   123.93ms  139.72ms 853.44ms   84.60%
+    Req/Sec   125.41     23.09   200.00     69.05%
+  15093 requests in 15.01s, 1.99MB read
+  Non-2xx or 3xx responses: 15093
+Requests/sec:   1005.60
+Transfer/sec:    135.52KB
+
+---------------------------------------------------------
+ Concurrency: 256 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/restexpress/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   249.09ms  361.85ms   2.14s    83.10%
+    Req/Sec   126.40     25.11   205.00     70.42%
+  15162 requests in 15.01s, 2.00MB read
+  Non-2xx or 3xx responses: 15162
+Requests/sec:   1010.33
+Transfer/sec:    136.16KB

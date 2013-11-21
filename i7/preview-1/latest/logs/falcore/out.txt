@@ -1,0 +1,197 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: falcore
+self.results['completed']: {}
+
+=====================================================
+  Beginning falcore
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting falcore
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 18:26:59 PST 2013
+
+  System load:  0.22               Processes:           120
+  Usage of /:   8.0% of 131.33GB   Users logged in:     0
+  Memory usage: 16%                IP address for eth0: 172.16.98.118
+  Swap usage:   2%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+52 updates are security updates.
+
+mysql start/running, process 26941
+mongodb start/running, process 27002
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+
+-----------------------------------------------------
+  Verifying URLs for falcore
+-----------------------------------------------------
+VERIFYING JSON (/json) ...
+HTTP/1.1 200 OK
+Content-Length: 28
+Content-Type: application/json
+Date: Wed, 20 Nov 2013 18:28:13 PST
+Server: falcore
+
+{"message":"Hello, World!"}
+
+
+VERIFYING DB (/db) ...
+HTTP/1.1 200 OK
+Content-Length: 32
+Content-Type: application/json
+Date: Wed, 20 Nov 2013 18:28:13 PST
+Server: falcore
+
+{"id":4060,"randomNumber":4435}
+
+
+VERIFYING Query (/queries?queries=2) ...
+HTTP/1.1 200 OK
+Content-Length: 65
+Content-Type: application/json
+Date: Wed, 20 Nov 2013 18:28:13 PST
+Server: falcore
+
+[{"id":2541,"randomNumber":2315},{"id":457,"randomNumber":4811}]
+
+
+VERIFYING Fortune (/fortune) ...
+HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Content-Type: text/html
+Date: Wed, 20 Nov 2013 18:28:13 PST
+Server: falcore
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fortunes</title>
+</head>
+<body>
+
+<table>
+<tr>
+<th>id</th>
+<th>message</th>
+</tr>
+
+<tr>
+<td>11</td>
+<td>&lt;script&gt;alert(&#34;This should not be displayed in a browser alert box.&#34;);&lt;/script&gt;</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e&#43;67, 1, 1, 1</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>A computer program does what you tell it to do, not what you want it to do.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>A computer scientist is someone who fixes things that aren&#39;t broken.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>A list is only as strong as its weakest link. — Donald Knuth</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Additional fortune added at request time.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>After enough decimal places, nobody gives a damn.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Any program that runs right is obsolete.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Computers make very fast, very accurate mistakes.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Feature: A bug with seniority.</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>fortune: No such file or directory</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>フレームワークのベンチマーク</td>
+</tr>
+
+</table>
+
+</body>
+</html>
+
+VERIFYING Update (/update?queries=2) ...
+HTTP/1.1 200 OK
+Content-Length: 66
+Content-Type: application/json
+Date: Wed, 20 Nov 2013 18:28:13 PST
+Server: falcore
+
+[{"id":3275,"randomNumber":1212},{"id":1446,"randomNumber":3238}]
+
+
+VERIFYING Plaintext (/plaintext) ...
+HTTP/1.1 200 OK
+Content-Length: 13
+Content-Type: text/plain
+Date: Wed, 20 Nov 2013 18:28:13 PST
+Server: falcore
+
+Hello, World!
+
+
+-----------------------------------------------------
+  Benchmarking falcore ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+BENCHMARKING Fortune ... Complete
+BENCHMARKING Update ... Complete
+BENCHMARKING Plaintext ... Complete
+
+-----------------------------------------------------
+  Stopping falcore
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped falcore
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through falcore
+----------------------------------------------------

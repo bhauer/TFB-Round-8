@@ -1,0 +1,96 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: openresty
+self.results['completed']: {}
+
+=====================================================
+  Beginning openresty
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting openresty
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 23:36:24 PST 2013
+
+  System load:  0.06               Processes:           120
+  Usage of /:   8.0% of 131.33GB   Users logged in:     0
+  Memory usage: 16%                IP address for eth0: 172.16.98.118
+  Swap usage:   2%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+52 updates are security updates.
+
+mysql start/running, process 18032
+mongodb start/running, process 18093
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+
+-----------------------------------------------------
+  Verifying URLs for openresty
+-----------------------------------------------------
+VERIFYING JSON (/json) ...
+HTTP/1.1 200 OK
+Server: ngx_openresty/1.2.7.5
+Date: Thu, 21 Nov 2013 07:37:35 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+{"message":"Hello, World!"}
+
+VERIFYING DB (/db) ...
+HTTP/1.1 200 OK
+Server: ngx_openresty/1.2.7.5
+Date: Thu, 21 Nov 2013 07:37:35 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+[{"randomNumber":3571,"id":7943}]
+
+VERIFYING Query (/db?queries=2) ...
+HTTP/1.1 200 OK
+Server: ngx_openresty/1.2.7.5
+Date: Thu, 21 Nov 2013 07:37:35 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+[{"randomNumber":4519,"id":5902},{"randomNumber":8788,"id":7533}]
+
+VERIFYING Plaintext (/plaintext) ...
+HTTP/1.1 200 OK
+Server: ngx_openresty/1.2.7.5
+Date: Thu, 21 Nov 2013 07:37:35 GMT
+Content-Type: text/plain
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+Hello, World!
+
+
+-----------------------------------------------------
+  Benchmarking openresty ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+BENCHMARKING Plaintext ... Complete
+
+-----------------------------------------------------
+  Stopping openresty
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped openresty
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through openresty
+----------------------------------------------------

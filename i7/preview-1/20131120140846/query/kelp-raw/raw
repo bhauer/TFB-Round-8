@@ -1,0 +1,120 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 21:34:47 PST 2013
+
+  System load:  0.54               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer kelp-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.01ms  545.07us   9.28ms   89.73%
+    Req/Sec     1.07k   183.94     1.55k    76.89%
+  40135 requests in 5.00s, 7.54MB read
+Requests/sec:   8026.58
+Transfer/sec:      1.51MB
+
+---------------------------------------------------------
+ Running Warmup kelp-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.65ms   11.63ms   1.01s    90.32%
+    Req/Sec     9.24k     2.22k   17.38k    73.30%
+  1073446 requests in 15.00s, 323.38MB read
+  Non-2xx or 3xx responses: 974562
+Requests/sec:  71566.49
+Transfer/sec:     21.56MB
+
+---------------------------------------------------------
+ Queries: 1 for kelp-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.45ms    6.30ms  56.44ms   90.17%
+    Req/Sec    10.03k     2.32k   24.44k    69.42%
+  1149708 requests in 15.00s, 346.26MB read
+  Non-2xx or 3xx responses: 1043094
+Requests/sec:  76662.86
+Transfer/sec:     23.09MB
+
+---------------------------------------------------------
+ Queries: 5 for kelp-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.63ms    6.95ms  49.53ms   91.18%
+    Req/Sec     9.32k     2.15k   17.15k    70.87%
+  1086716 requests in 15.00s, 328.65MB read
+  Non-2xx or 3xx responses: 996801
+Requests/sec:  72449.32
+Transfer/sec:     21.91MB
+
+---------------------------------------------------------
+ Queries: 10 for kelp-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.66ms    7.59ms  58.73ms   92.59%
+    Req/Sec     9.12k     1.70k   17.00k    70.09%
+  1060207 requests in 15.00s, 322.08MB read
+  Non-2xx or 3xx responses: 984077
+Requests/sec:  70681.29
+Transfer/sec:     21.47MB
+
+---------------------------------------------------------
+ Queries: 15 for kelp-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.57ms   14.18ms   1.45s    94.15%
+    Req/Sec     9.29k     2.37k   19.41k    78.41%
+  1082959 requests in 15.00s, 331.29MB read
+  Non-2xx or 3xx responses: 1023601
+Requests/sec:  72200.10
+Transfer/sec:     22.09MB
+
+---------------------------------------------------------
+ Queries: 20 for kelp-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.49ms    8.51ms  69.08ms   94.87%
+    Req/Sec     9.34k     1.57k   16.15k    69.33%
+  1091038 requests in 15.00s, 334.20MB read
+  Non-2xx or 3xx responses: 1034766
+Requests/sec:  72749.78
+Transfer/sec:     22.28MB

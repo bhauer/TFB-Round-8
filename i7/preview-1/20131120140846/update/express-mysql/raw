@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 18:08:38 PST 2013
+
+  System load:  0.13               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/mysql-orm-update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/mysql-orm-update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.60ms    1.38ms  21.57ms   99.16%
+    Req/Sec   704.31    119.52     1.00k    77.77%
+  26622 requests in 5.00s, 5.96MB read
+Requests/sec:   5323.42
+Transfer/sec:      1.19MB
+
+---------------------------------------------------------
+ Running Warmup express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql-orm-update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql-orm-update?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.84ms   14.30ms 110.31ms   68.85%
+    Req/Sec     1.31k   192.06     1.91k    70.27%
+  155209 requests in 15.00s, 34.72MB read
+Requests/sec:  10346.78
+Transfer/sec:      2.31MB
+
+---------------------------------------------------------
+ Queries: 1 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql-orm-update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql-orm-update?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.39ms   12.87ms 218.09ms   88.72%
+    Req/Sec     2.00k   408.20     2.75k    85.27%
+  235746 requests in 15.00s, 45.59MB read
+Requests/sec:  15715.75
+Transfer/sec:      3.04MB
+
+---------------------------------------------------------
+ Queries: 5 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql-orm-update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql-orm-update?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    54.17ms   27.16ms 188.78ms   59.07%
+    Req/Sec   624.55    124.34     0.90k    77.48%
+  73324 requests in 15.00s, 23.14MB read
+Requests/sec:   4887.37
+Transfer/sec:      1.54MB
+
+---------------------------------------------------------
+ Queries: 10 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql-orm-update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql-orm-update?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    99.17ms   96.32ms 466.98ms   88.14%
+    Req/Sec   342.68     74.79   468.00     72.13%
+  37394 requests in 15.00s, 17.47MB read
+Requests/sec:   2492.38
+Transfer/sec:      1.16MB
+
+---------------------------------------------------------
+ Queries: 15 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql-orm-update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql-orm-update?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   153.57ms   77.68ms 429.99ms   51.80%
+    Req/Sec   209.61     30.82   264.00     58.70%
+  25038 requests in 15.03s, 15.49MB read
+Requests/sec:   1665.73
+Transfer/sec:      1.03MB
+
+---------------------------------------------------------
+ Queries: 20 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql-orm-update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql-orm-update?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   197.20ms  219.40ms   1.00s    88.19%
+    Req/Sec   161.79     39.27   273.00     69.68%
+  18921 requests in 15.02s, 14.57MB read
+Requests/sec:   1259.58
+Transfer/sec:      0.97MB

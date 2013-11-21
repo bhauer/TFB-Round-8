@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 19:10:17 PST 2013
+
+  System load:  0.08               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/raw-updates?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/raw-updates?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.45ms  502.47us  15.42ms   88.82%
+    Req/Sec   431.95     60.73   600.00     69.60%
+  16354 requests in 5.00s, 3.74MB read
+Requests/sec:   3269.61
+Transfer/sec:    764.91KB
+
+---------------------------------------------------------
+ Running Warmup flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/raw-updates?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/raw-updates?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    60.61ms   21.55ms 213.35ms   76.07%
+    Req/Sec   527.29     26.71   620.00     66.07%
+  62351 requests in 15.00s, 14.24MB read
+Requests/sec:   4155.78
+Transfer/sec:      0.95MB
+
+---------------------------------------------------------
+ Queries: 1 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/raw-updates?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/raw-updates?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    44.13ms   16.99ms 179.05ms   77.13%
+    Req/Sec   726.67     50.23     0.87k    67.23%
+  85715 requests in 15.00s, 16.66MB read
+Requests/sec:   5713.18
+Transfer/sec:      1.11MB
+
+---------------------------------------------------------
+ Queries: 5 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/raw-updates?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/raw-updates?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   106.88ms   35.23ms 395.33ms   74.37%
+    Req/Sec   300.06     19.14   360.00     70.32%
+  35454 requests in 15.01s, 11.76MB read
+Requests/sec:   2362.08
+Transfer/sec:    802.48KB
+
+---------------------------------------------------------
+ Queries: 10 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/raw-updates?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/raw-updates?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   180.61ms   54.00ms 386.29ms   69.21%
+    Req/Sec   176.37     13.47   227.00     63.87%
+  20860 requests in 15.01s, 10.48MB read
+Requests/sec:   1389.82
+Transfer/sec:    714.98KB
+
+---------------------------------------------------------
+ Queries: 15 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/raw-updates?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/raw-updates?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   270.81ms   90.53ms 893.10ms   74.07%
+    Req/Sec   120.69     16.74   149.00     82.38%
+  14371 requests in 15.01s, 9.67MB read
+Requests/sec:    957.43
+Transfer/sec:    659.79KB
+
+---------------------------------------------------------
+ Queries: 20 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/raw-updates?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/raw-updates?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   335.46ms  140.56ms   1.08s    63.32%
+    Req/Sec    97.23     10.94   144.00     69.66%
+  11451 requests in 15.02s, 9.66MB read
+Requests/sec:    762.32
+Transfer/sec:    658.54KB

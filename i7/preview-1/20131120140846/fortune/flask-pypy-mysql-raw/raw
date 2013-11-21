@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 19:58:45 PST 2013
+
+  System load:  0.03               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.09ms   65.48ms 354.79ms   90.55%
+    Req/Sec   372.67    194.34     0.89k    69.51%
+  12837 requests in 5.02s, 16.97MB read
+Requests/sec:   2555.83
+Transfer/sec:      3.38MB
+
+---------------------------------------------------------
+ Running Warmup flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.01ms  121.08ms   1.13s    88.87%
+    Req/Sec   459.61    181.80     0.90k    62.25%
+  50194 requests in 15.00s, 66.35MB read
+Requests/sec:   3346.03
+Transfer/sec:      4.42MB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.83ms   21.83ms 127.77ms   96.17%
+    Req/Sec   498.16    242.52     1.00k    66.82%
+  55572 requests in 15.00s, 73.45MB read
+Requests/sec:   3704.39
+Transfer/sec:      4.90MB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.04ms    7.50ms 186.94ms   99.13%
+    Req/Sec   587.18    172.56     1.10k    72.31%
+  66128 requests in 15.00s, 87.41MB read
+Requests/sec:   4408.09
+Transfer/sec:      5.83MB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.28ms    8.54ms 262.47ms   95.28%
+    Req/Sec   669.38    295.64     1.57k    72.20%
+  70369 requests in 15.00s, 93.01MB read
+Requests/sec:   4690.67
+Transfer/sec:      6.20MB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.31ms   11.56ms 195.99ms   84.19%
+    Req/Sec   639.89    230.20     1.18k    59.39%
+  69622 requests in 15.00s, 92.03MB read
+Requests/sec:   4640.30
+Transfer/sec:      6.13MB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.52ms   32.87ms 543.65ms   90.39%
+    Req/Sec   617.42    182.66     1.08k    61.74%
+  70335 requests in 15.00s, 92.97MB read
+Requests/sec:   4688.47
+Transfer/sec:      6.20MB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunesraw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunesraw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    57.58ms   61.25ms 951.77ms   87.63%
+    Req/Sec   624.96    198.86     1.13k    57.20%
+  70540 requests in 15.00s, 93.24MB read
+Requests/sec:   4701.81
+Transfer/sec:      6.21MB

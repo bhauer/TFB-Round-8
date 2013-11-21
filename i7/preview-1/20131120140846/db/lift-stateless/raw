@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 21:54:01 PST 2013
+
+  System load:  0.24               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.93ms    3.34ms  25.89ms   83.72%
+    Req/Sec   193.76     68.26   343.00     61.41%
+  7168 requests in 5.00s, 2.22MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:   1433.23
+Transfer/sec:    454.59KB
+
+---------------------------------------------------------
+ Running Warmup lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.12ms   24.27ms 697.95ms   98.04%
+    Req/Sec   393.79     42.23   479.00     77.18%
+  46963 requests in 15.00s, 14.55MB read
+  Non-2xx or 3xx responses: 5
+Requests/sec:   3130.83
+Transfer/sec:      0.97MB
+
+---------------------------------------------------------
+ Concurrency: 8 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.16ms    1.12ms  16.86ms   84.97%
+    Req/Sec   344.08     74.73   555.00     71.60%
+  39167 requests in 15.00s, 12.13MB read
+  Non-2xx or 3xx responses: 5
+Requests/sec:   2610.84
+Transfer/sec:    828.09KB
+
+---------------------------------------------------------
+ Concurrency: 16 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.51ms   14.31ms 150.73ms   98.76%
+    Req/Sec   414.71     99.41   785.00     71.91%
+  47821 requests in 15.00s, 14.81MB read
+  Non-2xx or 3xx responses: 7
+Requests/sec:   3187.85
+Transfer/sec:      0.99MB
+
+---------------------------------------------------------
+ Concurrency: 32 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.26ms   10.35ms 127.84ms   95.20%
+    Req/Sec   429.25     82.96   689.00     71.23%
+  50667 requests in 15.00s, 15.69MB read
+  Non-2xx or 3xx responses: 9
+Requests/sec:   3376.98
+Transfer/sec:      1.05MB
+
+---------------------------------------------------------
+ Concurrency: 64 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.72ms    5.21ms  78.47ms   83.24%
+    Req/Sec   428.93     41.08   553.00     69.98%
+  50979 requests in 15.00s, 15.79MB read
+  Non-2xx or 3xx responses: 4
+Requests/sec:   3398.39
+Transfer/sec:      1.05MB
+
+---------------------------------------------------------
+ Concurrency: 128 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.09ms   14.59ms 206.79ms   97.30%
+    Req/Sec   420.96     49.34   524.00     88.25%
+  50256 requests in 15.00s, 15.57MB read
+  Non-2xx or 3xx responses: 7
+Requests/sec:   3349.84
+Transfer/sec:      1.04MB
+
+---------------------------------------------------------
+ Concurrency: 256 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    74.43ms   11.30ms 310.10ms   89.71%
+    Req/Sec   424.77     44.68   684.00     82.65%
+  50714 requests in 15.00s, 15.71MB read
+  Non-2xx or 3xx responses: 3
+Requests/sec:   3380.48
+Transfer/sec:      1.05MB

@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 19:15:55 PST 2013
+
+  System load:  0.33               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.56ms    1.40ms  28.63ms   94.03%
+    Req/Sec   428.18     82.03   666.00     69.10%
+  16164 requests in 5.00s, 3.09MB read
+Requests/sec:   3231.57
+Transfer/sec:    633.43KB
+
+---------------------------------------------------------
+ Running Warmup flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.00ms   10.21ms 177.94ms   98.04%
+    Req/Sec    18.03k     4.82k   37.78k    68.56%
+  2021716 requests in 15.00s, 628.54MB read
+  Non-2xx or 3xx responses: 1990629
+Requests/sec: 134786.17
+Transfer/sec:     41.90MB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.55ms  816.00us  17.40ms   86.52%
+    Req/Sec   420.40     76.75   666.00     56.16%
+  47860 requests in 15.00s, 9.16MB read
+Requests/sec:   3190.62
+Transfer/sec:    625.44KB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.52ms    3.42ms  33.99ms   90.47%
+    Req/Sec   484.91    132.45     0.93k    69.09%
+  55969 requests in 15.00s, 10.71MB read
+Requests/sec:   3731.00
+Transfer/sec:    731.37KB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.35ms    4.20ms  43.18ms   82.81%
+    Req/Sec   493.10     74.21   800.00     70.74%
+  57987 requests in 15.00s, 11.10MB read
+Requests/sec:   3864.62
+Transfer/sec:    757.56KB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.56ms    3.92ms  62.37ms   82.52%
+    Req/Sec   489.26     40.83   621.00     67.71%
+  57987 requests in 15.00s, 11.10MB read
+Requests/sec:   3864.97
+Transfer/sec:    757.62KB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    33.18ms    3.90ms  57.18ms   82.22%
+    Req/Sec   485.62     23.10   573.00     71.41%
+  57923 requests in 15.00s, 11.09MB read
+Requests/sec:   3860.79
+Transfer/sec:    756.81KB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.98ms    9.91ms 318.78ms   98.01%
+    Req/Sec    17.80k     4.74k   35.78k    68.74%
+  1986706 requests in 15.00s, 617.54MB read
+  Non-2xx or 3xx responses: 1955215
+Requests/sec: 132452.03
+Transfer/sec:     41.17MB

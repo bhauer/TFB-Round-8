@@ -1,0 +1,108 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 16:08:19 PST 2013
+
+  System load:  0.02               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer cake
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.92ms    1.32ms  20.46ms   75.16%
+    Req/Sec   275.35     65.04   454.00     68.74%
+  10481 requests in 5.00s, 2.00MB read
+Requests/sec:   2094.75
+Transfer/sec:    409.03KB
+
+---------------------------------------------------------
+ Running Warmup cake
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   108.82ms  129.68ms   3.21s    93.83%
+    Req/Sec   284.31     30.28   364.00     78.60%
+  33949 requests in 15.01s, 6.47MB read
+  Socket errors: connect 0, read 0, write 0, timeout 10
+Requests/sec:   2262.03
+Transfer/sec:    441.72KB
+
+---------------------------------------------------------
+ Concurrency: 256 for cake
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.88s   481.08ms   3.91s    71.18%
+    Req/Sec   281.00     10.76   314.00     66.67%
+  33719 requests in 15.01s, 6.43MB read
+  Socket errors: connect 0, read 0, write 0, timeout 83
+Requests/sec:   2247.11
+Transfer/sec:    438.81KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for cake
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.02s     3.55s   14.75s    78.99%
+    Req/Sec   289.04     57.33   398.00     72.22%
+  33625 requests in 15.00s, 6.42MB read
+  Socket errors: connect 0, read 321, write 0, timeout 4709
+  Non-2xx or 3xx responses: 65
+Requests/sec:   2241.14
+Transfer/sec:    438.26KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for cake
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.09s     4.04s   14.99s    77.93%
+    Req/Sec   249.35     26.44   289.00     57.69%
+  29463 requests in 15.01s, 5.64MB read
+  Socket errors: connect 0, read 440164, write 0, timeout 22341
+  Non-2xx or 3xx responses: 134
+Requests/sec:   1963.04
+Transfer/sec:    384.52KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for cake
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.28s     2.82s   14.89s    91.23%
+    Req/Sec   241.13     47.69   360.00     69.57%
+  27474 requests in 15.02s, 5.26MB read
+  Socket errors: connect 11, read 596228, write 0, timeout 51122
+  Non-2xx or 3xx responses: 127
+Requests/sec:   1829.26
+Transfer/sec:    358.38KB

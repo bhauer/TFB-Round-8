@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Nov 20 17:07:21 PST 2013
+
+  System load:  0.04               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.50ms    0.88ms  14.73ms   90.20%
+    Req/Sec   733.54    153.80     1.11k    61.25%
+  27895 requests in 5.00s, 5.69MB read
+Requests/sec:   5578.30
+Transfer/sec:      1.14MB
+
+---------------------------------------------------------
+ Running Warmup dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.40ms    7.77ms  61.34ms   93.97%
+    Req/Sec    10.41k     2.69k   24.33k    68.22%
+  1173538 requests in 15.00s, 359.83MB read
+  Non-2xx or 3xx responses: 1107243
+Requests/sec:  78238.01
+Transfer/sec:     23.99MB
+
+---------------------------------------------------------
+ Concurrency: 8 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.52ms    1.03ms  18.77ms   91.87%
+    Req/Sec   734.33    155.43     1.11k    73.26%
+  83616 requests in 15.00s, 17.06MB read
+Requests/sec:   5574.25
+Transfer/sec:      1.14MB
+
+---------------------------------------------------------
+ Concurrency: 16 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.56ms  728.89us  22.44ms   94.10%
+    Req/Sec   828.96    104.12     1.55k    75.98%
+  94475 requests in 15.00s, 19.28MB read
+Requests/sec:   6298.02
+Transfer/sec:      1.29MB
+
+---------------------------------------------------------
+ Concurrency: 32 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.07ms  660.15us  24.42ms   92.36%
+    Req/Sec   827.31     91.32     1.30k    66.83%
+  94656 requests in 15.00s, 19.31MB read
+Requests/sec:   6309.88
+Transfer/sec:      1.29MB
+
+---------------------------------------------------------
+ Concurrency: 64 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.14ms    0.92ms  29.85ms   88.70%
+    Req/Sec   808.84     55.27     1.10k    81.78%
+  94728 requests in 15.00s, 19.33MB read
+Requests/sec:   6314.43
+Transfer/sec:      1.29MB
+
+---------------------------------------------------------
+ Concurrency: 128 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.07ms    0.94ms  38.00ms   83.30%
+    Req/Sec   807.10     34.21     0.92k    60.31%
+  95825 requests in 15.00s, 19.55MB read
+Requests/sec:   6388.67
+Transfer/sec:      1.30MB
+
+---------------------------------------------------------
+ Concurrency: 256 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.62ms    7.85ms  69.42ms   93.49%
+    Req/Sec     9.01k     1.72k   15.08k    69.87%
+  1048820 requests in 15.00s, 320.53MB read
+  Non-2xx or 3xx responses: 979819
+Requests/sec:  69923.35
+Transfer/sec:     21.37MB
