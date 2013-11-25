@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Nov 25 03:38:03 PST 2013
+
+  System load:  0.44               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   515.98us  144.18us   2.05ms   86.92%
+    Req/Sec     2.03k   156.08     2.44k    69.40%
+  76237 requests in 5.00s, 136.10MB read
+Requests/sec:  15248.57
+Transfer/sec:     27.22MB
+
+---------------------------------------------------------
+ Running Warmup undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.17ms   16.86ms 649.50ms   99.89%
+    Req/Sec     5.81k   595.55     9.22k    78.98%
+  659556 requests in 15.00s, 1.15GB read
+Requests/sec:  43975.92
+Transfer/sec:     78.51MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   531.83us  164.59us  10.25ms   91.49%
+    Req/Sec     1.97k   159.59     2.44k    69.33%
+  224326 requests in 15.00s, 400.48MB read
+Requests/sec:  14955.21
+Transfer/sec:     26.70MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   507.92us  187.77us   9.96ms   93.25%
+    Req/Sec     4.12k   325.13     5.22k    76.09%
+  468598 requests in 15.00s, 836.58MB read
+Requests/sec:  31240.52
+Transfer/sec:     55.77MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   728.92us  295.73us   7.81ms   93.29%
+    Req/Sec     5.75k   473.51     6.89k    74.69%
+  652912 requests in 15.00s, 1.14GB read
+Requests/sec:  43528.34
+Transfer/sec:     77.71MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.45ms  423.63us  12.02ms   91.83%
+    Req/Sec     5.80k   443.42     7.22k    77.39%
+  658648 requests in 15.00s, 1.15GB read
+Requests/sec:  43910.32
+Transfer/sec:     78.39MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.89ms  766.72us  25.91ms   87.81%
+    Req/Sec     5.80k   484.96     8.33k    74.58%
+  659292 requests in 15.00s, 1.15GB read
+Requests/sec:  43953.16
+Transfer/sec:     78.47MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.93ms   24.06ms 626.09ms   99.60%
+    Req/Sec     5.80k   618.53     8.67k    81.88%
+  659438 requests in 15.00s, 1.15GB read
+Requests/sec:  43964.05
+Transfer/sec:     78.49MB

@@ -1,0 +1,102 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 12:02:58 PST 2013
+
+  System load:  1.14               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer cpoll_cppsp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:16969/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:16969/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   178.73us   37.14us 307.00us   71.82%
+    Req/Sec     5.71k   356.67     6.78k    59.06%
+  216431 requests in 5.00s, 33.02MB read
+Requests/sec:  43293.39
+Transfer/sec:      6.61MB
+
+---------------------------------------------------------
+ Running Warmup cpoll_cppsp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:16969/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:16969/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.32ms  121.97us   8.37ms   75.21%
+    Req/Sec    25.43k     1.56k   43.44k    61.30%
+  2885701 requests in 15.00s, 440.32MB read
+Requests/sec: 192396.65
+Transfer/sec:     29.36MB
+
+---------------------------------------------------------
+ Concurrency: 256 for cpoll_cppsp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:16969/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:16969/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.89ms   77.44us   8.98ms   70.61%
+    Req/Sec    67.05k     2.12k   72.29k    59.42%
+  7767365 requests in 15.00s, 1.16GB read
+Requests/sec: 517854.89
+Transfer/sec:     79.02MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for cpoll_cppsp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:16969/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:16969/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.26ms   61.49ms   1.48s    93.75%
+    Req/Sec    65.91k     5.98k   89.64k    74.46%
+  7791366 requests in 15.00s, 1.16GB read
+Requests/sec: 519431.01
+Transfer/sec:     79.26MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for cpoll_cppsp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:16969/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:16969/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   113.14ms  247.71ms   4.94s    91.29%
+    Req/Sec    66.21k    11.29k   88.35k    83.46%
+  7824000 requests in 15.00s, 1.17GB read
+  Socket errors: connect 0, read 0, write 0, timeout 2975
+Requests/sec: 521503.42
+Transfer/sec:     79.58MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for cpoll_cppsp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:16969/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:16969/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.62s     5.93s   13.66s    65.48%
+    Req/Sec    63.04k     9.58k  120.36k    70.92%
+  7772573 requests in 15.01s, 1.16GB read
+  Socket errors: connect 11, read 24, write 0, timeout 45203
+Requests/sec: 517662.22
+Transfer/sec:     79.00MB

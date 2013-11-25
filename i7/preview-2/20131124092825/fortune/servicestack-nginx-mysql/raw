@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 23:59:26 PST 2013
+
+  System load:  0.0                Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.08ms    2.40ms  14.96ms   73.49%
+    Req/Sec    96.44    174.15   555.00     76.45%
+  4589 requests in 6.00s, 6.33MB read
+  Socket errors: connect 0, read 1, write 0, timeout 12
+  Non-2xx or 3xx responses: 58
+Requests/sec:    764.69
+Transfer/sec:      1.05MB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   745.54ms  531.13ms   1.16s    64.64%
+    Req/Sec   124.34    176.31   577.00     72.58%
+  16990 requests in 16.00s, 20.66MB read
+  Socket errors: connect 0, read 44, write 0, timeout 1578
+  Non-2xx or 3xx responses: 2784
+Requests/sec:   1061.73
+Transfer/sec:      1.29MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.00ms    3.38ms  37.83ms   39.40%
+    Req/Sec    56.01    138.37   600.00     85.45%
+  6990 requests in 16.00s, 9.64MB read
+  Socket errors: connect 0, read 2, write 0, timeout 49
+  Non-2xx or 3xx responses: 86
+Requests/sec:    436.81
+Transfer/sec:    616.73KB
+
+---------------------------------------------------------
+ Concurrency: 16 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.65ms    3.68ms  51.56ms   63.51%
+    Req/Sec    50.13    132.33   750.00     87.19%
+  6972 requests in 16.00s, 9.47MB read
+  Socket errors: connect 0, read 8, write 0, timeout 105
+  Non-2xx or 3xx responses: 216
+Requests/sec:    435.71
+Transfer/sec:    605.90KB
+
+---------------------------------------------------------
+ Concurrency: 32 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.53ms   43.22ms 104.33ms   73.65%
+    Req/Sec    66.71    152.11     0.89k    83.29%
+  7914 requests in 16.00s, 10.62MB read
+  Socket errors: connect 0, read 12, write 0, timeout 214
+  Non-2xx or 3xx responses: 364
+Requests/sec:    494.62
+Transfer/sec:    679.58KB
+
+---------------------------------------------------------
+ Concurrency: 64 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.75ms   16.36ms  52.68ms   83.16%
+    Req/Sec    63.45    144.91   767.00     83.88%
+  9839 requests in 16.00s, 12.62MB read
+  Socket errors: connect 0, read 17, write 0, timeout 433
+  Non-2xx or 3xx responses: 995
+Requests/sec:    614.83
+Transfer/sec:    807.56KB
+
+---------------------------------------------------------
+ Concurrency: 128 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   141.01ms   75.46ms 210.86ms   77.67%
+    Req/Sec    82.31    155.96   615.00     79.26%
+  12533 requests in 16.00s, 15.39MB read
+  Socket errors: connect 0, read 37, write 0, timeout 854
+  Non-2xx or 3xx responses: 1899
+Requests/sec:    783.16
+Transfer/sec:      0.96MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mysql/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   500.82ms  476.93ms   1.12s    38.64%
+    Req/Sec   121.38    182.16   742.00     73.42%
+  15533 requests in 16.00s, 17.79MB read
+  Socket errors: connect 0, read 64, write 0, timeout 1648
+  Non-2xx or 3xx responses: 3539
+Requests/sec:    970.53
+Transfer/sec:      1.11MB

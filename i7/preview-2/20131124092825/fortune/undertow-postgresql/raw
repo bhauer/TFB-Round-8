@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Nov 25 03:47:55 PST 2013
+
+  System load:  0.16               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   709.22us    1.12ms  16.52ms   99.47%
+    Req/Sec     1.64k   192.04     2.11k    87.81%
+  62124 requests in 5.00s, 110.91MB read
+Requests/sec:  12425.03
+Transfer/sec:     22.18MB
+
+---------------------------------------------------------
+ Running Warmup undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.72ms   82.58ms 646.39ms   97.84%
+    Req/Sec     5.51k     1.10k    8.56k    91.24%
+  625878 requests in 15.00s, 1.09GB read
+Requests/sec:  41726.22
+Transfer/sec:     74.49MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   756.47us    1.54ms  20.60ms   99.37%
+    Req/Sec     1.63k   188.27     2.00k    89.79%
+  184970 requests in 15.00s, 330.22MB read
+Requests/sec:  12331.22
+Transfer/sec:     22.01MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.93ms    2.37ms  21.71ms   98.59%
+    Req/Sec     3.16k   489.17     4.11k    91.11%
+  360124 requests in 15.00s, 642.92MB read
+Requests/sec:  24008.34
+Transfer/sec:     42.86MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.23ms    3.09ms  23.05ms   97.67%
+    Req/Sec     5.35k     1.00k    6.67k    94.69%
+  608250 requests in 15.00s, 1.06GB read
+Requests/sec:  40550.40
+Transfer/sec:     72.39MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.02ms    3.44ms  27.54ms   97.43%
+    Req/Sec     5.51k     0.99k    6.78k    94.82%
+  625246 requests in 15.00s, 1.09GB read
+Requests/sec:  41683.50
+Transfer/sec:     74.42MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.74ms    4.80ms  37.10ms   96.84%
+    Req/Sec     5.51k     1.04k    8.33k    93.44%
+  625293 requests in 15.00s, 1.09GB read
+Requests/sec:  41688.70
+Transfer/sec:     74.43MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/postgresql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.32ms   20.15ms 215.78ms   97.90%
+    Req/Sec     5.53k     1.08k    8.67k    92.39%
+  627598 requests in 15.00s, 1.09GB read
+Requests/sec:  41846.00
+Transfer/sec:     74.71MB

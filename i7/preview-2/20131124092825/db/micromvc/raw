@@ -1,0 +1,135 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 17:56:43 PST 2013
+
+  System load:  0.13               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.96ms  274.61us   4.37ms   75.05%
+    Req/Sec   538.93     62.05   700.00     81.73%
+  20426 requests in 5.00s, 4.57MB read
+Requests/sec:   4084.27
+Transfer/sec:      0.91MB
+
+---------------------------------------------------------
+ Running Warmup micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   304.90ms  360.03ms   2.72s    95.50%
+    Req/Sec   155.62    163.88     1.16k    95.28%
+  21053 requests in 15.02s, 95.89MB read
+  Non-2xx or 3xx responses: 13202
+Requests/sec:   1402.02
+Transfer/sec:      6.39MB
+
+---------------------------------------------------------
+ Concurrency: 8 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.81ms    2.78ms  22.00ms   67.13%
+    Req/Sec    95.40     21.17   172.00     63.19%
+  11300 requests in 15.01s, 80.57MB read
+  Non-2xx or 3xx responses: 11300
+Requests/sec:    752.86
+Transfer/sec:      5.37MB
+
+---------------------------------------------------------
+ Concurrency: 16 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.04ms    5.09ms  39.97ms   70.47%
+    Req/Sec   100.94     16.96   166.00     63.91%
+  12037 requests in 15.01s, 85.83MB read
+  Non-2xx or 3xx responses: 12037
+Requests/sec:    801.96
+Transfer/sec:      5.72MB
+
+---------------------------------------------------------
+ Concurrency: 32 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.96ms    7.69ms  64.46ms   69.81%
+    Req/Sec   110.73     12.53   147.00     67.05%
+  13287 requests in 15.01s, 94.74MB read
+  Non-2xx or 3xx responses: 13287
+Requests/sec:    885.34
+Transfer/sec:      6.31MB
+
+---------------------------------------------------------
+ Concurrency: 64 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    66.97ms   18.54ms 152.10ms   71.05%
+    Req/Sec   119.40     10.02   153.00     68.24%
+  14341 requests in 15.03s, 102.25MB read
+  Non-2xx or 3xx responses: 14341
+Requests/sec:    954.39
+Transfer/sec:      6.80MB
+
+---------------------------------------------------------
+ Concurrency: 128 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   104.87ms   63.47ms 392.94ms   62.85%
+    Req/Sec   280.57    294.38     1.00k    77.54%
+  32808 requests in 15.03s, 84.72MB read
+  Non-2xx or 3xx responses: 11203
+Requests/sec:   2183.03
+Transfer/sec:      5.64MB
+
+---------------------------------------------------------
+ Concurrency: 256 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   262.79ms  129.85ms   1.03s    71.78%
+    Req/Sec   162.05    164.51     0.87k    91.80%
+  18970 requests in 15.06s, 87.90MB read
+  Non-2xx or 3xx responses: 12113
+Requests/sec:   1259.75
+Transfer/sec:      5.84MB

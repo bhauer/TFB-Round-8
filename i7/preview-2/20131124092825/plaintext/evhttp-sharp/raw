@@ -1,0 +1,102 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 13:09:35 PST 2013
+
+  System load:  0.44               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8085/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8085/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   257.33us   80.63us   2.83ms   90.85%
+    Req/Sec     4.03k   252.98     5.11k    69.87%
+  152315 requests in 5.00s, 19.46MB read
+Requests/sec:  30464.49
+Transfer/sec:      3.89MB
+
+---------------------------------------------------------
+ Running Warmup evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8085/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.51ms    1.19ms  12.81ms   70.16%
+    Req/Sec    13.62k     2.02k   20.78k    66.23%
+  1549086 requests in 15.00s, 197.96MB read
+Requests/sec: 103276.42
+Transfer/sec:     13.20MB
+
+---------------------------------------------------------
+ Concurrency: 256 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8085/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    43.84ms    4.38ms  63.93ms   93.81%
+    Req/Sec    11.72k   433.72    13.01k    69.15%
+  1398492 requests in 15.00s, 178.72MB read
+Requests/sec:  93228.55
+Transfer/sec:     11.91MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8085/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   152.76ms   45.34ms 336.20ms   76.89%
+    Req/Sec    13.38k   789.52    16.23k    84.58%
+  1601086 requests in 15.00s, 204.61MB read
+Requests/sec: 106736.47
+Transfer/sec:     13.64MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8085/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   642.09ms  144.86ms   2.25s    75.92%
+    Req/Sec    12.70k     0.96k   14.78k    92.50%
+  1531510 requests in 15.00s, 195.72MB read
+  Socket errors: connect 0, read 0, write 0, timeout 92
+Requests/sec: 102083.25
+Transfer/sec:     13.05MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8085/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.71s   875.45ms   5.34s    81.37%
+    Req/Sec    12.22k     1.26k   19.86k    92.07%
+  1466296 requests in 15.01s, 187.38MB read
+  Socket errors: connect 11, read 0, write 0, timeout 27911
+Requests/sec:  97680.00
+Transfer/sec:     12.48MB

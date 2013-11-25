@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 12:59:27 PST 2013
+
+  System load:  0.0                Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:9000/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   315.20us  319.32us   8.01ms   89.95%
+    Req/Sec     4.64k     2.08k    7.67k    61.00%
+  161834 requests in 5.00s, 23.77MB read
+Requests/sec:  32369.01
+Transfer/sec:      4.75MB
+
+---------------------------------------------------------
+ Running Warmup dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.63ms   84.64ms   1.04s    98.86%
+    Req/Sec    12.39k     3.60k   33.89k    78.06%
+  1389590 requests in 15.00s, 204.08MB read
+  Socket errors: connect 0, read 0, write 0, timeout 6
+Requests/sec:  92642.78
+Transfer/sec:     13.61MB
+
+---------------------------------------------------------
+ Concurrency: 8 for dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   163.02us   91.74us   8.30ms   95.12%
+    Req/Sec     6.24k   501.10     7.89k    68.95%
+  709982 requests in 15.00s, 104.27MB read
+Requests/sec:  47333.15
+Transfer/sec:      6.95MB
+
+---------------------------------------------------------
+ Concurrency: 16 for dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   190.78us  200.19us   9.83ms   94.73%
+    Req/Sec    10.95k     1.48k   14.56k    70.89%
+  1243683 requests in 15.00s, 182.65MB read
+Requests/sec:  82914.80
+Transfer/sec:     12.18MB
+
+---------------------------------------------------------
+ Concurrency: 32 for dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   340.08us  604.21us  11.83ms   95.19%
+    Req/Sec    13.64k     2.91k   22.78k    69.70%
+  1546911 requests in 15.00s, 227.19MB read
+Requests/sec: 103132.11
+Transfer/sec:     15.15MB
+
+---------------------------------------------------------
+ Concurrency: 64 for dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   668.53us    0.90ms  15.06ms   94.67%
+    Req/Sec    13.52k     2.50k   20.33k    77.78%
+  1530631 requests in 15.00s, 224.80MB read
+Requests/sec: 102044.77
+Transfer/sec:     14.99MB
+
+---------------------------------------------------------
+ Concurrency: 128 for dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.39ms    2.16ms  46.24ms   94.79%
+    Req/Sec    13.18k     2.48k   24.22k    82.82%
+  1495472 requests in 15.00s, 219.63MB read
+Requests/sec:  99708.29
+Transfer/sec:     14.64MB
+
+---------------------------------------------------------
+ Concurrency: 256 for dropwizard
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.52ms   38.14ms 645.63ms   99.07%
+    Req/Sec    12.65k     2.84k   35.89k    83.78%
+  1434732 requests in 15.00s, 210.71MB read
+  Socket errors: connect 0, read 0, write 0, timeout 6
+Requests/sec:  95650.53
+Transfer/sec:     14.05MB

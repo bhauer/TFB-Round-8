@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 09:35:30 PST 2013
+
+  System load:  0.02               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   462.68ms  565.02ms   1.17s    60.06%
+    Req/Sec   122.46    232.47   777.00     78.60%
+  5412 requests in 6.00s, 1.66MB read
+  Socket errors: connect 0, read 1, write 0, timeout 11
+  Non-2xx or 3xx responses: 14
+Requests/sec:    901.79
+Transfer/sec:    282.90KB
+
+---------------------------------------------------------
+ Running Warmup aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   412.09ms  319.25ms   1.19s    66.38%
+    Req/Sec   108.62    197.21   666.00     82.08%
+  17713 requests in 16.00s, 5.48MB read
+  Socket errors: connect 0, read 139, write 0, timeout 1645
+  Non-2xx or 3xx responses: 2468
+Requests/sec:   1106.87
+Transfer/sec:    350.61KB
+
+---------------------------------------------------------
+ Concurrency: 8 for aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.46ms   11.89ms  41.25ms   87.59%
+    Req/Sec    97.97    230.66   800.00     84.45%
+  10690 requests in 16.00s, 3.27MB read
+  Socket errors: connect 0, read 2, write 0, timeout 49
+  Non-2xx or 3xx responses: 54
+Requests/sec:    667.93
+Transfer/sec:    209.48KB
+
+---------------------------------------------------------
+ Concurrency: 16 for aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.17ms    1.87ms  34.48ms   80.45%
+    Req/Sec   114.03    242.10   800.00     81.54%
+  9244 requests in 16.00s, 2.83MB read
+  Socket errors: connect 0, read 5, write 0, timeout 104
+  Non-2xx or 3xx responses: 98
+Requests/sec:    577.66
+Transfer/sec:    181.25KB
+
+---------------------------------------------------------
+ Concurrency: 32 for aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.92ms    2.60ms  67.40ms   86.87%
+    Req/Sec    88.90    214.49   764.00     85.11%
+  9593 requests in 16.00s, 2.94MB read
+  Socket errors: connect 0, read 13, write 0, timeout 215
+  Non-2xx or 3xx responses: 318
+Requests/sec:    599.48
+Transfer/sec:    188.40KB
+
+---------------------------------------------------------
+ Concurrency: 64 for aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.22ms   37.10ms 112.43ms   84.79%
+    Req/Sec    81.42    198.90     0.90k    85.84%
+  10182 requests in 16.00s, 3.13MB read
+  Socket errors: connect 0, read 17, write 0, timeout 434
+  Non-2xx or 3xx responses: 565
+Requests/sec:    636.36
+Transfer/sec:    200.45KB
+
+---------------------------------------------------------
+ Concurrency: 128 for aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   256.00ms  139.01ms 386.64ms   77.59%
+    Req/Sec   105.61    209.42   727.00     82.20%
+  13673 requests in 16.00s, 4.22MB read
+  Socket errors: connect 0, read 79, write 0, timeout 867
+  Non-2xx or 3xx responses: 2170
+Requests/sec:    854.50
+Transfer/sec:    269.99KB
+
+---------------------------------------------------------
+ Concurrency: 256 for aspnet-mono-jsonnet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/json/jsonnet
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json/jsonnet
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   555.85ms  428.03ms   1.00s    25.01%
+    Req/Sec   135.94    217.31   811.00     80.63%
+  17684 requests in 16.00s, 5.48MB read
+  Socket errors: connect 0, read 155, write 0, timeout 1651
+  Non-2xx or 3xx responses: 3732
+Requests/sec:   1104.96
+Transfer/sec:    350.63KB

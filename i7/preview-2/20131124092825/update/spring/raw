@@ -1,0 +1,122 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Nov 25 01:55:09 PST 2013
+
+  System load:  0.09               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/updates?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   941.73ms  760.88ms   1.56s    60.40%
+    Req/Sec   194.98    246.09   700.00     68.87%
+  9775 requests in 6.00s, 1.85MB read
+Requests/sec:   1629.07
+Transfer/sec:    316.53KB
+
+---------------------------------------------------------
+ Running Warmup spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.68s     1.12s    3.19s    84.68%
+    Req/Sec   179.54    425.35     1.43k    85.41%
+  26253 requests in 15.73s, 4.98MB read
+  Socket errors: connect 0, read 0, write 0, timeout 329
+Requests/sec:   1668.46
+Transfer/sec:    324.10KB
+
+---------------------------------------------------------
+ Queries: 1 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.00s     1.42s    3.70s    80.87%
+    Req/Sec   301.39    640.55     1.96k    82.62%
+  42937 requests in 16.00s, 7.25MB read
+  Socket errors: connect 0, read 0, write 0, timeout 512
+Requests/sec:   2682.91
+Transfer/sec:    463.84KB
+
+---------------------------------------------------------
+ Queries: 5 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.22s   741.89ms   1.75s    71.77%
+    Req/Sec   192.26    298.87   818.00     75.62%
+  26347 requests in 16.00s, 6.65MB read
+Requests/sec:   1646.28
+Transfer/sec:    425.35KB
+
+---------------------------------------------------------
+ Queries: 10 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.08s     1.65s    4.09s    77.13%
+    Req/Sec    59.94    121.97   449.00     84.40%
+  8074 requests in 15.91s, 2.96MB read
+  Socket errors: connect 0, read 0, write 0, timeout 513
+  Non-2xx or 3xx responses: 5
+Requests/sec:    507.47
+Transfer/sec:    190.83KB
+
+---------------------------------------------------------
+ Queries: 15 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.10s     1.50s    3.93s    80.40%
+    Req/Sec    42.30     82.45   283.00     81.56%
+  6022 requests in 15.01s, 3.09MB read
+  Socket errors: connect 0, read 0, write 0, timeout 768
+  Non-2xx or 3xx responses: 18
+Requests/sec:    401.26
+Transfer/sec:    210.74KB
+
+---------------------------------------------------------
+ Queries: 20 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.34s     1.48s    4.10s    82.80%
+    Req/Sec    28.13     60.50   216.00     85.53%
+  4056 requests in 15.63s, 3.18MB read
+  Socket errors: connect 0, read 0, write 0, timeout 768
+  Non-2xx or 3xx responses: 52
+Requests/sec:    259.43
+Transfer/sec:    207.98KB

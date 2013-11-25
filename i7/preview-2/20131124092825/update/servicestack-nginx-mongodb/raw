@@ -1,0 +1,127 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 23:51:20 PST 2013
+
+  System load:  0.0                Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/mongodb/updates/2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/mongodb/updates/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  3 requests in 6.00s, 31.15KB read
+  Socket errors: connect 0, read 0, write 0, timeout 18
+Requests/sec:      0.50
+Transfer/sec:      5.19KB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/updates/2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/updates/2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   228.61ms  198.73ms 509.12ms   53.03%
+    Req/Sec     0.41      3.88    55.00     97.94%
+  151 requests in 16.01s, 1.06MB read
+  Socket errors: connect 0, read 2, write 0, timeout 1855
+  Non-2xx or 3xx responses: 48
+Requests/sec:      9.43
+Transfer/sec:     68.06KB
+
+---------------------------------------------------------
+ Queries: 1 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/updates/1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/updates/1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.60ms   66.55ms 169.59ms   76.04%
+    Req/Sec     0.32      3.74    59.00     98.92%
+  175 requests in 16.00s, 1.10MB read
+  Socket errors: connect 0, read 1, write 0, timeout 1884
+  Non-2xx or 3xx responses: 67
+Requests/sec:     10.93
+Transfer/sec:     70.70KB
+
+---------------------------------------------------------
+ Queries: 5 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/updates/5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/updates/5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   586.63ms  102.09ms 655.42ms   97.69%
+    Req/Sec     0.48      2.49    23.00     95.07%
+  216 requests in 16.01s, 1.39MB read
+  Socket errors: connect 0, read 3, write 0, timeout 1870
+  Non-2xx or 3xx responses: 82
+Requests/sec:     13.50
+Transfer/sec:     88.73KB
+
+---------------------------------------------------------
+ Queries: 10 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/updates/10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/updates/10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   378.80ms  254.09ms 670.96ms   55.48%
+    Req/Sec     0.59      3.21    31.00     95.21%
+  188 requests in 16.00s, 1.13MB read
+  Socket errors: connect 0, read 2, write 0, timeout 1859
+  Non-2xx or 3xx responses: 83
+Requests/sec:     11.75
+Transfer/sec:     72.24KB
+
+---------------------------------------------------------
+ Queries: 15 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/updates/15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/updates/15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   771.19ms  267.45ms 880.08ms   87.18%
+    Req/Sec     1.62      7.41    54.00     94.87%
+  285 requests in 16.00s, 1.86MB read
+  Socket errors: connect 0, read 9, write 0, timeout 1803
+  Non-2xx or 3xx responses: 112
+Requests/sec:     17.81
+Transfer/sec:    119.04KB
+
+---------------------------------------------------------
+ Queries: 20 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/updates/20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/updates/20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   394.01ms  349.05ms 753.08ms   49.71%
+    Req/Sec     0.27      2.81    38.00     98.98%
+  133 requests in 16.00s, 821.47KB read
+  Socket errors: connect 0, read 2, write 0, timeout 1823
+  Non-2xx or 3xx responses: 65
+Requests/sec:      8.31
+Transfer/sec:     51.33KB

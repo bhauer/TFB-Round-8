@@ -1,0 +1,85 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: play2
+self.results['completed']: {}
+
+=====================================================
+  Beginning play2
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting play2
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 21:28:02 PST 2013
+
+  System load:  1.45               Processes:           119
+  Usage of /:   8.0% of 131.33GB   Users logged in:     0
+  Memory usage: 16%                IP address for eth0: 172.16.98.118
+  Swap usage:   2%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+52 updates are security updates.
+
+mysql start/running, process 31403
+mongodb start/running, process 31464
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+[0m[[0minfo[0m] [0mLoading project definition from /home/tfb/FrameworkBenchmarks/play-java/project[0m
+[0m[[0minfo[0m] [0mSet current project to play-java (in build file:/home/tfb/FrameworkBenchmarks/play-java/)[0m
+[32m
+(Starting server. Type Ctrl+D to exit logs, the server will remain in background)
+[0m
+Play server process ID is 7326
+[[37minfo[0m] play - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+-----------------------------------------------------
+  Verifying URLs for play2
+-----------------------------------------------------
+VERIFYING JSON (/json) ...
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 26
+
+{"message":"Hello World!"}
+
+VERIFYING DB (/db) ...
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 33
+
+[{"id":9080,"randomNumber":7877}]
+
+VERIFYING Query (/db?queries=2) ...
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 65
+
+[{"id":8059,"randomNumber":5073},{"id":9859,"randomNumber":9085}]
+
+
+-----------------------------------------------------
+  Benchmarking play2 ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+
+-----------------------------------------------------
+  Stopping play2
+-----------------------------------------------------
+[info] Stopping application (with PID 7326)...
+[info] Done!
+
+-----------------------------------------------------
+  Stopped play2
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through play2
+----------------------------------------------------

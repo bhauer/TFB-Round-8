@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Nov 25 01:28:44 PST 2013
+
+  System load:  0.3                Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8000/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8000/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.67ms    0.87ms   4.60ms   50.93%
+    Req/Sec   799.05    392.77     1.67k    51.63%
+  30187 requests in 5.00s, 6.21MB read
+Requests/sec:   6035.39
+Transfer/sec:      1.24MB
+
+---------------------------------------------------------
+ Running Warmup snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    68.92ms   25.99ms 142.86ms   70.56%
+    Req/Sec   467.23     39.25   636.00     71.00%
+  56157 requests in 15.01s, 11.54MB read
+Requests/sec:   3741.42
+Transfer/sec:    787.63KB
+
+---------------------------------------------------------
+ Queries: 1 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.61ms    7.61ms  71.71ms   71.51%
+    Req/Sec     1.14k   125.16     1.95k    84.38%
+  133758 requests in 15.02s, 23.44MB read
+Requests/sec:   8907.58
+Transfer/sec:      1.56MB
+
+---------------------------------------------------------
+ Queries: 5 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    52.83ms   16.54ms 166.06ms   76.75%
+    Req/Sec   618.24     75.61   736.00     79.72%
+  73818 requests in 15.01s, 21.89MB read
+Requests/sec:   4918.16
+Transfer/sec:      1.46MB
+
+---------------------------------------------------------
+ Queries: 10 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   102.78ms   31.55ms 259.62ms   72.65%
+    Req/Sec   313.84     25.07   365.00     81.56%
+  37620 requests in 15.01s, 16.86MB read
+Requests/sec:   2506.95
+Transfer/sec:      1.12MB
+
+---------------------------------------------------------
+ Queries: 15 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   142.60ms   44.05ms 282.08ms   70.56%
+    Req/Sec   225.04     17.26   275.00     83.12%
+  26983 requests in 15.01s, 16.18MB read
+Requests/sec:   1797.58
+Transfer/sec:      1.08MB
+
+---------------------------------------------------------
+ Queries: 20 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   478.99ms  250.33ms   1.65s    66.51%
+    Req/Sec    69.79     13.95   158.00     82.79%
+  8369 requests in 15.06s, 6.29MB read
+Requests/sec:    555.85
+Transfer/sec:    427.58KB

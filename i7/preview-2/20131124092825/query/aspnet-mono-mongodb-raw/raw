@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Nov 24 09:41:45 PST 2013
+
+  System load:  0.08               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer aspnet-mono-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/mongodb?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/mongodb?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   727.10ms  446.87ms   1.01s    72.54%
+    Req/Sec    33.80    108.04   555.00     90.79%
+  1238 requests in 6.00s, 375.50KB read
+  Socket errors: connect 0, read 2, write 0, timeout 10
+  Non-2xx or 3xx responses: 144
+Requests/sec:    206.31
+Transfer/sec:     62.58KB
+
+---------------------------------------------------------
+ Running Warmup aspnet-mono-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   630.51ms  584.63ms   1.25s    45.34%
+    Req/Sec    97.02    123.10   517.00     79.18%
+  12719 requests in 16.00s, 3.90MB read
+  Socket errors: connect 0, read 105, write 0, timeout 1501
+  Non-2xx or 3xx responses: 6318
+Requests/sec:    794.72
+Transfer/sec:    249.71KB
+
+---------------------------------------------------------
+ Queries: 1 for aspnet-mono-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   598.48ms  715.35ms   2.04s    73.22%
+    Req/Sec   102.79    113.90   469.00     79.65%
+  13349 requests in 16.00s, 4.09MB read
+  Socket errors: connect 0, read 131, write 0, timeout 1344
+  Non-2xx or 3xx responses: 7800
+Requests/sec:    834.26
+Transfer/sec:    261.76KB
+
+---------------------------------------------------------
+ Queries: 5 for aspnet-mono-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   593.62ms  719.63ms   1.71s    63.93%
+    Req/Sec   125.72    115.72   422.00     45.34%
+  16384 requests in 16.00s, 5.14MB read
+  Socket errors: connect 0, read 146, write 0, timeout 1332
+  Non-2xx or 3xx responses: 10718
+Requests/sec:   1023.69
+Transfer/sec:    328.67KB
+
+---------------------------------------------------------
+ Queries: 10 for aspnet-mono-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   656.53ms    1.23s    3.28s    81.95%
+    Req/Sec   150.51     93.28   550.00     66.13%
+  19420 requests in 16.00s, 6.22MB read
+  Socket errors: connect 0, read 147, write 0, timeout 1084
+  Non-2xx or 3xx responses: 13615
+Requests/sec:   1213.78
+Transfer/sec:    398.33KB
+
+---------------------------------------------------------
+ Queries: 15 for aspnet-mono-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   473.13ms  695.55ms   1.75s    74.77%
+    Req/Sec   128.18     94.11   370.00     59.74%
+  16626 requests in 16.00s, 5.45MB read
+  Socket errors: connect 0, read 157, write 0, timeout 1271
+  Non-2xx or 3xx responses: 11571
+Requests/sec:   1039.02
+Transfer/sec:    348.66KB
+
+---------------------------------------------------------
+ Queries: 20 for aspnet-mono-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   488.78ms    1.02s    3.63s    85.60%
+    Req/Sec   122.47     73.52   350.00     71.60%
+  15665 requests in 16.00s, 5.30MB read
+  Socket errors: connect 0, read 141, write 0, timeout 972
+  Non-2xx or 3xx responses: 10233
+Requests/sec:    978.80
+Transfer/sec:    339.32KB

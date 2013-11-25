@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Nov 25 00:18:43 PST 2013
+
+  System load:  0.24               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+35 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.26ms    6.01ms  56.92ms   98.83%
+    Req/Sec     1.70k   240.04     2.11k    86.10%
+  62392 requests in 5.00s, 9.69MB read
+Requests/sec:  12478.79
+Transfer/sec:      1.94MB
+
+---------------------------------------------------------
+ Running Warmup servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    72.26ms  262.68ms   1.15s    93.85%
+    Req/Sec     7.25k     2.52k   15.38k    80.18%
+  828254 requests in 15.00s, 128.58MB read
+Requests/sec:  55219.31
+Transfer/sec:      8.57MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.80ms    9.04ms  71.90ms   98.34%
+    Req/Sec     1.63k   236.80     2.11k    96.20%
+  185923 requests in 15.00s, 28.86MB read
+Requests/sec:  12394.59
+Transfer/sec:      1.92MB
+
+---------------------------------------------------------
+ Concurrency: 16 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.19ms   14.07ms  81.69ms   96.71%
+    Req/Sec     3.39k   677.73     4.44k    95.37%
+  388251 requests in 15.08s, 60.27MB read
+Requests/sec:  25749.60
+Transfer/sec:      4.00MB
+
+---------------------------------------------------------
+ Concurrency: 32 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.94ms   18.41ms  89.66ms   94.96%
+    Req/Sec     5.67k     1.46k    7.89k    92.33%
+  645071 requests in 15.00s, 100.14MB read
+Requests/sec:  43006.22
+Transfer/sec:      6.68MB
+
+---------------------------------------------------------
+ Concurrency: 64 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.21ms   34.31ms 242.73ms   94.17%
+    Req/Sec     6.29k     1.81k    9.80k    86.80%
+  711782 requests in 15.00s, 110.50MB read
+Requests/sec:  47455.31
+Transfer/sec:      7.37MB
+
+---------------------------------------------------------
+ Concurrency: 128 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.90ms   31.63ms 221.07ms   94.42%
+    Req/Sec     6.11k     1.79k   10.18k    85.27%
+  713811 requests in 15.00s, 110.81MB read
+Requests/sec:  47589.23
+Transfer/sec:      7.39MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.86ms   33.78ms 216.89ms   94.46%
+    Req/Sec     7.14k     2.05k   11.36k    86.84%
+  838464 requests in 15.00s, 130.16MB read
+Requests/sec:  55899.48
+Transfer/sec:      8.68MB

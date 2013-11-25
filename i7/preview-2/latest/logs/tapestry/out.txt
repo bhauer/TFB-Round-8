@@ -1,0 +1,117 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: tapestry
+self.results['completed']: {}
+
+=====================================================
+  Beginning tapestry
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting tapestry
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Nov 25 02:45:10 PST 2013
+
+  System load:  0.13               Processes:           120
+  Usage of /:   8.0% of 131.33GB   Users logged in:     0
+  Memory usage: 17%                IP address for eth0: 172.16.98.118
+  Swap usage:   2%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+52 updates are security updates.
+
+mysql start/running, process 21423
+mongodb start/running, process 21485
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hello Tapestry 5 Application 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.3:clean (default-clean) @ hello ---
+[INFO] Deleting file set: /home/tfb/FrameworkBenchmarks/tapestry/hello/target (included: [**], excluded: [])
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ hello ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ hello ---
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 7 source files to /home/tfb/FrameworkBenchmarks/tapestry/hello/target/classes
+[INFO] 
+[INFO] --- maven-war-plugin:2.1.1:war (default-cli) @ hello ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [hello] in [/home/tfb/FrameworkBenchmarks/tapestry/hello/target/tapestry]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/tfb/FrameworkBenchmarks/tapestry/hello/src/main/webapp]
+[INFO] Webapp assembled in [253 msecs]
+[INFO] Building war: /home/tfb/FrameworkBenchmarks/tapestry/hello/target/tapestry.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.525s
+[INFO] Finished at: Mon Nov 25 02:45:23 PST 2013
+[INFO] Final Memory: 13M/146M
+[INFO] ------------------------------------------------------------------------
+Resin/4.0.36 launching watchdog at 127.0.0.1:6600
+Resin/4.0.36 started -server 'default' with watchdog at 127.0.0.1:6600
+
+-----------------------------------------------------
+  Verifying URLs for tapestry
+-----------------------------------------------------
+VERIFYING JSON (/tapestry/hellojson) ...
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 25 Nov 2013 10:46:26 GMT
+
+{"message":"Hello, world"}
+
+VERIFYING DB (/tapestry/hellodb) ...
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 25 Nov 2013 10:46:27 GMT
+
+[{"id":1393,"randomNumber":7055}]
+
+VERIFYING Query (/tapestry/hellodb?queries=2) ...
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 25 Nov 2013 10:46:27 GMT
+
+[{"id":6337,"randomNumber":4843},{"id":2488,"randomNumber":5449}]
+
+
+-----------------------------------------------------
+  Benchmarking tapestry ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+
+-----------------------------------------------------
+  Stopping tapestry
+-----------------------------------------------------
+Resin/4.0.36 shutdown watchdog at 127.0.0.1:6600
+
+-----------------------------------------------------
+  Stopped tapestry
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through tapestry
+----------------------------------------------------
