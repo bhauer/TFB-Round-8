@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 02:59:46 PST 2013
+
+  System load:  1.04               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/spark/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   220.56us   45.01us   1.66ms   67.05%
+    Req/Sec     4.66k   242.59     5.67k    67.24%
+  177026 requests in 5.00s, 25.66MB read
+Requests/sec:  35406.72
+Transfer/sec:      5.13MB
+
+---------------------------------------------------------
+ Running Warmup spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.73ms    6.27ms 119.54ms   98.43%
+    Req/Sec    23.97k     4.57k   55.00k    85.29%
+  2713883 requests in 15.00s, 393.40MB read
+Requests/sec: 180930.72
+Transfer/sec:     26.23MB
+
+---------------------------------------------------------
+ Concurrency: 256 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.18ms   35.09ms 312.95ms   90.93%
+    Req/Sec    28.97k     5.11k   51.17k    70.02%
+  3440819 requests in 15.00s, 498.78MB read
+Requests/sec: 229402.45
+Transfer/sec:     33.25MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   107.81ms  934.05ms  13.14s    99.26%
+    Req/Sec    32.04k     9.05k   63.05k    70.02%
+  3326088 requests in 15.19s, 482.14MB read
+  Socket errors: connect 0, read 171, write 0, timeout 2810
+Requests/sec: 218949.43
+Transfer/sec:     31.74MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   104.15ms  590.59ms   8.49s    98.43%
+    Req/Sec    29.21k     8.16k   50.62k    72.65%
+  3241607 requests in 15.00s, 469.90MB read
+  Socket errors: connect 0, read 2290, write 0, timeout 19973
+Requests/sec: 216075.11
+Transfer/sec:     31.32MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.54s     6.32s   14.87s    68.67%
+    Req/Sec    29.13k    12.52k   62.38k    65.48%
+  3237750 requests in 15.01s, 469.34MB read
+  Socket errors: connect 11, read 1167, write 0, timeout 102138
+Requests/sec: 215678.45
+Transfer/sec:     31.26MB

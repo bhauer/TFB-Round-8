@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 16:57:19 PST 2013
+
+  System load:  0.25               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   770.57us  425.12us  11.82ms   92.20%
+    Req/Sec     1.39k   201.29     1.89k    72.88%
+  51899 requests in 5.00s, 11.03MB read
+Requests/sec:  10379.98
+Transfer/sec:      2.21MB
+
+---------------------------------------------------------
+ Running Warmup kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.53ms    5.56ms  47.10ms   86.77%
+    Req/Sec     9.55k     2.08k   17.23k    68.32%
+  1104994 requests in 15.00s, 331.42MB read
+  Non-2xx or 3xx responses: 963476
+Requests/sec:  73668.34
+Transfer/sec:     22.10MB
+
+---------------------------------------------------------
+ Concurrency: 8 for kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   774.47us  524.22us  16.13ms   93.05%
+    Req/Sec     1.40k   203.75     1.89k    77.48%
+  158876 requests in 15.00s, 33.78MB read
+Requests/sec:  10591.47
+Transfer/sec:      2.25MB
+
+---------------------------------------------------------
+ Concurrency: 16 for kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.37ms    1.40ms  42.86ms   97.15%
+    Req/Sec     1.61k   303.57     2.89k    76.22%
+  183145 requests in 15.00s, 38.94MB read
+Requests/sec:  12209.34
+Transfer/sec:      2.60MB
+
+---------------------------------------------------------
+ Concurrency: 32 for kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.56ms    1.32ms  54.67ms   94.60%
+    Req/Sec     1.67k   249.20     3.11k    77.54%
+  190267 requests in 15.00s, 40.45MB read
+Requests/sec:  12684.43
+Transfer/sec:      2.70MB
+
+---------------------------------------------------------
+ Concurrency: 64 for kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.09ms    1.62ms  83.83ms   91.57%
+    Req/Sec     1.68k   241.52     2.90k    79.23%
+  191158 requests in 15.00s, 40.64MB read
+Requests/sec:  12743.89
+Transfer/sec:      2.71MB
+
+---------------------------------------------------------
+ Concurrency: 128 for kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.13ms    2.21ms  43.44ms   88.72%
+    Req/Sec     1.64k   202.77     2.47k    81.92%
+  192062 requests in 15.00s, 40.84MB read
+Requests/sec:  12804.71
+Transfer/sec:      2.72MB
+
+---------------------------------------------------------
+ Concurrency: 256 for kelp
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.57ms    5.56ms  49.97ms   86.35%
+    Req/Sec     9.40k     2.12k   17.69k    66.71%
+  1084789 requests in 15.00s, 324.81MB read
+  Non-2xx or 3xx responses: 940307
+Requests/sec:  72321.26
+Transfer/sec:     21.65MB

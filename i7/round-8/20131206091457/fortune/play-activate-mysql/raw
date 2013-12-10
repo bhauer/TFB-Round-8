@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 21:12:33 PST 2013
+
+  System load:  0.12               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:9000/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   691.64us    1.86ms  31.73ms   98.82%
+    Req/Sec     1.89k   356.27     2.44k    83.64%
+  69372 requests in 5.00s, 156.53MB read
+Requests/sec:  13875.90
+Transfer/sec:     31.31MB
+
+---------------------------------------------------------
+ Running Warmup play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.67ms   17.27ms 755.91ms   88.87%
+    Req/Sec     2.43k   628.91     5.58k    72.28%
+  284419 requests in 15.00s, 641.76MB read
+Requests/sec:  18962.18
+Transfer/sec:     42.79MB
+
+---------------------------------------------------------
+ Concurrency: 8 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   438.01ms  734.61ms   1.67s    73.85%
+    Req/Sec     1.43k     0.90k    2.44k    71.26%
+  157552 requests in 15.09s, 355.50MB read
+Requests/sec:  10440.85
+Transfer/sec:     23.56MB
+
+---------------------------------------------------------
+ Concurrency: 16 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.36s   524.12ms   1.57s    86.91%
+    Req/Sec   290.45    784.10     3.44k    88.09%
+  35463 requests in 15.74s, 80.02MB read
+Requests/sec:   2253.06
+Transfer/sec:      5.08MB
+
+---------------------------------------------------------
+ Concurrency: 32 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.30s   505.09ms   1.51s    86.52%
+    Req/Sec   327.97      0.88k    4.89k    87.80%
+  37666 requests in 15.00s, 84.99MB read
+Requests/sec:   2511.09
+Transfer/sec:      5.67MB
+
+---------------------------------------------------------
+ Concurrency: 64 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   832.87ms  367.26ms   1.31s    73.52%
+    Req/Sec   293.13      0.85k    5.44k    89.40%
+  33567 requests in 15.30s, 75.74MB read
+Requests/sec:   2193.84
+Transfer/sec:      4.95MB
+
+---------------------------------------------------------
+ Concurrency: 128 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.53s   495.18ms   2.12s    80.10%
+    Req/Sec   221.38    750.37     5.55k    91.59%
+  25865 requests in 15.25s, 58.36MB read
+Requests/sec:   1695.99
+Transfer/sec:      3.83MB
+
+---------------------------------------------------------
+ Concurrency: 256 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9000/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.97s   530.63ms   2.50s    81.67%
+    Req/Sec   168.71    657.88     6.00k    93.60%
+  19463 requests in 15.03s, 43.92MB read
+  Socket errors: connect 0, read 35, write 0, timeout 36
+Requests/sec:   1294.75
+Transfer/sec:      2.92MB

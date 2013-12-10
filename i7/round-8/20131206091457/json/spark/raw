@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 02:57:33 PST 2013
+
+  System load:  0.02               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/spark/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   239.31us  283.21us  13.16ms   99.53%
+    Req/Sec     4.41k   530.24     5.67k    87.47%
+  161310 requests in 5.00s, 23.84MB read
+Requests/sec:  32264.23
+Transfer/sec:      4.77MB
+
+---------------------------------------------------------
+ Running Warmup spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.53ms  266.09ms   2.82s    99.04%
+    Req/Sec    22.30k     6.22k   58.33k    81.04%
+  2489177 requests in 15.00s, 367.95MB read
+Requests/sec: 165950.03
+Transfer/sec:     24.53MB
+
+---------------------------------------------------------
+ Concurrency: 8 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   223.84us   50.54us   2.31ms   83.62%
+    Req/Sec     4.58k   223.07     5.67k    86.64%
+  522825 requests in 15.00s, 77.28MB read
+Requests/sec:  34855.63
+Transfer/sec:      5.15MB
+
+---------------------------------------------------------
+ Concurrency: 16 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   231.71us  191.28us   9.60ms   94.24%
+    Req/Sec     8.90k   727.52    11.44k    72.48%
+  1011014 requests in 15.00s, 149.45MB read
+Requests/sec:  67403.02
+Transfer/sec:      9.96MB
+
+---------------------------------------------------------
+ Concurrency: 32 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   239.63us  409.69us  11.25ms   96.18%
+    Req/Sec    18.09k     2.66k   25.22k    75.16%
+  2056460 requests in 15.00s, 303.98MB read
+Requests/sec: 137109.26
+Transfer/sec:     20.27MB
+
+---------------------------------------------------------
+ Concurrency: 64 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   373.87us  779.06us  13.44ms   97.44%
+    Req/Sec    25.48k     4.94k   47.40k    80.89%
+  2881270 requests in 15.00s, 425.91MB read
+Requests/sec: 192093.43
+Transfer/sec:     28.40MB
+
+---------------------------------------------------------
+ Concurrency: 128 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   762.25us    1.38ms  31.41ms   96.36%
+    Req/Sec    24.63k     5.00k   70.89k    84.09%
+  2787935 requests in 15.00s, 412.11MB read
+Requests/sec: 185897.27
+Transfer/sec:     27.48MB
+
+---------------------------------------------------------
+ Concurrency: 256 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/spark/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.55ms    1.99ms  35.20ms   94.67%
+    Req/Sec    22.87k     4.08k   57.56k    85.87%
+  2589354 requests in 15.00s, 382.76MB read
+Requests/sec: 172631.68
+Transfer/sec:     25.52MB

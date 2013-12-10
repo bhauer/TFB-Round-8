@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 07:40:47 PST 2013
+
+  System load:  0.35               Processes:           121
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8000/dbs/2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8000/dbs/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.08ms  171.69us   5.15ms   81.28%
+    Req/Sec     0.97k    88.34     1.22k    76.51%
+  36763 requests in 5.00s, 6.79MB read
+Requests/sec:   7352.13
+Transfer/sec:      1.36MB
+
+---------------------------------------------------------
+ Running Warmup yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/dbs/2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/dbs/2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.52ms   13.10ms 175.77ms   74.97%
+    Req/Sec     1.97k   228.22     2.97k    69.11%
+  234363 requests in 15.00s, 43.26MB read
+Requests/sec:  15623.44
+Transfer/sec:      2.88MB
+
+---------------------------------------------------------
+ Queries: 1 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/dbs/1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/dbs/1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.95ms   10.11ms  91.91ms   84.02%
+    Req/Sec     3.00k   494.54     5.22k    71.54%
+  352658 requests in 15.00s, 54.41MB read
+Requests/sec:  23514.93
+Transfer/sec:      3.63MB
+
+---------------------------------------------------------
+ Queries: 5 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/dbs/5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/dbs/5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.78ms   27.23ms 240.64ms   76.21%
+    Req/Sec     1.01k   207.38     1.71k    70.67%
+  117859 requests in 15.00s, 32.47MB read
+Requests/sec:   7856.27
+Transfer/sec:      2.16MB
+
+---------------------------------------------------------
+ Queries: 10 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/dbs/10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/dbs/10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    59.91ms   38.66ms 313.78ms   72.68%
+    Req/Sec   538.33     43.24   668.00     68.32%
+  64409 requests in 15.01s, 27.51MB read
+Requests/sec:   4292.13
+Transfer/sec:      1.83MB
+
+---------------------------------------------------------
+ Queries: 15 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/dbs/15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/dbs/15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    88.40ms   52.83ms 536.21ms   72.22%
+    Req/Sec   367.41     25.62   443.00     66.31%
+  44032 requests in 15.00s, 25.48MB read
+Requests/sec:   2934.59
+Transfer/sec:      1.70MB
+
+---------------------------------------------------------
+ Queries: 20 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8000/dbs/20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8000/dbs/20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   115.19ms   57.65ms 416.39ms   71.82%
+    Req/Sec   277.87     15.60   325.00     68.17%
+  33298 requests in 15.01s, 24.31MB read
+Requests/sec:   2218.39
+Transfer/sec:      1.62MB

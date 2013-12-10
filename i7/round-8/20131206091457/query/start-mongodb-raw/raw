@@ -1,0 +1,121 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 03:24:54 PST 2013
+
+  System load:  0.59               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/queries-mongo?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/queries-mongo?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   277.48us  109.58us   1.74ms   75.90%
+    Req/Sec     3.73k   448.37     5.78k    71.71%
+  138863 requests in 5.00s, 43.70MB read
+  Non-2xx or 3xx responses: 138863
+Requests/sec:  27773.87
+Transfer/sec:      8.74MB
+
+---------------------------------------------------------
+ Running Warmup start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries-mongo?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries-mongo?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.39ms    2.11ms  37.61ms   86.55%
+    Req/Sec     9.70k     1.81k   24.56k    92.65%
+  1091468 requests in 15.00s, 343.45MB read
+  Non-2xx or 3xx responses: 1091468
+Requests/sec:  72766.73
+Transfer/sec:     22.90MB
+
+---------------------------------------------------------
+ Queries: 1 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries-mongo?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries-mongo?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.48ms    1.53ms  32.49ms   77.36%
+    Req/Sec     9.59k   699.72    12.25k    71.15%
+  1096203 requests in 15.00s, 344.94MB read
+  Non-2xx or 3xx responses: 1096203
+Requests/sec:  73098.28
+Transfer/sec:     23.00MB
+
+---------------------------------------------------------
+ Queries: 5 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries-mongo?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries-mongo?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.57ms    3.93ms  27.60ms   91.03%
+    Req/Sec     8.55k     2.05k   13.05k    88.75%
+  984147 requests in 15.00s, 309.68MB read
+  Non-2xx or 3xx responses: 984147
+Requests/sec:  65623.59
+Transfer/sec:     20.65MB
+
+---------------------------------------------------------
+ Queries: 10 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries-mongo?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries-mongo?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.92ms    4.19ms  25.99ms   87.48%
+    Req/Sec     8.22k     2.31k   13.37k    86.22%
+  948285 requests in 15.00s, 298.39MB read
+  Non-2xx or 3xx responses: 948285
+Requests/sec:  63222.86
+Transfer/sec:     19.89MB
+
+---------------------------------------------------------
+ Queries: 15 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries-mongo?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries-mongo?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.33ms    3.53ms  28.51ms   91.81%
+    Req/Sec     8.75k     2.13k   28.33k    90.86%
+  1005709 requests in 15.00s, 316.46MB read
+  Non-2xx or 3xx responses: 1005709
+Requests/sec:  67050.23
+Transfer/sec:     21.10MB
+
+---------------------------------------------------------
+ Queries: 20 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries-mongo?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries-mongo?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.52ms    3.74ms  25.44ms   91.13%
+    Req/Sec     8.52k     2.12k   20.85k    88.38%
+  980928 requests in 15.00s, 308.66MB read
+  Non-2xx or 3xx responses: 980928
+Requests/sec:  65395.99
+Transfer/sec:     20.58MB

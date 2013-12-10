@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 05:49:40 PST 2013
+
+  System load:  0.17               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   475.10us  133.89us   2.20ms   86.58%
+    Req/Sec     2.20k   192.80     2.78k    60.23%
+  81460 requests in 5.00s, 145.43MB read
+Requests/sec:  16292.44
+Transfer/sec:     29.09MB
+
+---------------------------------------------------------
+ Running Warmup undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.81ms    5.16ms 643.45ms   99.62%
+    Req/Sec     5.78k   459.02     8.44k    71.99%
+  655742 requests in 15.00s, 1.14GB read
+Requests/sec:  43721.65
+Transfer/sec:     78.06MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   467.49us  131.55us   2.08ms   86.11%
+    Req/Sec     2.24k   186.73     2.78k    64.27%
+  255262 requests in 15.00s, 455.71MB read
+Requests/sec:  17017.62
+Transfer/sec:     30.38MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   466.33us  206.09us  10.02ms   95.30%
+    Req/Sec     4.50k   353.25     5.44k    68.71%
+  512106 requests in 15.00s, 0.89GB read
+Requests/sec:  34141.15
+Transfer/sec:     60.95MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   739.25us  222.59us   8.49ms   92.89%
+    Req/Sec     5.69k   403.65     7.22k    67.87%
+  646069 requests in 15.00s, 1.13GB read
+Requests/sec:  43073.09
+Transfer/sec:     76.90MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.49ms  498.29us  18.85ms   94.62%
+    Req/Sec     5.69k   458.64     6.78k    81.94%
+  646431 requests in 15.00s, 1.13GB read
+Requests/sec:  43097.44
+Transfer/sec:     76.94MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.94ms  693.29us  14.77ms   92.35%
+    Req/Sec     5.74k   602.80     8.44k    90.78%
+  651779 requests in 15.00s, 1.14GB read
+Requests/sec:  43454.14
+Transfer/sec:     77.58MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes/mongodb
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.36ms   25.78ms 629.54ms   99.41%
+    Req/Sec     5.80k   749.12    12.11k    90.78%
+  654500 requests in 15.00s, 1.14GB read
+Requests/sec:  43638.47
+Transfer/sec:     77.91MB

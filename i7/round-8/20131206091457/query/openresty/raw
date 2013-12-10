@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Dec 10 08:53:12 PST 2013
+
+  System load:  1.44               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 0%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   687.54us  116.85us   1.37ms   68.58%
+    Req/Sec     1.52k    96.91     1.78k    66.45%
+  57238 requests in 5.00s, 13.13MB read
+Requests/sec:  11447.17
+Transfer/sec:      2.63MB
+
+---------------------------------------------------------
+ Running Warmup openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.48ms    8.61ms 258.14ms   95.68%
+    Req/Sec     7.69k     1.05k   12.59k    80.99%
+  885997 requests in 15.00s, 203.22MB read
+Requests/sec:  59068.75
+Transfer/sec:     13.55MB
+
+---------------------------------------------------------
+ Queries: 1 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.46ms    1.45ms  25.82ms   89.80%
+    Req/Sec    13.35k     1.20k   25.00k    85.97%
+  1512912 requests in 15.00s, 298.27MB read
+Requests/sec: 100869.17
+Transfer/sec:     19.89MB
+
+---------------------------------------------------------
+ Queries: 5 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.62ms   11.91ms 527.58ms   84.63%
+    Req/Sec     2.80k   630.03     4.04k    81.91%
+  326640 requests in 15.00s, 104.62MB read
+Requests/sec:  21776.70
+Transfer/sec:      6.97MB
+
+---------------------------------------------------------
+ Queries: 10 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.11ms   20.76ms 539.01ms   83.46%
+    Req/Sec     1.30k   363.95     2.21k    67.33%
+  152479 requests in 15.00s, 72.09MB read
+Requests/sec:  10165.69
+Transfer/sec:      4.81MB
+
+---------------------------------------------------------
+ Queries: 15 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.71ms   23.40ms 307.40ms   79.28%
+    Req/Sec     1.02k   103.44     1.58k    76.14%
+  121564 requests in 15.00s, 75.89MB read
+Requests/sec:   8103.60
+Transfer/sec:      5.06MB
+
+---------------------------------------------------------
+ Queries: 20 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    41.92ms   27.66ms 371.76ms   79.47%
+    Req/Sec   765.31     93.76     2.09k    82.52%
+  91053 requests in 15.00s, 70.64MB read
+Requests/sec:   6069.78
+Transfer/sec:      4.71MB

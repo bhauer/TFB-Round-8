@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 20:07:53 PST 2013
+
+  System load:  0.14               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.30ms  374.38us   4.28ms   75.34%
+    Req/Sec   457.19     62.40   666.00     79.08%
+  16905 requests in 5.00s, 3.75MB read
+Requests/sec:   3380.20
+Transfer/sec:    768.25KB
+
+---------------------------------------------------------
+ Running Warmup php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   267.94ms  219.61ms   5.24s    87.74%
+    Req/Sec   169.53    173.92   752.00     88.08%
+  22118 requests in 15.05s, 92.00MB read
+  Socket errors: connect 0, read 0, write 0, timeout 7
+  Non-2xx or 3xx responses: 10763
+Requests/sec:   1469.42
+Transfer/sec:      6.11MB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.31ms    4.02ms  35.24ms   66.69%
+    Req/Sec    71.96     16.48   142.00     59.71%
+  8558 requests in 15.01s, 71.16MB read
+  Non-2xx or 3xx responses: 8558
+Requests/sec:    570.18
+Transfer/sec:      4.74MB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.22ms    5.59ms  47.03ms   69.87%
+    Req/Sec    73.77     11.99   126.00     76.56%
+  8864 requests in 15.02s, 73.71MB read
+  Non-2xx or 3xx responses: 8864
+Requests/sec:    590.32
+Transfer/sec:      4.91MB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    44.41ms    8.22ms  77.51ms   69.39%
+    Req/Sec    91.16     10.74   121.00     61.04%
+  10943 requests in 15.02s, 90.99MB read
+  Non-2xx or 3xx responses: 10943
+Requests/sec:    728.65
+Transfer/sec:      6.06MB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    80.03ms   18.27ms 154.70ms   71.07%
+    Req/Sec   100.49      8.92   129.00     69.37%
+  12089 requests in 15.03s, 100.50MB read
+  Non-2xx or 3xx responses: 12089
+Requests/sec:    804.49
+Transfer/sec:      6.69MB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   142.88ms   54.22ms 532.56ms   77.29%
+    Req/Sec   143.29    136.49   723.00     92.43%
+  17843 requests in 15.00s, 97.56MB read
+  Non-2xx or 3xx responses: 11569
+Requests/sec:   1189.42
+Transfer/sec:      6.50MB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   233.53ms  146.87ms 922.16ms   64.16%
+    Req/Sec   245.11    239.63   818.00     75.08%
+  30772 requests in 15.06s, 78.74MB read
+  Non-2xx or 3xx responses: 8888
+Requests/sec:   2043.25
+Transfer/sec:      5.23MB

@@ -1,0 +1,39 @@
+Stacktrace:
+
+  at <unknown> <0xffffffff>
+  at (wrapper managed-to-native) object.__icall_wrapper_mono_object_isinst (object,intptr) <0xffffffff>
+  at (wrapper stelemref) object.virt_stelemref_class (intptr,object) <0xffffffff>
+  at System.Linq.Enumerable.ToArray<TSource> (System.Collections.Generic.IEnumerable`1<TSource>) <0x00212>
+  at Nancy.Conventions.BuiltInAcceptHeaderCoercions.BoostHtml (System.Collections.Generic.IEnumerable`1<System.Tuple`2<string, System.Decimal>>,Nancy.NancyContext) <0x0032b>
+  at Nancy.Routing.DefaultRouteInvoker.GetCoercedAcceptHeaders (Nancy.NancyContext) <0x00086>
+  at Nancy.Routing.DefaultRouteInvoker.ProcessAsNegotiator (object,Nancy.NancyContext) <0x0018b>
+  at (wrapper dynamic-method) object.CallSite.Target (System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,Nancy.Routing.DefaultRouteInvoker,object,Nancy.NancyContext) <0x00119>
+  at Nancy.Routing.DefaultRouteInvoker.InvokeRouteWithStrategy (object,Nancy.NancyContext) <0x00497>
+  at (wrapper dynamic-method) object.CallSite.Target (System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,Nancy.Routing.DefaultRouteInvoker,object,Nancy.NancyContext) <0x00119>
+  at Nancy.Routing.DefaultRouteInvoker.Invoke (Nancy.Routing.Route,Nancy.DynamicDictionary,Nancy.NancyContext) <0x00475>
+  at Nancy.Routing.DefaultRequestDispatcher.Dispatch (Nancy.NancyContext) <0x00108>
+  at Nancy.NancyEngine.InvokeRequestLifeCycle (Nancy.NancyContext,Nancy.Bootstrapper.IPipelines) <0x00075>
+  at Nancy.NancyEngine.HandleRequest (Nancy.Request,System.Func`2<Nancy.NancyContext, Nancy.NancyContext>) <0x000e3>
+  at Nancy.NancyEngine.HandleRequest (Nancy.Request) <0x000b7>
+  at Nancy.Hosting.Event2.NancyEvent2Host/<RequestHandler>c__AnonStorey1.<>m__3 (object) <0x001a8>
+  at (wrapper runtime-invoke) <Module>.runtime_invoke_void__this___object (object,intptr,intptr,intptr) <0xffffffff>
+
+Native stacktrace:
+
+	mono-sgen() [0x4ab6dd]
+	mono-sgen() [0x501ccf]
+	mono-sgen() [0x420367]
+	/lib/x86_64-linux-gnu/libpthread.so.0(+0xfcb0) [0x7f5681948cb0]
+	mono-sgen(mono_class_is_assignable_from+0x43) [0x511213]
+	mono-sgen(mono_object_isinst+0x3d) [0x5ab63d]
+	[0x405e01cd]
+
+Debug info from gdb:
+
+
+=================================================================
+Got a SIGSEGV while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries 
+used by your application.
+=================================================================
+

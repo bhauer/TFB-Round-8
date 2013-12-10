@@ -1,0 +1,123 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 06:27:46 PST 2013
+
+  System load:  0.0                Processes:           125
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.31ms  337.06us   5.47ms   68.19%
+    Req/Sec   244.71     50.30   333.00     66.37%
+  9277 requests in 5.01s, 2.18MB read
+Requests/sec:   1851.42
+Transfer/sec:    445.78KB
+
+---------------------------------------------------------
+ Running Warmup urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.47ms    2.96ms  14.90ms   63.71%
+    Req/Sec   488.52    254.77     1.00k    43.96%
+  27822 requests in 16.01s, 6.54MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1779
+Requests/sec:   1737.95
+Transfer/sec:    418.46KB
+
+---------------------------------------------------------
+ Queries: 1 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.21ms    3.69ms  10.71ms   67.33%
+    Req/Sec   791.83    291.17     1.44k    52.44%
+  45065 requests in 16.01s, 9.23MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1665
+Requests/sec:   2815.30
+Transfer/sec:    590.49KB
+
+---------------------------------------------------------
+ Queries: 5 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.90ms    0.94ms  11.07ms   44.45%
+    Req/Sec   219.39     83.52   450.00     63.49%
+  12914 requests in 16.01s, 4.24MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1736
+Requests/sec:    806.76
+Transfer/sec:    270.93KB
+
+---------------------------------------------------------
+ Queries: 10 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.00ms    1.60ms  22.56ms   75.83%
+    Req/Sec   153.94     35.32   425.00     68.27%
+  6838 requests in 16.01s, 3.28MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1813
+  Non-2xx or 3xx responses: 33
+Requests/sec:    427.22
+Transfer/sec:    209.61KB
+
+---------------------------------------------------------
+ Queries: 15 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.75ms    4.07ms  34.33ms   73.23%
+    Req/Sec   107.17     74.29     1.32k    84.37%
+  4758 requests in 16.01s, 2.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1745
+  Non-2xx or 3xx responses: 168
+Requests/sec:    297.26
+Transfer/sec:    189.71KB
+
+---------------------------------------------------------
+ Queries: 20 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/queries?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.17ms    5.58ms  39.68ms   96.78%
+    Req/Sec   101.37    203.12     2.40k    97.84%
+  4513 requests in 16.00s, 3.12MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1789
+  Non-2xx or 3xx responses: 1094
+Requests/sec:    282.01
+Transfer/sec:    199.89KB

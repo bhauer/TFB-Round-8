@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 13:07:44 PST 2013
+
+  System load:  0.25               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.30ms    0.96ms  17.50ms   81.88%
+    Req/Sec   328.47     69.45   555.00     58.40%
+  12465 requests in 5.00s, 2.85MB read
+Requests/sec:   2492.45
+Transfer/sec:    583.12KB
+
+---------------------------------------------------------
+ Running Warmup django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    92.73ms   31.15ms 270.19ms   70.93%
+    Req/Sec   343.22     18.08   395.00     67.92%
+  40645 requests in 15.00s, 9.29MB read
+Requests/sec:   2709.02
+Transfer/sec:    633.78KB
+
+---------------------------------------------------------
+ Queries: 1 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    67.89ms   23.70ms 189.13ms   72.17%
+    Req/Sec   476.63     35.65   576.00     67.53%
+  55882 requests in 15.01s, 11.07MB read
+Requests/sec:   3723.92
+Transfer/sec:    755.63KB
+
+---------------------------------------------------------
+ Queries: 5 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   166.03ms   55.03ms 471.42ms   68.63%
+    Req/Sec   193.15     12.75   236.00     74.58%
+  22924 requests in 15.01s, 7.32MB read
+Requests/sec:   1527.69
+Transfer/sec:    499.63KB
+
+---------------------------------------------------------
+ Queries: 10 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   281.11ms   80.02ms 708.11ms   70.51%
+    Req/Sec   111.74     10.70   154.00     86.02%
+  13276 requests in 15.01s, 6.26MB read
+Requests/sec:    884.22
+Transfer/sec:    427.25KB
+
+---------------------------------------------------------
+ Queries: 15 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   416.45ms  148.02ms   1.33s    78.61%
+    Req/Sec    76.58     10.78   104.00     75.76%
+  9345 requests in 15.02s, 5.83MB read
+Requests/sec:    622.11
+Transfer/sec:    397.15KB
+
+---------------------------------------------------------
+ Queries: 20 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   530.06ms  199.92ms   2.01s    77.98%
+    Req/Sec    61.07      8.80    84.00     70.68%
+  7245 requests in 15.06s, 5.61MB read
+Requests/sec:    480.98
+Transfer/sec:    381.69KB

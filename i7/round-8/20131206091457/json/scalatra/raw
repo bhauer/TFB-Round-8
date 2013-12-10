@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 00:40:02 PST 2013
+
+  System load:  0.02               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   516.32us    1.01ms  18.42ms   96.52%
+    Req/Sec     3.47k     1.99k    7.11k    49.94%
+  121362 requests in 5.00s, 23.26MB read
+Requests/sec:  24274.54
+Transfer/sec:      4.65MB
+
+---------------------------------------------------------
+ Running Warmup scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    53.16ms  409.92ms   3.74s    98.46%
+    Req/Sec    13.07k     4.59k   44.56k    76.28%
+  1462247 requests in 15.00s, 280.30MB read
+  Socket errors: connect 0, read 0, write 0, timeout 22
+Requests/sec:  97487.79
+Transfer/sec:     18.69MB
+
+---------------------------------------------------------
+ Concurrency: 8 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   164.12us   87.33us   3.09ms   95.04%
+    Req/Sec     6.21k   501.42     7.55k    72.31%
+  706505 requests in 15.00s, 135.43MB read
+Requests/sec:  47101.38
+Transfer/sec:      9.03MB
+
+---------------------------------------------------------
+ Concurrency: 16 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   198.69us  335.44us  11.80ms   97.50%
+    Req/Sec    10.88k     1.54k   14.56k    72.94%
+  1235797 requests in 15.00s, 236.89MB read
+Requests/sec:  82389.22
+Transfer/sec:     15.79MB
+
+---------------------------------------------------------
+ Concurrency: 32 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   395.73us    1.11ms  13.49ms   98.39%
+    Req/Sec    13.96k     3.47k   22.00k    71.43%
+  1583475 requests in 15.00s, 303.53MB read
+Requests/sec: 105571.93
+Transfer/sec:     20.24MB
+
+---------------------------------------------------------
+ Concurrency: 64 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   717.95us    1.42ms  17.50ms   95.51%
+    Req/Sec    13.98k     3.29k   28.78k    76.43%
+  1584084 requests in 15.00s, 303.65MB read
+Requests/sec: 105617.94
+Transfer/sec:     20.25MB
+
+---------------------------------------------------------
+ Concurrency: 128 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.41ms    2.49ms  29.86ms   94.68%
+    Req/Sec    13.78k     3.00k   24.80k    80.61%
+  1561298 requests in 15.00s, 299.28MB read
+Requests/sec: 104092.64
+Transfer/sec:     19.95MB
+
+---------------------------------------------------------
+ Concurrency: 256 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/scalatra/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.62ms   13.19ms 188.66ms   97.88%
+    Req/Sec    13.17k     3.15k   33.89k    81.28%
+  1493239 requests in 15.00s, 286.24MB read
+Requests/sec:  99551.16
+Transfer/sec:     19.08MB

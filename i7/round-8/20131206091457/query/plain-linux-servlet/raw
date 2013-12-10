@@ -1,0 +1,118 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 20:58:30 PST 2013
+
+  System load:  0.41               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:9080/web-apps/servlet/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:9080/web-apps/servlet/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   770.18us  135.82us   4.94ms   79.10%
+    Req/Sec     1.36k    93.52     1.67k    82.14%
+  50590 requests in 5.00s, 10.01MB read
+Requests/sec:  10118.21
+Transfer/sec:      2.00MB
+
+---------------------------------------------------------
+ Running Warmup plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9080/web-apps/servlet/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9080/web-apps/servlet/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.10ms   34.25ms   1.79s    99.92%
+    Req/Sec     1.77k   230.98     2.65k    75.12%
+  205727 requests in 15.00s, 40.72MB read
+Requests/sec:  13714.94
+Transfer/sec:      2.71MB
+
+---------------------------------------------------------
+ Queries: 1 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9080/web-apps/servlet/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9080/web-apps/servlet/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.87ms   18.30ms   1.06s    99.79%
+    Req/Sec     2.85k   347.22     4.28k    84.04%
+  332651 requests in 15.00s, 55.76MB read
+Requests/sec:  22177.66
+Transfer/sec:      3.72MB
+
+---------------------------------------------------------
+ Queries: 5 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9080/web-apps/servlet/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9080/web-apps/servlet/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    56.55ms  244.57ms   3.32s    99.33%
+    Req/Sec   849.72    200.55     1.64k    78.49%
+  93607 requests in 15.00s, 27.13MB read
+  Socket errors: connect 0, read 0, write 0, timeout 39
+Requests/sec:   6239.42
+Transfer/sec:      1.81MB
+
+---------------------------------------------------------
+ Queries: 10 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9080/web-apps/servlet/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9080/web-apps/servlet/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   245.05ms    1.18s    8.16s    97.61%
+    Req/Sec   414.81    119.48   725.00     73.54%
+  49974 requests in 15.00s, 22.06MB read
+  Socket errors: connect 0, read 0, write 0, timeout 156
+Requests/sec:   3330.84
+Transfer/sec:      1.47MB
+
+---------------------------------------------------------
+ Queries: 15 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9080/web-apps/servlet/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9080/web-apps/servlet/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   108.77ms  451.15ms  13.15s    99.50%
+    Req/Sec   316.54     61.97   500.00     65.55%
+  34032 requests in 15.01s, 20.18MB read
+  Socket errors: connect 0, read 0, write 0, timeout 305
+Requests/sec:   2267.13
+Transfer/sec:      1.34MB
+
+---------------------------------------------------------
+ Queries: 20 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:9080/web-apps/servlet/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:9080/web-apps/servlet/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.89s     4.23s   12.04s    84.85%
+    Req/Sec   207.58    124.50   500.00     63.26%
+  25724 requests in 15.01s, 19.15MB read
+  Socket errors: connect 0, read 0, write 0, timeout 474
+Requests/sec:   1713.46
+Transfer/sec:      1.28MB

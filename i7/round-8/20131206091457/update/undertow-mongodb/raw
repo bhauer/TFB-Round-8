@@ -1,0 +1,121 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 05:51:52 PST 2013
+
+  System load:  0.36               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/updates/mongodb?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/updates/mongodb?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.41ms  221.23us   2.99ms   70.25%
+    Req/Sec   747.46     71.71     1.00k    76.58%
+  28094 requests in 5.00s, 5.51MB read
+  Non-2xx or 3xx responses: 4
+Requests/sec:   5617.82
+Transfer/sec:      1.10MB
+
+---------------------------------------------------------
+ Running Warmup undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates/mongodb?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates/mongodb?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    33.22ms    9.30ms 235.43ms   70.91%
+    Req/Sec     0.96k    75.36     1.38k    72.80%
+  113786 requests in 15.00s, 22.30MB read
+  Non-2xx or 3xx responses: 26
+Requests/sec:   7585.52
+Transfer/sec:      1.49MB
+
+---------------------------------------------------------
+ Queries: 1 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates/mongodb?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates/mongodb?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.56ms    7.19ms 697.10ms   82.29%
+    Req/Sec     1.94k   192.81     2.95k    71.68%
+  227326 requests in 15.00s, 37.67MB read
+  Non-2xx or 3xx responses: 21
+Requests/sec:  15155.47
+Transfer/sec:      2.51MB
+
+---------------------------------------------------------
+ Queries: 5 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates/mongodb?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates/mongodb?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    84.26ms   23.67ms 337.29ms   82.89%
+    Req/Sec   379.26     41.22   624.00     88.23%
+  45369 requests in 15.00s, 13.06MB read
+  Non-2xx or 3xx responses: 25
+Requests/sec:   3023.89
+Transfer/sec:      0.87MB
+
+---------------------------------------------------------
+ Queries: 10 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates/mongodb?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates/mongodb?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   165.61ms   29.96ms 427.39ms   75.27%
+    Req/Sec   188.83     18.53   248.00     83.06%
+  22636 requests in 15.02s, 9.94MB read
+  Non-2xx or 3xx responses: 15
+Requests/sec:   1507.10
+Transfer/sec:    677.85KB
+
+---------------------------------------------------------
+ Queries: 15 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates/mongodb?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates/mongodb?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   251.89ms   38.91ms 792.32ms   73.45%
+    Req/Sec   125.80     10.11   166.00     87.01%
+  15039 requests in 15.02s, 8.87MB read
+  Non-2xx or 3xx responses: 28
+Requests/sec:   1001.10
+Transfer/sec:    604.90KB
+
+---------------------------------------------------------
+ Queries: 20 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/updates/mongodb?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/updates/mongodb?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   330.48ms   53.25ms 829.26ms   80.23%
+    Req/Sec    94.68      5.72   137.00     91.39%
+  11263 requests in 15.03s, 8.35MB read
+  Non-2xx or 3xx responses: 17
+Requests/sec:    749.42
+Transfer/sec:    569.06KB

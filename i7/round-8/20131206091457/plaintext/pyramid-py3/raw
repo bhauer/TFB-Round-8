@@ -1,0 +1,106 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 22:35:57 PST 2013
+
+  System load:  0.04               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:6543/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:6543/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 6.00s, 0.00B read
+  Socket errors: connect 0, read 0, write 0, timeout 24
+Requests/sec:      0.00
+Transfer/sec:       0.00B
+
+---------------------------------------------------------
+ Running Warmup pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.10ms  150.65ms  13.90s    99.76%
+    Req/Sec     1.70k   285.54     2.81k    66.82%
+  199087 requests in 15.00s, 32.66MB read
+  Socket errors: connect 0, read 0, write 0, timeout 158
+Requests/sec:  13271.81
+Transfer/sec:      2.18MB
+
+---------------------------------------------------------
+ Concurrency: 256 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  193308 requests in 15.00s, 31.71MB read
+  Socket errors: connect 0, read 7, write 0, timeout 34
+Requests/sec:  12886.13
+Transfer/sec:      2.11MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  166444 requests in 15.00s, 27.31MB read
+  Socket errors: connect 0, read 688, write 0, timeout 2199
+Requests/sec:  11095.52
+Transfer/sec:      1.82MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  5893 requests in 16.01s, 0.97MB read
+  Socket errors: connect 0, read 1, write 0, timeout 29583
+Requests/sec:    368.00
+Transfer/sec:     61.82KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  159029 requests in 15.01s, 26.09MB read
+  Socket errors: connect 11, read 6171, write 0, timeout 81147
+Requests/sec:  10593.32
+Transfer/sec:      1.74MB

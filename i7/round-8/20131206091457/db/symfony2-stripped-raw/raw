@@ -1,0 +1,140 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 04:41:43 PST 2013
+
+  System load:  0.0                Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db-raw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.19ms   12.45ms  51.40ms   82.53%
+    Req/Sec    87.85     27.63   172.00     66.31%
+  3446 requests in 5.01s, 0.96MB read
+  Non-2xx or 3xx responses: 1701
+Requests/sec:    688.08
+Transfer/sec:    197.16KB
+
+---------------------------------------------------------
+ Running Warmup symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db-raw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   352.22ms  372.82ms   1.97s    83.54%
+    Req/Sec    87.31      8.84   107.00     76.82%
+  10655 requests in 15.05s, 2.99MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+  Non-2xx or 3xx responses: 5315
+Requests/sec:    707.94
+Transfer/sec:    203.12KB
+
+---------------------------------------------------------
+ Concurrency: 8 for symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db-raw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.64ms   12.46ms  67.45ms   83.27%
+    Req/Sec    89.48     27.64   196.00     74.70%
+  10702 requests in 15.01s, 2.99MB read
+  Non-2xx or 3xx responses: 5285
+Requests/sec:    712.89
+Transfer/sec:    204.27KB
+
+---------------------------------------------------------
+ Concurrency: 16 for symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db-raw
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.15ms   27.67ms 376.71ms   63.81%
+    Req/Sec    65.94     30.19   194.00     75.00%
+  8044 requests in 15.01s, 3.54MB read
+  Non-2xx or 3xx responses: 5508
+Requests/sec:    535.89
+Transfer/sec:    241.28KB
+
+---------------------------------------------------------
+ Concurrency: 32 for symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db-raw
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    70.45ms   61.47ms 561.04ms   63.99%
+    Req/Sec    66.47     29.23   172.00     70.63%
+  8090 requests in 15.04s, 3.57MB read
+  Non-2xx or 3xx responses: 5659
+Requests/sec:    537.73
+Transfer/sec:    242.89KB
+
+---------------------------------------------------------
+ Concurrency: 64 for symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db-raw
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   146.69ms  253.99ms   2.96s    95.07%
+    Req/Sec    67.33     29.46   163.00     75.37%
+  8183 requests in 15.04s, 3.41MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+  Non-2xx or 3xx responses: 5738
+Requests/sec:    544.10
+Transfer/sec:    232.16KB
+
+---------------------------------------------------------
+ Concurrency: 128 for symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db-raw
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   322.37ms  359.68ms   5.37s    88.04%
+    Req/Sec    57.20     22.58   128.00     75.36%
+  7074 requests in 15.09s, 3.29MB read
+  Socket errors: connect 0, read 0, write 0, timeout 16
+  Non-2xx or 3xx responses: 5573
+Requests/sec:    468.89
+Transfer/sec:    223.31KB
+
+---------------------------------------------------------
+ Concurrency: 256 for symfony2-stripped-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db-raw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   494.09ms  475.02ms   2.31s    55.89%
+    Req/Sec    69.61     24.41   108.00     55.26%
+  8106 requests in 15.04s, 3.23MB read
+  Socket errors: connect 0, read 0, write 0, timeout 23
+  Non-2xx or 3xx responses: 5555
+Requests/sec:    539.12
+Transfer/sec:    220.26KB

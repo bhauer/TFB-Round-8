@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 09:41:00 PST 2013
+
+  System load:  0.01               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer aspnet-mono-mysql-entityframework
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/entityframework/mysql/update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/entityframework/mysql/update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.11ms    5.76ms  14.43ms   75.83%
+    Req/Sec    24.57     53.07   206.00     82.33%
+  893 requests in 6.00s, 314.25KB read
+  Socket errors: connect 0, read 3, write 0, timeout 14
+  Non-2xx or 3xx responses: 62
+Requests/sec:    148.81
+Transfer/sec:     52.37KB
+
+---------------------------------------------------------
+ Running Warmup aspnet-mono-mysql-entityframework
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/entityframework/mysql/update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/entityframework/mysql/update?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   638.33ms    1.25s    4.19s    86.29%
+    Req/Sec    71.63     38.06   171.00     74.67%
+  8954 requests in 16.00s, 3.02MB read
+  Socket errors: connect 0, read 178, write 0, timeout 1107
+  Non-2xx or 3xx responses: 3112
+Requests/sec:    559.59
+Transfer/sec:    193.08KB
+
+---------------------------------------------------------
+ Queries: 1 for aspnet-mono-mysql-entityframework
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/entityframework/mysql/update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/entityframework/mysql/update?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.36s     2.21s    8.22s    88.45%
+    Req/Sec    73.33     69.59   221.00     38.80%
+  9741 requests in 16.01s, 3.08MB read
+  Socket errors: connect 0, read 221, write 0, timeout 1404
+  Non-2xx or 3xx responses: 4246
+Requests/sec:    608.61
+Transfer/sec:    197.34KB
+
+---------------------------------------------------------
+ Queries: 5 for aspnet-mono-mysql-entityframework
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/entityframework/mysql/update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/entityframework/mysql/update?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   506.15ms  800.77ms   5.19s    84.20%
+    Req/Sec    50.23     16.06    98.00     66.89%
+  6145 requests in 15.06s, 2.39MB read
+  Socket errors: connect 0, read 97, write 0, timeout 506
+  Non-2xx or 3xx responses: 2439
+Requests/sec:    408.03
+Transfer/sec:    162.44KB
+
+---------------------------------------------------------
+ Queries: 10 for aspnet-mono-mysql-entityframework
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/entityframework/mysql/update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/entityframework/mysql/update?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.29s     1.48s    7.35s    82.14%
+    Req/Sec    23.76     14.84    73.00     72.79%
+  2917 requests in 15.18s, 1.32MB read
+  Socket errors: connect 0, read 9, write 0, timeout 549
+  Non-2xx or 3xx responses: 1456
+Requests/sec:    192.11
+Transfer/sec:     89.16KB
+
+---------------------------------------------------------
+ Queries: 15 for aspnet-mono-mysql-entityframework
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/entityframework/mysql/update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/entityframework/mysql/update?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.16s     2.82s    9.78s    38.46%
+    Req/Sec    19.12     15.19    84.00     73.66%
+  2260 requests in 15.08s, 1.18MB read
+  Socket errors: connect 0, read 17, write 0, timeout 707
+  Non-2xx or 3xx responses: 1150
+Requests/sec:    149.85
+Transfer/sec:     80.04KB
+
+---------------------------------------------------------
+ Queries: 20 for aspnet-mono-mysql-entityframework
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/entityframework/mysql/update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/entityframework/mysql/update?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.64s     3.65s    9.73s    33.26%
+    Req/Sec    12.66     12.07   104.00     75.30%
+  1576 requests in 15.21s, 0.97MB read
+  Socket errors: connect 0, read 5, write 0, timeout 865
+  Non-2xx or 3xx responses: 751
+Requests/sec:    103.64
+Transfer/sec:     65.52KB

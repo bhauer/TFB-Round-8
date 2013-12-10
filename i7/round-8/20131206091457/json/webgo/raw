@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec  8 09:29:19 PST 2013
+
+  System load:  0.0                Processes:           121
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   270.52us   84.96us 797.00us   91.58%
+    Req/Sec     3.80k   176.25     4.33k    50.65%
+  144133 requests in 5.00s, 21.72MB read
+Requests/sec:  28828.57
+Transfer/sec:      4.34MB
+
+---------------------------------------------------------
+ Running Warmup webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.10ms    0.95ms  15.64ms   77.05%
+    Req/Sec    16.03k     1.25k   19.67k    67.83%
+  1820308 requests in 15.00s, 274.28MB read
+Requests/sec: 121351.52
+Transfer/sec:     18.29MB
+
+---------------------------------------------------------
+ Concurrency: 8 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   266.65us   84.63us   0.92ms   94.68%
+    Req/Sec     3.89k   175.35     4.55k    53.45%
+  438447 requests in 15.00s, 66.07MB read
+Requests/sec:  29230.34
+Transfer/sec:      4.40MB
+
+---------------------------------------------------------
+ Concurrency: 16 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   276.29us  118.39us   1.30ms   89.55%
+    Req/Sec     7.45k   425.43     8.89k    56.96%
+  845524 requests in 15.00s, 127.40MB read
+Requests/sec:  56370.28
+Transfer/sec:      8.49MB
+
+---------------------------------------------------------
+ Concurrency: 32 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   282.21us  177.12us   7.04ms   91.97%
+    Req/Sec    14.47k     1.06k   17.44k    66.03%
+  1642574 requests in 15.00s, 247.50MB read
+Requests/sec: 109508.53
+Transfer/sec:     16.50MB
+
+---------------------------------------------------------
+ Concurrency: 64 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   541.37us  372.65us  11.44ms   88.63%
+    Req/Sec    15.40k     1.15k   18.67k    67.32%
+  1745097 requests in 15.00s, 262.95MB read
+Requests/sec: 116350.09
+Transfer/sec:     17.53MB
+
+---------------------------------------------------------
+ Concurrency: 128 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.06ms  609.57us  12.65ms   79.03%
+    Req/Sec    15.81k     1.40k   20.56k    67.00%
+  1796694 requests in 15.00s, 270.73MB read
+Requests/sec: 119794.25
+Transfer/sec:     18.05MB
+
+---------------------------------------------------------
+ Concurrency: 256 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.11ms    0.99ms  24.62ms   78.26%
+    Req/Sec    16.01k     1.12k   22.11k    69.92%
+  1816887 requests in 15.00s, 273.77MB read
+Requests/sec: 121131.60
+Transfer/sec:     18.25MB

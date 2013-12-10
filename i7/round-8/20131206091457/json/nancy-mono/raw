@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 18:15:11 PST 2013
+
+  System load:  0.02               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   813.21ms  519.27ms   1.27s    71.60%
+    Req/Sec   137.48    226.34   666.00     74.11%
+  4552 requests in 6.00s, 1.02MB read
+  Socket errors: connect 0, read 0, write 0, timeout 10
+  Non-2xx or 3xx responses: 32
+Requests/sec:    758.53
+Transfer/sec:    173.22KB
+
+---------------------------------------------------------
+ Running Warmup nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.32s     1.15s    2.63s    21.45%
+    Req/Sec   148.96    204.10   729.00     74.93%
+  20547 requests in 16.00s, 4.78MB read
+  Socket errors: connect 0, read 131, write 0, timeout 1526
+  Non-2xx or 3xx responses: 1935
+Requests/sec:   1284.08
+Transfer/sec:    305.60KB
+
+---------------------------------------------------------
+ Concurrency: 8 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.93ms    1.86ms  17.50ms   87.92%
+    Req/Sec    74.39    186.10   700.00     85.87%
+  9032 requests in 16.00s, 2.01MB read
+  Socket errors: connect 0, read 2, write 0, timeout 48
+  Non-2xx or 3xx responses: 20
+Requests/sec:    564.45
+Transfer/sec:    128.60KB
+
+---------------------------------------------------------
+ Concurrency: 16 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.64ms   10.78ms  37.72ms   88.51%
+    Req/Sec   100.30    211.42   777.00     81.34%
+  10475 requests in 16.00s, 2.33MB read
+  Socket errors: connect 0, read 3, write 0, timeout 102
+  Non-2xx or 3xx responses: 55
+Requests/sec:    654.54
+Transfer/sec:    149.35KB
+
+---------------------------------------------------------
+ Concurrency: 32 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.76ms   24.23ms 101.71ms   93.68%
+    Req/Sec    95.21    198.29   619.00     81.15%
+  12601 requests in 16.00s, 2.82MB read
+  Socket errors: connect 0, read 9, write 0, timeout 211
+  Non-2xx or 3xx responses: 114
+Requests/sec:    787.45
+Transfer/sec:    180.38KB
+
+---------------------------------------------------------
+ Concurrency: 64 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.89ms   21.57ms  69.38ms   83.66%
+    Req/Sec    77.88    182.19     1.07k    84.75%
+  10949 requests in 16.00s, 2.48MB read
+  Socket errors: connect 0, read 35, write 0, timeout 434
+  Non-2xx or 3xx responses: 406
+Requests/sec:    684.25
+Transfer/sec:    158.44KB
+
+---------------------------------------------------------
+ Concurrency: 128 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   155.33ms   86.58ms 241.34ms   76.05%
+    Req/Sec   103.17    191.59   763.00     79.13%
+  14236 requests in 16.00s, 3.25MB read
+  Socket errors: connect 0, read 61, write 0, timeout 851
+  Non-2xx or 3xx responses: 840
+Requests/sec:    889.61
+Transfer/sec:    208.19KB
+
+---------------------------------------------------------
+ Concurrency: 256 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   842.68ms  610.37ms   1.41s    65.75%
+    Req/Sec   137.63    209.28     1.02k    78.59%
+  18778 requests in 16.00s, 4.43MB read
+  Socket errors: connect 0, read 151, write 0, timeout 1645
+  Non-2xx or 3xx responses: 2539
+Requests/sec:   1173.40
+Transfer/sec:    283.65KB

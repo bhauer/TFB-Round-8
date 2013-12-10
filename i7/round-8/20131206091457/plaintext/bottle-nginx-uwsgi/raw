@@ -1,0 +1,108 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 10:39:36 PST 2013
+
+  System load:  1.77               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   329.06us   67.03us 671.00us   66.76%
+    Req/Sec     3.14k   187.64     3.89k    60.75%
+  118194 requests in 5.00s, 18.03MB read
+Requests/sec:  23640.59
+Transfer/sec:      3.61MB
+
+---------------------------------------------------------
+ Running Warmup bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.40ms    2.61ms  58.60ms   74.09%
+    Req/Sec     9.93k     1.58k   20.73k    77.17%
+  1131217 requests in 15.00s, 197.08MB read
+  Non-2xx or 3xx responses: 153047
+Requests/sec:  75431.41
+Transfer/sec:     13.14MB
+
+---------------------------------------------------------
+ Concurrency: 256 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    38.96ms   18.98ms 134.47ms   68.38%
+    Req/Sec    13.47k     1.74k   18.62k    66.59%
+  1605701 requests in 15.00s, 364.64MB read
+  Non-2xx or 3xx responses: 747144
+Requests/sec: 107055.44
+Transfer/sec:     24.31MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   116.56ms   91.88ms   1.70s    89.05%
+    Req/Sec    13.92k     2.63k   21.10k    63.64%
+  1649205 requests in 15.00s, 391.05MB read
+  Socket errors: connect 0, read 43, write 0, timeout 735
+  Non-2xx or 3xx responses: 870586
+Requests/sec: 109945.74
+Transfer/sec:     26.07MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   148.01ms  448.34ms  13.80s    98.39%
+    Req/Sec    16.37k     5.38k   50.06k    80.54%
+  1672584 requests in 15.00s, 399.54MB read
+  Socket errors: connect 0, read 929, write 0, timeout 16966
+  Non-2xx or 3xx responses: 901263
+Requests/sec: 111480.03
+Transfer/sec:     26.63MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.25s     6.45s   14.90s    71.60%
+    Req/Sec    13.31k     7.29k   71.20k    82.99%
+  1630320 requests in 15.01s, 382.46MB read
+  Socket errors: connect 11, read 2625, write 0, timeout 90930
+  Non-2xx or 3xx responses: 834950
+Requests/sec: 108605.77
+Transfer/sec:     25.48MB

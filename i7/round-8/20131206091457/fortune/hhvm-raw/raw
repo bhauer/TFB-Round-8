@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 16:32:25 PST 2013
+
+  System load:  0.1                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   614.14us   89.12us   1.28ms   71.95%
+    Req/Sec     1.70k    85.75     2.00k    67.27%
+  64352 requests in 5.00s, 84.51MB read
+Requests/sec:  12869.92
+Transfer/sec:     16.90MB
+
+---------------------------------------------------------
+ Running Warmup hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.55ms    1.21ms  20.01ms   81.54%
+    Req/Sec     3.44k   131.47     3.95k    63.77%
+  401748 requests in 15.00s, 527.58MB read
+Requests/sec:  26788.36
+Transfer/sec:     35.18MB
+
+---------------------------------------------------------
+ Concurrency: 8 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   613.00us   86.70us   1.14ms   70.94%
+    Req/Sec     1.70k    84.53     2.00k    68.29%
+  193632 requests in 15.00s, 254.28MB read
+Requests/sec:  12909.06
+Transfer/sec:     16.95MB
+
+---------------------------------------------------------
+ Concurrency: 16 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   773.92us  197.46us   5.17ms   81.91%
+    Req/Sec     2.71k   179.11     3.33k    58.39%
+  308050 requests in 15.00s, 404.53MB read
+Requests/sec:  20537.10
+Transfer/sec:     26.97MB
+
+---------------------------------------------------------
+ Concurrency: 32 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.31ms  610.33us   9.15ms   91.18%
+    Req/Sec     3.23k   296.88     4.33k    65.33%
+  367819 requests in 15.00s, 483.02MB read
+Requests/sec:  24521.21
+Transfer/sec:     32.20MB
+
+---------------------------------------------------------
+ Concurrency: 64 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.45ms  820.62us  11.15ms   83.01%
+    Req/Sec     3.44k   267.48     4.44k    71.28%
+  391680 requests in 15.00s, 514.36MB read
+Requests/sec:  26112.56
+Transfer/sec:     34.29MB
+
+---------------------------------------------------------
+ Concurrency: 128 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.79ms    1.04ms  13.93ms   80.57%
+    Req/Sec     3.49k   217.04     4.18k    64.94%
+  400560 requests in 15.00s, 526.02MB read
+Requests/sec:  26705.52
+Transfer/sec:     35.07MB
+
+---------------------------------------------------------
+ Concurrency: 256 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.52ms    1.23ms  61.19ms   81.74%
+    Req/Sec     3.44k   169.96     4.17k    74.39%
+  401477 requests in 15.00s, 527.22MB read
+Requests/sec:  26768.88
+Transfer/sec:     35.15MB

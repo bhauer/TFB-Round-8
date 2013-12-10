@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 17:24:42 PST 2013
+
+  System load:  0.1                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db/2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.46ms    1.22ms  14.46ms   83.26%
+    Req/Sec   314.24     72.42   555.00     59.23%
+  11875 requests in 5.00s, 4.04MB read
+Requests/sec:   2373.99
+Transfer/sec:    826.34KB
+
+---------------------------------------------------------
+ Running Warmup lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db/2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db/2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    80.28ms   21.53ms 707.75ms   94.56%
+    Req/Sec   393.88     30.84   554.00     73.58%
+  47031 requests in 15.00s, 15.99MB read
+Requests/sec:   3134.64
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Queries: 1 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db/1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db/1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    79.68ms   21.23ms 708.15ms   98.33%
+    Req/Sec   403.62     29.56   610.00     70.23%
+  48261 requests in 15.01s, 14.95MB read
+Requests/sec:   3216.21
+Transfer/sec:      1.00MB
+
+---------------------------------------------------------
+ Queries: 5 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db/5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db/5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    86.28ms   18.88ms 711.32ms   96.13%
+    Req/Sec   370.44     24.38   447.00     68.26%
+  44294 requests in 15.00s, 19.12MB read
+Requests/sec:   2952.57
+Transfer/sec:      1.27MB
+
+---------------------------------------------------------
+ Queries: 10 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db/10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db/10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    95.88ms   21.19ms 705.35ms   95.16%
+    Req/Sec   334.02     37.96   520.00     85.21%
+  39831 requests in 15.00s, 23.21MB read
+Requests/sec:   2654.67
+Transfer/sec:      1.55MB
+
+---------------------------------------------------------
+ Queries: 15 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db/15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db/15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   104.45ms   18.73ms 714.09ms   93.77%
+    Req/Sec   304.50     18.97   366.00     67.98%
+  36463 requests in 15.00s, 26.76MB read
+Requests/sec:   2430.92
+Transfer/sec:      1.78MB
+
+---------------------------------------------------------
+ Queries: 20 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db/20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db/20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   113.04ms   14.43ms 710.73ms   90.66%
+    Req/Sec   281.76     23.65   445.00     74.81%
+  33625 requests in 15.00s, 29.75MB read
+Requests/sec:   2241.00
+Transfer/sec:      1.98MB

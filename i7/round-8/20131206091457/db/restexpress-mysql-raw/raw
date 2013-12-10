@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 23:41:13 PST 2013
+
+  System load:  0.05               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    65.48ms  202.72ms   1.03s    96.17%
+    Req/Sec   165.64     81.54   288.00     73.16%
+  6243 requests in 5.00s, 724.10KB read
+Requests/sec:   1247.84
+Transfer/sec:    144.73KB
+
+---------------------------------------------------------
+ Running Warmup restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   232.66ms  440.60ms   2.41s    88.57%
+    Req/Sec   243.90    173.30   710.00     70.70%
+  29421 requests in 15.01s, 3.47MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+  Non-2xx or 3xx responses: 7435
+Requests/sec:   1960.61
+Transfer/sec:    236.72KB
+
+---------------------------------------------------------
+ Concurrency: 8 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.13ms    3.16ms  32.49ms   77.17%
+    Req/Sec   116.27     27.88   200.00     59.06%
+  13717 requests in 15.01s, 1.81MB read
+  Non-2xx or 3xx responses: 13717
+Requests/sec:    914.15
+Transfer/sec:    123.20KB
+
+---------------------------------------------------------
+ Concurrency: 16 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.48ms   64.77ms   1.01s    98.04%
+    Req/Sec   160.55    105.97   627.00     87.53%
+  18987 requests in 15.01s, 2.39MB read
+  Non-2xx or 3xx responses: 13200
+Requests/sec:   1265.23
+Transfer/sec:    163.27KB
+
+---------------------------------------------------------
+ Concurrency: 32 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    26.57ms   20.29ms 115.70ms   73.94%
+    Req/Sec   204.42    158.92   786.00     81.37%
+  24093 requests in 15.00s, 2.93MB read
+  Non-2xx or 3xx responses: 11015
+Requests/sec:   1606.04
+Transfer/sec:    200.07KB
+
+---------------------------------------------------------
+ Concurrency: 64 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    54.80ms   54.47ms 320.53ms   82.22%
+    Req/Sec   178.46    120.97   775.00     86.34%
+  21455 requests in 15.01s, 2.66MB read
+  Non-2xx or 3xx responses: 12373
+Requests/sec:   1429.53
+Transfer/sec:    181.29KB
+
+---------------------------------------------------------
+ Concurrency: 128 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   122.81ms  130.52ms 750.93ms   84.17%
+    Req/Sec   126.22     22.13   189.00     70.42%
+  15109 requests in 15.01s, 1.98MB read
+  Non-2xx or 3xx responses: 14849
+Requests/sec:   1006.80
+Transfer/sec:    135.36KB
+
+---------------------------------------------------------
+ Concurrency: 256 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/restexpress/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/restexpress/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   238.73ms  344.43ms   2.16s    83.72%
+    Req/Sec   125.78     27.63   240.00     67.21%
+  15084 requests in 15.01s, 1.99MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+  Non-2xx or 3xx responses: 15084
+Requests/sec:   1004.88
+Transfer/sec:    135.42KB

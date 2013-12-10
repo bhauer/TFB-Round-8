@@ -1,0 +1,122 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 02:42:33 PST 2013
+
+  System load:  0.0                Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.92ms    3.87ms  29.16ms   61.95%
+    Req/Sec    79.46     18.14   147.00     59.98%
+  3148 requests in 5.01s, 7.32MB read
+  Non-2xx or 3xx responses: 3148
+Requests/sec:    627.74
+Transfer/sec:      1.46MB
+
+---------------------------------------------------------
+ Running Warmup slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   307.67ms  175.46ms   2.53s    82.34%
+    Req/Sec   104.97     12.25   151.00     82.41%
+  12571 requests in 15.03s, 29.25MB read
+  Non-2xx or 3xx responses: 12571
+Requests/sec:    836.59
+Transfer/sec:      1.95MB
+
+---------------------------------------------------------
+ Queries: 1 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   308.37ms  163.22ms   1.36s    75.27%
+    Req/Sec   105.58     10.31   128.00     78.75%
+  12646 requests in 15.01s, 29.42MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+  Non-2xx or 3xx responses: 12646
+Requests/sec:    842.35
+Transfer/sec:      1.96MB
+
+---------------------------------------------------------
+ Queries: 5 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   229.11ms  159.23ms   1.35s    75.73%
+    Req/Sec   176.35     97.27   539.00     69.23%
+  20630 requests in 15.03s, 24.45MB read
+  Non-2xx or 3xx responses: 8622
+Requests/sec:   1372.39
+Transfer/sec:      1.63MB
+
+---------------------------------------------------------
+ Queries: 10 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   197.04ms  141.12ms   2.07s    82.60%
+    Req/Sec   186.04     66.34   266.00     57.05%
+  21702 requests in 15.05s, 21.48MB read
+  Non-2xx or 3xx responses: 5451
+Requests/sec:   1442.34
+Transfer/sec:      1.43MB
+
+---------------------------------------------------------
+ Queries: 15 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   300.95ms  158.47ms   1.56s    77.80%
+    Req/Sec   104.19      6.64   121.00     64.86%
+  12445 requests in 15.00s, 28.96MB read
+  Non-2xx or 3xx responses: 12445
+Requests/sec:    829.40
+Transfer/sec:      1.93MB
+
+---------------------------------------------------------
+ Queries: 20 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   299.95ms  161.48ms   1.96s    76.80%
+    Req/Sec   105.04      8.15   123.00     64.97%
+  12491 requests in 15.02s, 29.06MB read
+  Non-2xx or 3xx responses: 12491
+Requests/sec:    831.63
+Transfer/sec:      1.94MB

@@ -1,0 +1,135 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 00:49:42 PST 2013
+
+  System load:  0.17               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    56.31ms   74.37ms 284.69ms   87.33%
+    Req/Sec    32.71     20.18    88.00     59.68%
+  1414 requests in 6.00s, 538.50KB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    235.67
+Transfer/sec:     89.75KB
+
+---------------------------------------------------------
+ Running Warmup senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   767.37ms  539.44ms   4.28s    96.41%
+    Req/Sec    45.54     12.15    68.00     76.77%
+  5524 requests in 15.05s, 2.05MB read
+  Socket errors: connect 0, read 0, write 0, timeout 21
+Requests/sec:    366.94
+Transfer/sec:    139.75KB
+
+---------------------------------------------------------
+ Concurrency: 8 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   165.06ms   83.13ms 601.52ms   83.78%
+    Req/Sec     5.81      1.72    11.00     65.95%
+  763 requests in 15.14s, 290.60KB read
+Requests/sec:     50.38
+Transfer/sec:     19.19KB
+
+---------------------------------------------------------
+ Concurrency: 16 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   699.83ms  950.38ms   2.23s    73.05%
+    Req/Sec    21.81     26.72   116.00     84.40%
+  2620 requests in 15.06s, 0.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:    174.01
+Transfer/sec:     66.27KB
+
+---------------------------------------------------------
+ Concurrency: 32 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   324.90ms    1.07s    4.49s    94.12%
+    Req/Sec    15.41      4.60    23.00     88.24%
+  1560 requests in 15.02s, 594.14KB read
+  Socket errors: connect 0, read 0, write 0, timeout 92
+Requests/sec:    103.88
+Transfer/sec:     39.56KB
+
+---------------------------------------------------------
+ Concurrency: 64 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  1493 requests in 16.01s, 568.62KB read
+  Socket errors: connect 0, read 0, write 0, timeout 378
+Requests/sec:     93.27
+Transfer/sec:     35.52KB
+
+---------------------------------------------------------
+ Concurrency: 128 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   130.20ms   58.20ms 200.34ms   78.12%
+    Req/Sec    36.25      1.67    38.00     50.00%
+  2183 requests in 16.01s, 831.42KB read
+  Socket errors: connect 0, read 0, write 0, timeout 768
+Requests/sec:    136.33
+Transfer/sec:     51.92KB
+
+---------------------------------------------------------
+ Concurrency: 256 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:80/bench/rawjson
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:80/bench/rawjson
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 16.01s, 0.00B read
+  Socket errors: connect 0, read 0, write 0, timeout 1993
+Requests/sec:      0.00
+Transfer/sec:       0.00B

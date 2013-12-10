@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 07:28:10 PST 2013
+
+  System load:  0.43               Processes:           121
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   716.06us  114.43us   2.40ms   73.53%
+    Req/Sec     1.46k    85.90     1.67k    62.20%
+  55288 requests in 5.00s, 12.38MB read
+Requests/sec:  11057.44
+Transfer/sec:      2.48MB
+
+---------------------------------------------------------
+ Running Warmup yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.41ms   28.45ms   1.24s    98.87%
+    Req/Sec     2.02k   224.98     3.54k    79.26%
+  239701 requests in 15.00s, 53.66MB read
+Requests/sec:  15980.70
+Transfer/sec:      3.58MB
+
+---------------------------------------------------------
+ Concurrency: 8 for yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   717.48us  113.77us   1.61ms   73.15%
+    Req/Sec     1.46k    84.30     1.67k    63.42%
+  165721 requests in 15.00s, 37.10MB read
+Requests/sec:  11048.07
+Transfer/sec:      2.47MB
+
+---------------------------------------------------------
+ Concurrency: 16 for yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.00ms  362.19us   3.23ms   79.61%
+    Req/Sec     2.10k   203.53     2.89k    65.96%
+  238278 requests in 15.00s, 53.34MB read
+Requests/sec:  15885.06
+Transfer/sec:      3.56MB
+
+---------------------------------------------------------
+ Concurrency: 32 for yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.75ms    0.97ms  15.13ms   88.33%
+    Req/Sec     2.45k   337.79     3.90k    66.88%
+  279134 requests in 15.00s, 62.49MB read
+Requests/sec:  18609.48
+Transfer/sec:      4.17MB
+
+---------------------------------------------------------
+ Concurrency: 64 for yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.68ms    2.55ms  40.74ms   89.20%
+    Req/Sec     2.30k   334.08     3.64k    70.23%
+  264501 requests in 15.00s, 59.21MB read
+Requests/sec:  17633.13
+Transfer/sec:      3.95MB
+
+---------------------------------------------------------
+ Concurrency: 128 for yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.85ms    4.91ms  88.71ms   76.07%
+    Req/Sec     2.10k   225.91     3.65k    72.94%
+  246413 requests in 15.00s, 55.16MB read
+Requests/sec:  16427.60
+Transfer/sec:      3.68MB
+
+---------------------------------------------------------
+ Concurrency: 256 for yaf-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/bench/raw/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/bench/raw/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.12ms   28.98ms   1.50s    99.00%
+    Req/Sec     2.02k   228.07     3.28k    78.99%
+  238902 requests in 15.00s, 53.48MB read
+Requests/sec:  15927.37
+Transfer/sec:      3.57MB

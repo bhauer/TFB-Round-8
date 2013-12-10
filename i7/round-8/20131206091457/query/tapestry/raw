@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 04:54:08 PST 2013
+
+  System load:  0.36               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/tapestry/hellodb?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/tapestry/hellodb?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.98ms  241.09us   7.92ms   94.74%
+    Req/Sec     1.08k    94.41     1.33k    79.81%
+  40791 requests in 5.00s, 8.97MB read
+Requests/sec:   8157.68
+Transfer/sec:      1.79MB
+
+---------------------------------------------------------
+ Running Warmup tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/tapestry/hellodb?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/tapestry/hellodb?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.84ms   39.49ms 648.16ms   98.80%
+    Req/Sec     3.15k   707.31    22.89k    87.79%
+  357758 requests in 15.00s, 78.68MB read
+Requests/sec:  23850.54
+Transfer/sec:      5.25MB
+
+---------------------------------------------------------
+ Queries: 1 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/tapestry/hellodb?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/tapestry/hellodb?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.43ms    9.78ms 226.44ms   93.75%
+    Req/Sec     4.01k   717.06     7.69k    84.68%
+  462226 requests in 15.00s, 87.65MB read
+Requests/sec:  30816.29
+Transfer/sec:      5.84MB
+
+---------------------------------------------------------
+ Queries: 5 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/tapestry/hellodb?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/tapestry/hellodb?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.91ms    9.17ms 171.67ms   86.07%
+    Req/Sec     1.81k   174.44     2.97k    77.62%
+  214161 requests in 15.00s, 66.58MB read
+Requests/sec:  14277.25
+Transfer/sec:      4.44MB
+
+---------------------------------------------------------
+ Queries: 10 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/tapestry/hellodb?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/tapestry/hellodb?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.88ms   12.05ms 169.45ms   86.18%
+    Req/Sec     1.08k    89.68     1.56k    76.64%
+  128614 requests in 15.00s, 59.48MB read
+Requests/sec:   8572.94
+Transfer/sec:      3.96MB
+
+---------------------------------------------------------
+ Queries: 15 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/tapestry/hellodb?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/tapestry/hellodb?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    41.34ms   13.71ms 202.07ms   84.18%
+    Req/Sec   773.24     71.06     1.70k    85.02%
+  92346 requests in 15.00s, 56.70MB read
+Requests/sec:   6155.99
+Transfer/sec:      3.78MB
+
+---------------------------------------------------------
+ Queries: 20 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/tapestry/hellodb?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/tapestry/hellodb?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    53.14ms   16.55ms 208.41ms   84.32%
+    Req/Sec   602.75     39.16     0.92k    72.27%
+  72036 requests in 15.00s, 55.15MB read
+Requests/sec:   4802.21
+Transfer/sec:      3.68MB

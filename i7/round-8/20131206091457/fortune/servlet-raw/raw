@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 01:52:45 PST 2013
+
+  System load:  0.3                Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   535.85us  299.91us  12.88ms   99.57%
+    Req/Sec     1.97k   148.77     2.33k    82.75%
+  73383 requests in 5.00s, 101.34MB read
+Requests/sec:  14677.41
+Transfer/sec:     20.27MB
+
+---------------------------------------------------------
+ Running Warmup servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.22ms   60.64ms 328.61ms   91.39%
+    Req/Sec     6.99k     2.40k   15.44k    87.15%
+  791856 requests in 15.00s, 1.07GB read
+Requests/sec:  52795.17
+Transfer/sec:     72.91MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   530.32us  243.15us   8.15ms   99.17%
+    Req/Sec     1.98k   151.17     2.33k    83.63%
+  225394 requests in 15.00s, 311.25MB read
+Requests/sec:  15026.31
+Transfer/sec:     20.75MB
+
+---------------------------------------------------------
+ Concurrency: 16 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   579.19us  327.27us   8.40ms   95.46%
+    Req/Sec     3.65k   359.51     4.55k    85.74%
+  415292 requests in 15.00s, 573.49MB read
+Requests/sec:  27686.71
+Transfer/sec:     38.23MB
+
+---------------------------------------------------------
+ Concurrency: 32 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   755.78us  541.75us  10.90ms   91.70%
+    Req/Sec     5.68k   846.19     8.44k    73.92%
+  646097 requests in 15.00s, 0.87GB read
+Requests/sec:  43073.83
+Transfer/sec:     59.48MB
+
+---------------------------------------------------------
+ Concurrency: 64 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.19ms    1.51ms  26.37ms   95.15%
+    Req/Sec     7.62k     1.24k   11.00k    81.92%
+  866831 requests in 15.00s, 1.17GB read
+Requests/sec:  57791.80
+Transfer/sec:     79.81MB
+
+---------------------------------------------------------
+ Concurrency: 128 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.61ms   14.06ms  89.51ms   96.86%
+    Req/Sec     7.48k     1.69k   11.78k    90.90%
+  849924 requests in 15.00s, 1.15GB read
+Requests/sec:  56663.87
+Transfer/sec:     78.25MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet//fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.09ms   39.25ms 204.87ms   94.02%
+    Req/Sec     7.09k     2.01k   13.00k    89.45%
+  800576 requests in 15.00s, 1.08GB read
+Requests/sec:  53374.54
+Transfer/sec:     73.71MB

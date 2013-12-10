@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 01:45:03 PST 2013
+
+  System load:  0.31               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/servlet/postgres-update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/servlet/postgres-update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.23ms    7.09ms  64.90ms   98.72%
+    Req/Sec   735.17    122.35     1.11k    75.90%
+  27694 requests in 5.00s, 5.14MB read
+Requests/sec:   5537.88
+Transfer/sec:      1.03MB
+
+---------------------------------------------------------
+ Running Warmup servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres-update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres-update?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.97ms   24.98ms 188.77ms   89.77%
+    Req/Sec     1.54k   348.11     2.15k    85.44%
+  183395 requests in 15.00s, 34.03MB read
+Requests/sec:  12226.72
+Transfer/sec:      2.27MB
+
+---------------------------------------------------------
+ Queries: 1 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres-update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres-update?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.58ms   31.06ms 188.71ms   93.85%
+    Req/Sec     3.01k   842.60     4.48k    83.05%
+  357030 requests in 15.00s, 55.42MB read
+Requests/sec:  23802.38
+Transfer/sec:      3.70MB
+
+---------------------------------------------------------
+ Queries: 5 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres-update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres-update?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    53.67ms   32.30ms 222.25ms   70.45%
+    Req/Sec   618.99    107.66     0.92k    82.16%
+  74027 requests in 15.00s, 20.54MB read
+Requests/sec:   4934.86
+Transfer/sec:      1.37MB
+
+---------------------------------------------------------
+ Queries: 10 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres-update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres-update?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    98.01ms   41.99ms 281.30ms   70.01%
+    Req/Sec   333.85     43.42   400.00     74.10%
+  39827 requests in 15.01s, 17.08MB read
+Requests/sec:   2653.42
+Transfer/sec:      1.14MB
+
+---------------------------------------------------------
+ Queries: 15 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres-update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres-update?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   138.92ms   51.37ms 376.49ms   67.92%
+    Req/Sec   231.03     26.23   308.00     70.33%
+  27546 requests in 15.01s, 15.99MB read
+Requests/sec:   1834.97
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Queries: 20 for servlet-postgres-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/servlet/postgres-update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/servlet/postgres-update?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   182.47ms   61.10ms 396.07ms   69.21%
+    Req/Sec   175.36     12.46   201.00     62.96%
+  20706 requests in 15.01s, 15.16MB read
+Requests/sec:   1379.57
+Transfer/sec:      1.01MB

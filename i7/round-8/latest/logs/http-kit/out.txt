@@ -1,0 +1,87 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: http-kit
+self.results['completed']: {}
+
+=====================================================
+  Beginning http-kit
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting http-kit
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 16:38:44 PST 2013
+
+  System load:  3.29               Processes:           119
+  Usage of /:   7.9% of 131.33GB   Users logged in:     0
+  Memory usage: 18%                IP address for eth0: 172.16.98.118
+  Swap usage:   2%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+110 packages can be updated.
+57 updates are security updates.
+
+mysql start/running, process 18413
+mongodb start/running, process 18474
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+Compiling hello.handler
+Compiling hello.handler
+Created /home/tfb/FrameworkBenchmarks/http-kit/hello/target/hello-compojure.jar
+Created /home/tfb/FrameworkBenchmarks/http-kit/hello/target/http-kit-standalone.jar
+http-kit server listens at :8080
+
+-----------------------------------------------------
+  Verifying URLs for http-kit
+-----------------------------------------------------
+VERIFYING JSON (/http-kit/json) ...
+HTTP/1.1 200 OK
+Content-Length: 27
+Content-Type: application/json; charset=utf-8
+Date: Sat, 07 Dec 2013 00:40:16 GMT
+Server: http-kit
+
+{"message":"Hello, World!"}
+
+VERIFYING DB (/http-kit/db/1) ...
+HTTP/1.1 200 OK
+Content-Length: 23
+Content-Type: application/json; charset=utf-8
+Date: Sat, 07 Dec 2013 00:40:17 GMT
+Server: http-kit
+
+[{"randomnumber":8897}]
+
+VERIFYING Query (/http-kit/db/2) ...
+HTTP/1.1 200 OK
+Content-Length: 45
+Content-Type: application/json; charset=utf-8
+Date: Sat, 07 Dec 2013 00:40:17 GMT
+Server: http-kit
+
+[{"randomnumber":7413},{"randomnumber":1422}]
+
+
+-----------------------------------------------------
+  Benchmarking http-kit ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+
+-----------------------------------------------------
+  Stopping http-kit
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped http-kit
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through http-kit
+----------------------------------------------------

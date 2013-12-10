@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 12:16:11 PST 2013
+
+  System load:  0.03               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.48ms    1.02ms  17.40ms   91.93%
+    Req/Sec   743.96    154.91     1.11k    71.55%
+  28142 requests in 5.00s, 5.74MB read
+Requests/sec:   5627.28
+Transfer/sec:      1.15MB
+
+---------------------------------------------------------
+ Running Warmup dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.33ms    7.70ms  72.53ms   94.19%
+    Req/Sec    10.55k     2.61k   22.56k    68.11%
+  1188882 requests in 15.00s, 364.66MB read
+  Non-2xx or 3xx responses: 1122873
+Requests/sec:  79261.56
+Transfer/sec:     24.31MB
+
+---------------------------------------------------------
+ Concurrency: 8 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.47ms    0.94ms  16.58ms   91.56%
+    Req/Sec   746.50    153.13     1.22k    73.24%
+  85018 requests in 15.00s, 17.35MB read
+Requests/sec:   5667.65
+Transfer/sec:      1.16MB
+
+---------------------------------------------------------
+ Concurrency: 16 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.49ms  678.11us  25.96ms   94.85%
+    Req/Sec   849.41    102.52     1.44k    76.15%
+  96742 requests in 15.00s, 19.74MB read
+Requests/sec:   6448.97
+Transfer/sec:      1.32MB
+
+---------------------------------------------------------
+ Concurrency: 32 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.96ms  812.78us  33.04ms   94.94%
+    Req/Sec     0.85k    87.63     1.22k    81.40%
+  96812 requests in 15.00s, 19.75MB read
+Requests/sec:   6453.61
+Transfer/sec:      1.32MB
+
+---------------------------------------------------------
+ Concurrency: 64 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.94ms  817.36us  34.01ms   91.01%
+    Req/Sec   825.61     50.32     1.00k    75.48%
+  96599 requests in 15.00s, 19.71MB read
+Requests/sec:   6439.35
+Transfer/sec:      1.31MB
+
+---------------------------------------------------------
+ Concurrency: 128 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.87ms    0.98ms  44.02ms   84.76%
+    Req/Sec   815.26     34.07     1.13k    81.98%
+  96664 requests in 15.01s, 19.72MB read
+Requests/sec:   6442.01
+Transfer/sec:      1.31MB
+
+---------------------------------------------------------
+ Concurrency: 256 for dancer
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.39ms    7.63ms  60.53ms   94.02%
+    Req/Sec     9.73k     1.96k   16.92k    66.97%
+  1132510 requests in 15.00s, 346.82MB read
+  Non-2xx or 3xx responses: 1064581
+Requests/sec:  75515.34
+Transfer/sec:     23.13MB

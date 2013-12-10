@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 22:27:39 PST 2013
+
+  System load:  0.62               Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:6543/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.37ms  641.97us   7.97ms   84.78%
+    Req/Sec   430.19     74.14   666.00     72.63%
+  16158 requests in 5.00s, 2.96MB read
+Requests/sec:   3230.99
+Transfer/sec:    605.10KB
+
+---------------------------------------------------------
+ Running Warmup pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.00ms  263.45ms  13.68s    99.78%
+    Req/Sec   483.38    109.03   784.00     72.41%
+  57603 requests in 15.00s, 10.54MB read
+  Socket errors: connect 0, read 0, write 0, timeout 263
+  Non-2xx or 3xx responses: 10
+Requests/sec:   3839.17
+Transfer/sec:    719.05KB
+
+---------------------------------------------------------
+ Concurrency: 8 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.96ms    1.72ms   8.90ms   51.48%
+    Req/Sec   306.66    132.71   636.00     52.91%
+  34775 requests in 15.00s, 6.36MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:   2318.16
+Transfer/sec:    434.16KB
+
+---------------------------------------------------------
+ Concurrency: 16 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.48ms    3.30ms  41.49ms   90.82%
+    Req/Sec   482.30    126.39     0.90k    70.81%
+  55408 requests in 15.00s, 10.13MB read
+  Non-2xx or 3xx responses: 8
+Requests/sec:   3693.62
+Transfer/sec:    691.78KB
+
+---------------------------------------------------------
+ Concurrency: 32 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.28ms    2.39ms  41.13ms   77.65%
+    Req/Sec   490.02     55.07   684.00     68.12%
+  57507 requests in 15.00s, 10.52MB read
+  Non-2xx or 3xx responses: 9
+Requests/sec:   3833.12
+Transfer/sec:    717.91KB
+
+---------------------------------------------------------
+ Concurrency: 64 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.63ms    2.32ms  30.06ms   76.47%
+    Req/Sec   484.46     34.14   605.00     66.29%
+  57407 requests in 15.00s, 10.50MB read
+  Non-2xx or 3xx responses: 8
+Requests/sec:   3826.82
+Transfer/sec:    716.73KB
+
+---------------------------------------------------------
+ Concurrency: 128 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    33.37ms    2.36ms  47.11ms   79.88%
+    Req/Sec   480.26     20.36   560.00     71.66%
+  57282 requests in 15.00s, 10.48MB read
+  Non-2xx or 3xx responses: 5
+Requests/sec:   3817.94
+Transfer/sec:    715.06KB
+
+---------------------------------------------------------
+ Concurrency: 256 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:6543/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.44ms  307.30ms  13.67s    99.87%
+    Req/Sec   476.19    110.80   759.00     67.69%
+  56842 requests in 15.00s, 10.40MB read
+  Socket errors: connect 0, read 0, write 0, timeout 241
+  Non-2xx or 3xx responses: 6
+Requests/sec:   3788.54
+Transfer/sec:    709.56KB

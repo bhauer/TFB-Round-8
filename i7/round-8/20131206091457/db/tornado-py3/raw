@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 05:09:18 PST 2013
+
+  System load:  0.57               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.32ms    0.95ms  32.98ms   98.88%
+    Req/Sec   820.96     99.95     1.11k    71.83%
+  31095 requests in 5.00s, 5.45MB read
+  Non-2xx or 3xx responses: 4
+Requests/sec:   6218.25
+Transfer/sec:      1.09MB
+
+---------------------------------------------------------
+ Running Warmup tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.35ms   10.00ms 100.70ms   76.59%
+    Req/Sec     0.91k    53.34     1.11k    72.29%
+  107836 requests in 15.00s, 18.90MB read
+  Non-2xx or 3xx responses: 6
+Requests/sec:   7189.10
+Transfer/sec:      1.26MB
+
+---------------------------------------------------------
+ Concurrency: 8 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.38ms  385.53us   5.58ms   71.03%
+    Req/Sec   792.76    167.97     1.22k    65.19%
+  90238 requests in 15.00s, 15.82MB read
+  Non-2xx or 3xx responses: 12
+Requests/sec:   6015.67
+Transfer/sec:      1.05MB
+
+---------------------------------------------------------
+ Concurrency: 16 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.25ms  820.19us  18.35ms   67.39%
+    Req/Sec     0.95k   249.90     1.89k    69.41%
+  108727 requests in 15.00s, 19.06MB read
+  Non-2xx or 3xx responses: 12
+Requests/sec:   7248.35
+Transfer/sec:      1.27MB
+
+---------------------------------------------------------
+ Concurrency: 32 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.43ms    1.79ms   8.60ms   72.41%
+    Req/Sec     1.04k   359.13     2.11k    68.98%
+  115454 requests in 15.00s, 20.24MB read
+  Non-2xx or 3xx responses: 14
+Requests/sec:   7696.38
+Transfer/sec:      1.35MB
+
+---------------------------------------------------------
+ Concurrency: 64 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.60ms    3.14ms  20.28ms   76.51%
+    Req/Sec     1.01k   264.77     1.70k    76.41%
+  117276 requests in 15.00s, 20.56MB read
+  Non-2xx or 3xx responses: 14
+Requests/sec:   7817.75
+Transfer/sec:      1.37MB
+
+---------------------------------------------------------
+ Concurrency: 128 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.25ms    4.82ms  66.50ms   76.29%
+    Req/Sec     0.94k    74.60     1.30k    68.27%
+  111023 requests in 15.00s, 19.46MB read
+  Non-2xx or 3xx responses: 12
+Requests/sec:   7402.25
+Transfer/sec:      1.30MB
+
+---------------------------------------------------------
+ Concurrency: 256 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.48ms   11.02ms 105.08ms   71.82%
+    Req/Sec     0.91k    66.20     1.23k    64.70%
+  107906 requests in 15.00s, 18.91MB read
+  Non-2xx or 3xx responses: 12
+Requests/sec:   7193.13
+Transfer/sec:      1.26MB

@@ -1,0 +1,134 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 06:29:47 PST 2013
+
+  System load:  0.07               Processes:           125
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.23ms  401.04us  10.53ms   69.01%
+    Req/Sec   111.11     15.63   166.00     90.94%
+  4338 requests in 5.01s, 6.69MB read
+Requests/sec:    866.19
+Transfer/sec:      1.33MB
+
+---------------------------------------------------------
+ Running Warmup urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.31ms    2.32ms  16.38ms   39.20%
+    Req/Sec   222.20    137.83   578.00     74.67%
+  12993 requests in 16.00s, 20.02MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1700
+Requests/sec:    811.81
+Transfer/sec:      1.25MB
+
+---------------------------------------------------------
+ Concurrency: 8 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.22ms  402.28us  11.08ms   69.58%
+    Req/Sec   111.11     15.90   166.00     89.61%
+  13005 requests in 15.01s, 20.04MB read
+Requests/sec:    866.63
+Transfer/sec:      1.34MB
+
+---------------------------------------------------------
+ Concurrency: 16 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.23ms  402.57us  11.38ms   68.25%
+    Req/Sec   222.15     23.19   333.00     79.77%
+  12991 requests in 16.01s, 20.02MB read
+  Socket errors: connect 0, read 0, write 0, timeout 64
+Requests/sec:    811.60
+Transfer/sec:      1.25MB
+
+---------------------------------------------------------
+ Concurrency: 32 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.24ms  445.24us  14.70ms   72.76%
+    Req/Sec   296.34     58.83   473.00     57.76%
+  12985 requests in 16.01s, 20.01MB read
+  Socket errors: connect 0, read 0, write 0, timeout 180
+Requests/sec:    811.18
+Transfer/sec:      1.25MB
+
+---------------------------------------------------------
+ Concurrency: 64 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.24ms  541.95us  16.67ms   82.34%
+    Req/Sec   222.23     81.54   444.00     51.96%
+  12993 requests in 16.00s, 20.02MB read
+  Socket errors: connect 0, read 0, write 0, timeout 423
+Requests/sec:    811.86
+Transfer/sec:      1.25MB
+
+---------------------------------------------------------
+ Concurrency: 128 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.64ms    1.01ms  11.77ms   77.35%
+    Req/Sec   296.32    140.86   578.00     48.31%
+  12985 requests in 16.00s, 20.01MB read
+  Socket errors: connect 0, read 0, write 0, timeout 908
+Requests/sec:    811.35
+Transfer/sec:      1.25MB
+
+---------------------------------------------------------
+ Concurrency: 256 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.59ms    1.88ms  13.93ms   73.68%
+    Req/Sec   221.84     81.11   444.00     52.25%
+  12973 requests in 16.00s, 19.99MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1716
+Requests/sec:    810.70
+Transfer/sec:      1.25MB

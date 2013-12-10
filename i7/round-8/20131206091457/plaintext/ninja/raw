@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 18:37:35 PST 2013
+
+  System load:  0.06               Processes:           117
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ninja
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/ninja/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/ninja/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   244.85us   45.09us   2.65ms   72.63%
+    Req/Sec     4.19k   224.15     4.67k    69.30%
+  158509 requests in 5.00s, 22.83MB read
+Requests/sec:  31704.01
+Transfer/sec:      4.57MB
+
+---------------------------------------------------------
+ Running Warmup ninja
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/ninja/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.50ms    2.95ms  26.54ms   61.53%
+    Req/Sec     9.59k     0.88k   13.09k    69.34%
+  1104258 requests in 15.00s, 159.02MB read
+Requests/sec:  73618.67
+Transfer/sec:     10.60MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:8080/ninja/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    55.04ms   25.57ms 145.68ms   66.41%
+    Req/Sec     9.23k   488.16    11.53k    68.74%
+  1103648 requests in 15.00s, 158.93MB read
+Requests/sec:  73587.87
+Transfer/sec:     10.60MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for ninja
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:8080/ninja/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   256.34ms  309.96ms   3.68s    98.16%
+    Req/Sec     8.63k     1.47k   13.58k    87.30%
+  1019479 requests in 15.00s, 146.81MB read
+  Socket errors: connect 0, read 8, write 0, timeout 192
+Requests/sec:  67965.15
+Transfer/sec:      9.79MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for ninja
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:8080/ninja/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   622.88ms  639.21ms  13.58s    94.89%
+    Req/Sec     7.94k     1.82k   10.17k    88.59%
+  929230 requests in 15.00s, 133.81MB read
+  Socket errors: connect 0, read 783, write 0, timeout 10577
+Requests/sec:  61936.80
+Transfer/sec:      8.92MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for ninja
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:8080/ninja/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.68s     6.70s   14.91s    64.68%
+    Req/Sec     7.18k     3.49k   17.44k    78.62%
+  900930 requests in 15.01s, 129.74MB read
+  Socket errors: connect 11, read 953, write 0, timeout 89656
+Requests/sec:  60018.57
+Transfer/sec:      8.64MB

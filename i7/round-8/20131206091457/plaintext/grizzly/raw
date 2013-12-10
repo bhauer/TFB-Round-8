@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 15:53:32 PST 2013
+
+  System load:  1.38               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer grizzly
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   190.42us   33.68us 790.00us   69.89%
+    Req/Sec     5.30k   259.22     6.78k    80.15%
+  203212 requests in 5.00s, 27.91MB read
+Requests/sec:  40648.55
+Transfer/sec:      5.58MB
+
+---------------------------------------------------------
+ Running Warmup grizzly
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.22ms  394.01us  15.65ms   97.13%
+    Req/Sec    27.82k     2.43k   36.00k    82.59%
+  3150143 requests in 15.00s, 432.61MB read
+Requests/sec: 210050.56
+Transfer/sec:     28.85MB
+
+---------------------------------------------------------
+ Concurrency: 256 for grizzly
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.96ms   19.55ms 767.54ms   97.38%
+    Req/Sec    40.73k     4.02k   52.04k    76.14%
+  4745920 requests in 15.00s, 651.75MB read
+Requests/sec: 316400.93
+Transfer/sec:     43.45MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for grizzly
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    38.19ms   98.27ms 957.00ms   93.48%
+    Req/Sec    50.31k     8.04k   72.89k    74.65%
+  5918169 requests in 15.00s, 812.74MB read
+  Socket errors: connect 0, read 2, write 0, timeout 1186
+Requests/sec: 394544.15
+Transfer/sec:     54.18MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for grizzly
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    99.28ms  257.01ms   5.38s    92.08%
+    Req/Sec    54.01k     7.23k   80.23k    69.95%
+  6340366 requests in 15.00s, 0.85GB read
+  Socket errors: connect 0, read 175, write 0, timeout 9238
+Requests/sec: 422619.11
+Transfer/sec:     58.04MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for grizzly
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.83s     6.97s   14.54s    61.15%
+    Req/Sec    52.70k     8.21k   94.13k    74.49%
+  6435190 requests in 15.02s, 0.86GB read
+  Socket errors: connect 11, read 715, write 0, timeout 64902
+Requests/sec: 428583.65
+Transfer/sec:     58.86MB

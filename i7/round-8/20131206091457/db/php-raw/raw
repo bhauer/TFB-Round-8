@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 20:19:19 PST 2013
+
+  System load:  0.1                Processes:           119
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   557.63us  101.63us   2.08ms   76.27%
+    Req/Sec     1.87k   110.71     2.22k    62.53%
+  70805 requests in 5.00s, 15.38MB read
+Requests/sec:  14162.07
+Transfer/sec:      3.08MB
+
+---------------------------------------------------------
+ Running Warmup php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.89ms   49.71ms   6.61s    99.26%
+    Req/Sec     4.29k   627.60     8.17k    71.58%
+  505415 requests in 15.00s, 109.77MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+  Non-2xx or 3xx responses: 2
+Requests/sec:  33694.10
+Transfer/sec:      7.32MB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   554.95us   91.70us   1.25ms   71.83%
+    Req/Sec     1.88k   107.20     2.22k    63.64%
+  213448 requests in 15.00s, 46.36MB read
+Requests/sec:  14230.00
+Transfer/sec:      3.09MB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   563.80us  151.75us   1.87ms   79.44%
+    Req/Sec     3.70k   245.81     4.55k    66.49%
+  420082 requests in 15.00s, 91.23MB read
+Requests/sec:  28006.63
+Transfer/sec:      6.08MB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   817.04us  721.20us  15.31ms   95.49%
+    Req/Sec     5.19k   637.45     7.55k    69.52%
+  589496 requests in 15.00s, 128.03MB read
+Requests/sec:  39300.93
+Transfer/sec:      8.54MB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.57ms    2.67ms 105.97ms   98.13%
+    Req/Sec     5.45k     0.87k    8.56k    68.29%
+  616778 requests in 15.00s, 133.95MB read
+Requests/sec:  41119.31
+Transfer/sec:      8.93MB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.50ms    4.47ms 177.95ms   94.84%
+    Req/Sec     4.75k   632.37     8.79k    73.98%
+  547566 requests in 15.00s, 118.92MB read
+Requests/sec:  36506.93
+Transfer/sec:      7.93MB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/dbraw.php
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.74ms   14.18ms 715.56ms   95.23%
+    Req/Sec     4.34k   681.54     8.65k    74.60%
+  506301 requests in 15.00s, 109.96MB read
+Requests/sec:  33751.60
+Transfer/sec:      7.33MB

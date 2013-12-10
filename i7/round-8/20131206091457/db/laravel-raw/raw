@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 17:11:56 PST 2013
+
+  System load:  0.01               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.65ms    7.15ms  59.91ms   90.55%
+    Req/Sec   199.78     59.33   370.00     73.71%
+  7675 requests in 5.01s, 4.69MB read
+  Non-2xx or 3xx responses: 3746
+Requests/sec:   1533.30
+Transfer/sec:      0.94MB
+
+---------------------------------------------------------
+ Running Warmup laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   189.56ms  195.96ms   1.40s    88.70%
+    Req/Sec   182.45     33.00   239.00     86.89%
+  21724 requests in 15.02s, 13.65MB read
+  Non-2xx or 3xx responses: 11062
+Requests/sec:   1446.65
+Transfer/sec:      0.91MB
+
+---------------------------------------------------------
+ Concurrency: 8 for laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.89ms    5.76ms  50.92ms   74.99%
+    Req/Sec    65.90     17.72   139.00     66.59%
+  7876 requests in 15.01s, 11.79MB read
+  Non-2xx or 3xx responses: 7876
+Requests/sec:    524.74
+Transfer/sec:    804.35KB
+
+---------------------------------------------------------
+ Concurrency: 16 for laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.44ms    6.48ms  52.89ms   76.79%
+    Req/Sec    71.88     17.14   285.00     90.16%
+  8660 requests in 15.01s, 13.36MB read
+  Non-2xx or 3xx responses: 8547
+Requests/sec:    576.87
+Transfer/sec:      0.89MB
+
+---------------------------------------------------------
+ Concurrency: 32 for laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    41.73ms   26.60ms 487.08ms   82.53%
+    Req/Sec   111.23     56.02   370.00     85.10%
+  13715 requests in 15.01s, 15.97MB read
+  Non-2xx or 3xx responses: 10798
+Requests/sec:    913.46
+Transfer/sec:      1.06MB
+
+---------------------------------------------------------
+ Concurrency: 64 for laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    51.55ms   72.97ms 528.93ms   89.75%
+    Req/Sec   173.42     67.55   443.00     58.55%
+  20915 requests in 15.01s, 15.01MB read
+  Non-2xx or 3xx responses: 11622
+Requests/sec:   1392.96
+Transfer/sec:      1.00MB
+
+---------------------------------------------------------
+ Concurrency: 128 for laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   169.81ms  122.49ms   1.36s    75.25%
+    Req/Sec   106.04     38.56   248.00     83.33%
+  13117 requests in 15.02s, 16.11MB read
+  Non-2xx or 3xx responses: 10910
+Requests/sec:    873.02
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Concurrency: 256 for laravel-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   350.20ms  330.09ms   3.24s    86.99%
+    Req/Sec    89.78     10.81   113.00     80.89%
+  10784 requests in 15.02s, 16.27MB read
+  Socket errors: connect 0, read 0, write 0, timeout 25
+  Non-2xx or 3xx responses: 10784
+Requests/sec:    718.11
+Transfer/sec:      1.08MB

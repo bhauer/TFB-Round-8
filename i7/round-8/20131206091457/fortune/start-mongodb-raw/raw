@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 03:26:50 PST 2013
+
+  System load:  0.92               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   276.84us  107.24us   2.00ms   75.03%
+    Req/Sec     3.76k   423.16     5.55k    68.12%
+  139430 requests in 5.00s, 43.87MB read
+  Non-2xx or 3xx responses: 139430
+Requests/sec:  27887.08
+Transfer/sec:      8.78MB
+
+---------------------------------------------------------
+ Running Warmup start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.51ms    1.59ms  28.92ms   78.09%
+    Req/Sec     9.46k     1.31k   33.85k    94.96%
+  1083649 requests in 15.00s, 340.99MB read
+  Non-2xx or 3xx responses: 1083649
+Requests/sec:  72246.15
+Transfer/sec:     22.73MB
+
+---------------------------------------------------------
+ Concurrency: 8 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   276.09us  106.93us   1.86ms   74.65%
+    Req/Sec     3.76k   441.71     5.89k    68.79%
+  426595 requests in 15.00s, 134.23MB read
+  Non-2xx or 3xx responses: 426595
+Requests/sec:  28440.21
+Transfer/sec:      8.95MB
+
+---------------------------------------------------------
+ Concurrency: 16 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   305.45us  131.48us   2.81ms   77.01%
+    Req/Sec     6.81k   754.29     9.56k    71.23%
+  765073 requests in 15.00s, 240.74MB read
+  Non-2xx or 3xx responses: 765073
+Requests/sec:  51006.44
+Transfer/sec:     16.05MB
+
+---------------------------------------------------------
+ Concurrency: 32 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   414.99us  234.42us   5.27ms   84.00%
+    Req/Sec    10.02k     1.26k   14.78k    69.65%
+  1113759 requests in 15.00s, 350.46MB read
+  Non-2xx or 3xx responses: 1113759
+Requests/sec:  74253.12
+Transfer/sec:     23.36MB
+
+---------------------------------------------------------
+ Concurrency: 64 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   788.95us  508.86us  16.90ms   87.90%
+    Req/Sec    10.81k     1.58k   16.67k    73.21%
+  1197150 requests in 15.00s, 376.70MB read
+  Non-2xx or 3xx responses: 1197150
+Requests/sec:  79815.20
+Transfer/sec:     25.12MB
+
+---------------------------------------------------------
+ Concurrency: 128 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.88ms    1.48ms  33.55ms   92.18%
+    Req/Sec     9.69k     1.89k   13.42k    86.80%
+  1102717 requests in 15.00s, 346.99MB read
+  Non-2xx or 3xx responses: 1102717
+Requests/sec:  73516.27
+Transfer/sec:     23.13MB
+
+---------------------------------------------------------
+ Concurrency: 256 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/fortunes-mongo
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.27ms    3.30ms  25.50ms   91.35%
+    Req/Sec     8.74k     2.03k   25.12k    91.07%
+  1004611 requests in 15.00s, 316.12MB read
+  Non-2xx or 3xx responses: 1004611
+Requests/sec:  66975.49
+Transfer/sec:     21.07MB

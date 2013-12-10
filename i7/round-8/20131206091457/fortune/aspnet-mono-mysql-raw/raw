@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 09:49:00 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   242.14ms  224.75ms 502.36ms   19.80%
+    Req/Sec    82.71    147.44   461.00     81.25%
+  1968 requests in 6.00s, 3.18MB read
+  Socket errors: connect 0, read 1, write 0, timeout 13
+  Non-2xx or 3xx responses: 66
+Requests/sec:    327.90
+Transfer/sec:    543.26KB
+
+---------------------------------------------------------
+ Running Warmup aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.86s     1.45s    3.12s    63.49%
+    Req/Sec    89.18    128.18   447.00     78.16%
+  11083 requests in 16.01s, 13.38MB read
+  Socket errors: connect 0, read 165, write 0, timeout 1605
+  Non-2xx or 3xx responses: 3732
+Requests/sec:    692.45
+Transfer/sec:    856.28KB
+
+---------------------------------------------------------
+ Concurrency: 8 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.05ms   20.12ms 258.26ms   99.41%
+    Req/Sec    36.89    103.47   466.00     88.48%
+  4730 requests in 16.00s, 7.73MB read
+  Socket errors: connect 0, read 3, write 0, timeout 49
+  Non-2xx or 3xx responses: 94
+Requests/sec:    295.60
+Transfer/sec:    494.91KB
+
+---------------------------------------------------------
+ Concurrency: 16 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  573 requests in 16.00s, 660.69KB read
+  Socket errors: connect 0, read 11, write 0, timeout 112
+  Non-2xx or 3xx responses: 226
+Requests/sec:     35.81
+Transfer/sec:     41.29KB
+
+---------------------------------------------------------
+ Concurrency: 32 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.29ms   75.10ms 251.22ms   89.81%
+    Req/Sec    53.66    116.78   448.00     82.26%
+  6110 requests in 16.00s, 9.63MB read
+  Socket errors: connect 0, read 24, write 0, timeout 212
+  Non-2xx or 3xx responses: 385
+Requests/sec:    381.83
+Transfer/sec:    616.49KB
+
+---------------------------------------------------------
+ Concurrency: 64 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.01ms   11.86ms 146.00ms   71.87%
+    Req/Sec    46.58    115.08   523.00     86.18%
+  6615 requests in 16.00s, 9.79MB read
+  Socket errors: connect 0, read 42, write 0, timeout 436
+  Non-2xx or 3xx responses: 887
+Requests/sec:    413.41
+Transfer/sec:    626.79KB
+
+---------------------------------------------------------
+ Concurrency: 128 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   292.98ms  255.10ms 961.70ms   68.93%
+    Req/Sec    60.23    117.34   434.00     81.50%
+  8413 requests in 16.00s, 10.48MB read
+  Socket errors: connect 0, read 63, write 0, timeout 855
+  Non-2xx or 3xx responses: 2597
+Requests/sec:    525.72
+Transfer/sec:    670.81KB
+
+---------------------------------------------------------
+ Concurrency: 256 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/ado/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   709.07ms  524.75ms   1.15s    65.02%
+    Req/Sec    91.72    129.07   573.00     76.98%
+  11429 requests in 16.00s, 11.92MB read
+  Socket errors: connect 0, read 134, write 0, timeout 1601
+  Non-2xx or 3xx responses: 5252
+Requests/sec:    714.09
+Transfer/sec:    762.46KB

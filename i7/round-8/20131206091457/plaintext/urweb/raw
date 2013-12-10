@@ -1,0 +1,105 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 06:34:07 PST 2013
+
+  System load:  0.0                Processes:           125
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.03ms  149.11us   1.76ms   68.98%
+    Req/Sec     1.02k    96.58     1.33k    69.87%
+  38637 requests in 5.00s, 6.96MB read
+Requests/sec:   7726.92
+Transfer/sec:      1.39MB
+
+---------------------------------------------------------
+ Running Warmup urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.04ms  155.57us   2.07ms   69.52%
+    Req/Sec     4.03k     1.04k    5.89k    59.70%
+  114722 requests in 16.01s, 20.68MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1890
+Requests/sec:   7166.38
+Transfer/sec:      1.29MB
+
+---------------------------------------------------------
+ Concurrency: 256 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.55ms    1.59ms  19.78ms   69.36%
+    Req/Sec     2.72k   493.78     3.35k    61.35%
+  120365 requests in 16.01s, 21.70MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1707
+Requests/sec:   7519.12
+Transfer/sec:      1.36MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.41ms    1.43ms  19.54ms   80.48%
+    Req/Sec     2.73k     0.97k    4.45k    66.59%
+  120473 requests in 16.01s, 21.71MB read
+  Socket errors: connect 0, read 0, write 0, timeout 6836
+Requests/sec:   7526.41
+Transfer/sec:      1.36MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.09ms    2.92ms  26.12ms   59.95%
+    Req/Sec     2.79k     1.26k    4.40k    50.36%
+  119668 requests in 16.03s, 21.57MB read
+  Socket errors: connect 0, read 0, write 0, timeout 27276
+Requests/sec:   7467.23
+Transfer/sec:      1.35MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://tfbapp:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 16.04s, 0.00B read
+  Socket errors: connect 11, read 10770, write 1661156, timeout 115319
+Requests/sec:      0.00
+Transfer/sec:       0.00B

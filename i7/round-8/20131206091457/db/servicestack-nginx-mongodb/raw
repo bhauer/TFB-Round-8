@@ -1,0 +1,141 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 01:06:50 PST 2013
+
+  System load:  0.02               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 6.00s, 2.03KB read
+  Socket errors: connect 0, read 0, write 0, timeout 20
+Requests/sec:      0.00
+Transfer/sec:     346.51B
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.67ms    4.41ms  13.35ms   87.47%
+    Req/Sec     0.11      2.63    65.00     99.84%
+  290 requests in 16.00s, 2.44MB read
+  Socket errors: connect 0, read 5, write 0, timeout 1850
+  Non-2xx or 3xx responses: 38
+Requests/sec:     18.12
+Transfer/sec:    155.88KB
+
+---------------------------------------------------------
+ Concurrency: 8 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  4 requests in 16.00s, 40.52KB read
+  Socket errors: connect 0, read 0, write 0, timeout 60
+Requests/sec:      0.25
+Transfer/sec:      2.53KB
+
+---------------------------------------------------------
+ Concurrency: 16 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  7 requests in 16.00s, 71.41KB read
+  Socket errors: connect 0, read 0, write 0, timeout 117
+Requests/sec:      0.44
+Transfer/sec:      4.46KB
+
+---------------------------------------------------------
+ Concurrency: 32 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  17 requests in 16.00s, 143.78KB read
+  Socket errors: connect 0, read 0, write 0, timeout 232
+  Non-2xx or 3xx responses: 3
+Requests/sec:      1.06
+Transfer/sec:      8.99KB
+
+---------------------------------------------------------
+ Concurrency: 64 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  37 requests in 16.00s, 277.72KB read
+  Socket errors: connect 0, read 0, write 0, timeout 458
+  Non-2xx or 3xx responses: 11
+Requests/sec:      2.31
+Transfer/sec:     17.36KB
+
+---------------------------------------------------------
+ Concurrency: 128 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  56 requests in 16.00s, 273.65KB read
+  Socket errors: connect 0, read 0, write 0, timeout 942
+  Non-2xx or 3xx responses: 32
+Requests/sec:      3.50
+Transfer/sec:     17.10KB
+
+---------------------------------------------------------
+ Concurrency: 256 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/mongodb/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/mongodb/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.91ms    6.47ms  13.45ms   63.56%
+    Req/Sec     0.31      8.10   213.00     99.86%
+  178 requests in 16.00s, 1.14MB read
+  Socket errors: connect 0, read 2, write 0, timeout 1880
+  Non-2xx or 3xx responses: 69
+Requests/sec:     11.12
+Transfer/sec:     72.68KB

@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 09:44:37 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.65ms   29.23ms 102.58ms   88.07%
+    Req/Sec    94.80    158.26   545.00     75.31%
+  4554 requests in 6.00s, 1.42MB read
+  Socket errors: connect 0, read 0, write 0, timeout 12
+  Non-2xx or 3xx responses: 48
+Requests/sec:    758.97
+Transfer/sec:    242.50KB
+
+---------------------------------------------------------
+ Running Warmup aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   824.76ms  675.17ms   1.95s    56.01%
+    Req/Sec   108.36    141.32   583.00     80.07%
+  14777 requests in 16.00s, 4.65MB read
+  Socket errors: connect 0, read 142, write 0, timeout 1504
+  Non-2xx or 3xx responses: 1249
+Requests/sec:    923.43
+Transfer/sec:    297.27KB
+
+---------------------------------------------------------
+ Concurrency: 8 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    26.56ms   42.99ms 105.31ms   73.01%
+    Req/Sec    50.44    129.08   600.00     86.43%
+  6275 requests in 16.00s, 1.96MB read
+  Socket errors: connect 0, read 2, write 0, timeout 49
+  Non-2xx or 3xx responses: 76
+Requests/sec:    392.14
+Transfer/sec:    125.21KB
+
+---------------------------------------------------------
+ Concurrency: 16 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.76ms   14.71ms  41.84ms   80.61%
+    Req/Sec    57.51    134.40   636.00     84.19%
+  6060 requests in 16.00s, 1.89MB read
+  Socket errors: connect 0, read 3, write 0, timeout 105
+  Non-2xx or 3xx responses: 66
+Requests/sec:    378.72
+Transfer/sec:    121.02KB
+
+---------------------------------------------------------
+ Concurrency: 32 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.81ms  100.35ms   1.00s    99.07%
+    Req/Sec    49.53    124.41   724.00     86.11%
+  6433 requests in 16.00s, 2.01MB read
+  Socket errors: connect 0, read 15, write 0, timeout 215
+  Non-2xx or 3xx responses: 170
+Requests/sec:    402.00
+Transfer/sec:    128.65KB
+
+---------------------------------------------------------
+ Concurrency: 64 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    87.89ms   34.60ms 117.30ms   86.42%
+    Req/Sec    45.64    116.08   604.00     86.81%
+  6197 requests in 16.00s, 1.94MB read
+  Socket errors: connect 0, read 28, write 0, timeout 436
+  Non-2xx or 3xx responses: 288
+Requests/sec:    387.26
+Transfer/sec:    124.45KB
+
+---------------------------------------------------------
+ Concurrency: 128 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   211.16ms  111.57ms 316.93ms   77.29%
+    Req/Sec    69.84    132.42   403.00     80.61%
+  9629 requests in 16.00s, 3.02MB read
+  Socket errors: connect 0, read 82, write 0, timeout 861
+  Non-2xx or 3xx responses: 1017
+Requests/sec:    601.71
+Transfer/sec:    193.20KB
+
+---------------------------------------------------------
+ Concurrency: 256 for aspnet-mono-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/ado/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ado/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   767.16ms  619.85ms   2.23s    60.82%
+    Req/Sec    91.60    136.04   393.00     79.73%
+  11841 requests in 16.00s, 3.74MB read
+  Socket errors: connect 0, read 157, write 0, timeout 1633
+  Non-2xx or 3xx responses: 2389
+Requests/sec:    739.88
+Transfer/sec:    239.10KB

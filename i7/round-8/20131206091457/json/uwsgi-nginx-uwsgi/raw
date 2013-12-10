@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec  7 06:38:56 PST 2013
+
+  System load:  0.02               Processes:           121
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   308.55us   61.21us 587.00us   68.59%
+    Req/Sec     3.34k   227.54     4.11k    65.36%
+  126719 requests in 5.00s, 21.75MB read
+Requests/sec:  25345.19
+Transfer/sec:      4.35MB
+
+---------------------------------------------------------
+ Running Warmup uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.79ms    3.07ms  43.01ms   64.57%
+    Req/Sec     9.25k     2.43k   24.44k    72.44%
+  1046046 requests in 15.00s, 219.26MB read
+  Non-2xx or 3xx responses: 281573
+Requests/sec:  69741.90
+Transfer/sec:     14.62MB
+
+---------------------------------------------------------
+ Concurrency: 8 for uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   308.07us   61.21us 605.00us   69.03%
+    Req/Sec     3.34k   222.62     4.11k    66.00%
+  380484 requests in 15.00s, 65.30MB read
+Requests/sec:  25366.48
+Transfer/sec:      4.35MB
+
+---------------------------------------------------------
+ Concurrency: 16 for uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   377.03us  120.67us  12.10ms   83.93%
+    Req/Sec     5.49k   384.01     6.78k    62.79%
+  625102 requests in 15.00s, 107.28MB read
+Requests/sec:  41675.68
+Transfer/sec:      7.15MB
+
+---------------------------------------------------------
+ Concurrency: 32 for uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   693.39us    1.01ms  39.99ms   95.85%
+    Req/Sec     6.34k     1.32k   10.78k    68.36%
+  720455 requests in 15.00s, 123.64MB read
+Requests/sec:  48032.57
+Transfer/sec:      8.24MB
+
+---------------------------------------------------------
+ Concurrency: 64 for uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.28ms    1.52ms  31.90ms   90.48%
+    Req/Sec     6.84k     1.45k   12.67k    69.81%
+  774603 requests in 15.00s, 132.93MB read
+Requests/sec:  51643.27
+Transfer/sec:      8.86MB
+
+---------------------------------------------------------
+ Concurrency: 128 for uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.43ms    2.09ms  34.18ms   90.44%
+    Req/Sec     7.09k     1.16k   13.44k    70.82%
+  794005 requests in 15.00s, 136.26MB read
+Requests/sec:  52938.05
+Transfer/sec:      9.08MB
+
+---------------------------------------------------------
+ Concurrency: 256 for uwsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.86ms    3.17ms  67.07ms   64.65%
+    Req/Sec     9.04k     2.28k   24.00k    74.66%
+  1020302 requests in 15.00s, 213.16MB read
+  Non-2xx or 3xx responses: 269682
+Requests/sec:  68035.85
+Transfer/sec:     14.21MB

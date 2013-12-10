@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 18:29:02 PST 2013
+
+  System load:  0.35               Processes:           117
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/ninja/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   282.60us  574.86us  12.21ms   99.72%
+    Req/Sec     4.03k   476.13     5.11k    90.76%
+  144453 requests in 5.00s, 37.75MB read
+Requests/sec:  28893.41
+Transfer/sec:      7.55MB
+
+---------------------------------------------------------
+ Running Warmup ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.74ms    7.03ms   1.02s    95.85%
+    Req/Sec     8.78k     0.90k   12.56k    76.90%
+  1014490 requests in 15.00s, 265.09MB read
+Requests/sec:  67645.14
+Transfer/sec:     17.68MB
+
+---------------------------------------------------------
+ Concurrency: 8 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   250.25us   48.87us   2.20ms   73.31%
+    Req/Sec     4.10k   202.85     5.22k    39.22%
+  466812 requests in 15.00s, 121.98MB read
+Requests/sec:  31121.40
+Transfer/sec:      8.13MB
+
+---------------------------------------------------------
+ Concurrency: 16 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   266.99us  105.34us   2.59ms   78.97%
+    Req/Sec     7.69k   521.21     9.33k    65.75%
+  873578 requests in 15.00s, 228.27MB read
+Requests/sec:  58241.31
+Transfer/sec:     15.22MB
+
+---------------------------------------------------------
+ Concurrency: 32 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   436.60us  277.31us  11.67ms   83.78%
+    Req/Sec     9.54k   783.63    11.78k    71.26%
+  1084246 requests in 15.00s, 283.32MB read
+Requests/sec:  72286.09
+Transfer/sec:     18.89MB
+
+---------------------------------------------------------
+ Concurrency: 64 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.88ms  620.64us   8.76ms   66.67%
+    Req/Sec     9.56k     0.88k   12.89k    69.32%
+  1082807 requests in 15.00s, 282.94MB read
+Requests/sec:  72193.93
+Transfer/sec:     18.86MB
+
+---------------------------------------------------------
+ Concurrency: 128 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.80ms    1.45ms  12.88ms   63.89%
+    Req/Sec     9.41k     1.02k   13.89k    69.33%
+  1065858 requests in 15.00s, 278.52MB read
+Requests/sec:  71060.51
+Transfer/sec:     18.57MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/ninja/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.73ms    3.22ms  26.88ms   61.93%
+    Req/Sec     8.95k     0.94k   12.70k    67.22%
+  1023578 requests in 15.00s, 267.47MB read
+Requests/sec:  68255.22
+Transfer/sec:     17.84MB

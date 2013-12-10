@@ -1,0 +1,44 @@
+curl: (22) The requested URL returned error: 500
+Stacktrace:
+
+
+Native stacktrace:
+
+	/usr/local/bin/mono() [0x4ab6dd]
+	/usr/local/bin/mono() [0x501ccf]
+	/usr/local/bin/mono() [0x420367]
+	/lib/x86_64-linux-gnu/libpthread.so.0(+0xfcb0) [0x7f5a806f1cb0]
+	/usr/local/bin/mono() [0x5eecdb]
+	/usr/local/bin/mono() [0x5f0331]
+	/usr/local/bin/mono() [0x5cbbcf]
+	/usr/local/bin/mono() [0x5d1aae]
+	/usr/local/bin/mono() [0x5d1d2e]
+	/usr/local/bin/mono() [0x5e8048]
+	/usr/local/bin/mono() [0x5e84ac]
+	[0x40b98ca0]
+
+Debug info from gdb:
+
+
+=================================================================
+Got a SIGSEGV while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries 
+used by your application.
+=================================================================
+
+Warning: Degraded allocation.  Consider increasing nursery-size if the warning persists.
+An exception has occurred while generating HttpException page:
+System.Threading.ThreadAbortException: Thread was being aborted
+  at System.Web.HttpContext.get_IsCustomErrorEnabled () [0x00000] in <filename unknown>:0 
+  at System.Web.HttpException.GetHtmlErrorMessage () [0x00000] in <filename unknown>:0 
+
+The actual exception which was being reported was:
+System.Web.HttpException:  ---> System.Threading.SynchronizationLockException: The current thread has not entered the lock in upgradable mode
+  at System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock () [0x00000] in <filename unknown>:0 
+  at System.Web.Caching.Cache.Get (System.String key) [0x00000] in <filename unknown>:0 
+  at System.Web.Caching.InMemoryOutputCacheProvider.Get (System.String key) [0x00000] in <filename unknown>:0 
+  at System.Web.Caching.OutputCacheModule.OnResolveRequestCache (System.Object o, System.EventArgs args) [0x00000] in <filename unknown>:0 
+  at System.Web.HttpApplication+<RunHooks>c__Iterator2.MoveNext () [0x00000] in <filename unknown>:0 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator3.MoveNext () [0x00000] in <filename unknown>:0 
+  at System.Web.HttpApplication.Tick () [0x00000] in <filename unknown>:0 
+  --- End of inner exception stack trace ---

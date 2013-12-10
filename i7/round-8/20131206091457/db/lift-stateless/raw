@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec  6 17:22:29 PST 2013
+
+  System load:  0.56               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 1%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+76 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.32ms    3.93ms  45.60ms   87.34%
+    Req/Sec   182.55     58.47   321.00     62.75%
+  6766 requests in 5.00s, 2.08MB read
+  Non-2xx or 3xx responses: 2
+Requests/sec:   1352.79
+Transfer/sec:    426.38KB
+
+---------------------------------------------------------
+ Running Warmup lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.17ms   16.32ms 698.51ms   95.25%
+    Req/Sec   393.62     39.03   467.00     74.66%
+  46853 requests in 15.00s, 14.42MB read
+  Non-2xx or 3xx responses: 6
+Requests/sec:   3123.38
+Transfer/sec:      0.96MB
+
+---------------------------------------------------------
+ Concurrency: 8 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.89ms    8.47ms 102.32ms   99.21%
+    Req/Sec   339.58     78.92   555.00     71.80%
+  38697 requests in 15.00s, 11.91MB read
+  Non-2xx or 3xx responses: 5
+Requests/sec:   2579.61
+Transfer/sec:    813.04KB
+
+---------------------------------------------------------
+ Concurrency: 16 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.70ms   15.24ms 154.97ms   98.67%
+    Req/Sec   410.88     92.05   666.00     75.31%
+  47723 requests in 15.00s, 14.69MB read
+  Non-2xx or 3xx responses: 5
+Requests/sec:   3181.56
+Transfer/sec:      0.98MB
+
+---------------------------------------------------------
+ Concurrency: 32 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.70ms    5.39ms  72.42ms   85.93%
+    Req/Sec   429.78     71.03   655.00     71.57%
+  50742 requests in 15.00s, 15.62MB read
+  Non-2xx or 3xx responses: 7
+Requests/sec:   3382.39
+Transfer/sec:      1.04MB
+
+---------------------------------------------------------
+ Concurrency: 64 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.19ms   12.84ms 160.51ms   96.42%
+    Req/Sec   422.36     53.07   541.00     81.45%
+  50223 requests in 15.00s, 15.46MB read
+  Non-2xx or 3xx responses: 2
+Requests/sec:   3347.21
+Transfer/sec:      1.03MB
+
+---------------------------------------------------------
+ Concurrency: 128 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    38.68ms   10.68ms 181.96ms   94.17%
+    Req/Sec   418.78     45.84   551.00     88.75%
+  49803 requests in 15.01s, 15.33MB read
+  Non-2xx or 3xx responses: 6
+Requests/sec:   3318.94
+Transfer/sec:      1.02MB
+
+---------------------------------------------------------
+ Concurrency: 256 for lift-stateless
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://tfbapp:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://tfbapp:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    75.66ms    7.92ms 297.18ms   83.46%
+    Req/Sec   419.76     37.74   657.00     75.53%
+  50178 requests in 15.00s, 15.44MB read
+  Non-2xx or 3xx responses: 6
+Requests/sec:   3344.68
+Transfer/sec:      1.03MB
