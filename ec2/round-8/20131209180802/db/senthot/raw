@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   263.84ms  692.37ms   2.28s    87.50%
+    Req/Sec   116.70     72.36   294.00     72.50%
+  4484 requests in 6.00s, 1.67MB read
+Requests/sec:    747.23
+Transfer/sec:    284.56KB
+
+---------------------------------------------------------
+ Running Warmup senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.09s     1.64s    4.12s    76.36%
+    Req/Sec   126.10     78.39   346.00     67.06%
+  15378 requests in 15.01s, 5.72MB read
+  Socket errors: connect 0, read 0, write 0, timeout 297
+Requests/sec:   1024.36
+Transfer/sec:    390.14KB
+
+---------------------------------------------------------
+ Concurrency: 8 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   767.22ms    1.11s    2.66s    69.91%
+    Req/Sec   146.91    130.37   750.00     51.91%
+  17079 requests in 15.41s, 6.35MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:   1108.16
+Transfer/sec:    422.00KB
+
+---------------------------------------------------------
+ Concurrency: 16 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.18s     3.26s    7.66s    72.60%
+    Req/Sec   111.63    103.47   585.00     49.49%
+  13485 requests in 15.03s, 5.01MB read
+  Socket errors: connect 0, read 0, write 0, timeout 24
+Requests/sec:    897.13
+Transfer/sec:    341.64KB
+
+---------------------------------------------------------
+ Concurrency: 32 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   482.39ms    2.16s   11.88s    96.36%
+    Req/Sec   136.58     69.83   393.00     71.03%
+  16598 requests in 15.00s, 6.17MB read
+  Socket errors: connect 0, read 0, write 0, timeout 42
+Requests/sec:   1106.25
+Transfer/sec:    421.28KB
+
+---------------------------------------------------------
+ Concurrency: 64 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   399.86ms  688.66ms   1.91s    81.73%
+    Req/Sec   114.56     72.36   352.00     62.12%
+  13971 requests in 15.01s, 5.20MB read
+  Socket errors: connect 0, read 0, write 0, timeout 59
+Requests/sec:    930.84
+Transfer/sec:    354.48KB
+
+---------------------------------------------------------
+ Concurrency: 128 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   175.48ms  243.50ms   1.02s    89.90%
+    Req/Sec   135.21     47.30   212.00     84.54%
+  16377 requests in 15.01s, 6.09MB read
+  Socket errors: connect 0, read 0, write 0, timeout 36
+Requests/sec:   1091.31
+Transfer/sec:    415.60KB
+
+---------------------------------------------------------
+ Concurrency: 256 for senthot
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:80/bench/rawdb
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:80/bench/rawdb
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.10s     2.09s   10.38s    93.38%
+    Req/Sec   110.34     71.36   252.00     61.47%
+  13393 requests in 15.03s, 4.98MB read
+  Socket errors: connect 0, read 0, write 0, timeout 88
+Requests/sec:    890.89
+Transfer/sec:    339.31KB

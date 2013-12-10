@@ -1,0 +1,159 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: spark
+self.results['completed']: {u'cpoll_cppsp': '__run_test timeout (=3600 seconds)'}
+
+=====================================================
+  Beginning spark
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting spark
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Dec 10 12:53:35 UTC 2013
+
+  System load:  0.08               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+mysql start/running, process 31659
+mongodb start/running, process 31724
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for hello.world:hello-spark:war:1.0.0-BUILD-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 108, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-war-plugin is missing. @ line 116, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spark Test project 1.0.0-BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.3:clean (default-clean) @ hello-spark ---
+[INFO] Deleting file set: /home/ubuntu/FrameworkBenchmarks/spark/target (included: [**], excluded: [])
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ hello-spark ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ hello-spark ---
+[INFO] Compiling 5 source files to /home/ubuntu/FrameworkBenchmarks/spark/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ hello-spark ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ubuntu/FrameworkBenchmarks/spark/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ hello-spark ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ hello-spark ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: /home/ubuntu/FrameworkBenchmarks/spark/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.1.1:war (default-war) @ hello-spark ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [hello-spark] in [/home/ubuntu/FrameworkBenchmarks/spark/target/hello-spark-1.0.0-BUILD-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/ubuntu/FrameworkBenchmarks/spark/src/main/webapp]
+[INFO] Webapp assembled in [267 msecs]
+[INFO] Building war: /home/ubuntu/FrameworkBenchmarks/spark/target/spark.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.246s
+[INFO] Finished at: Tue Dec 10 12:53:59 UTC 2013
+[INFO] Final Memory: 13M/206M
+[INFO] ------------------------------------------------------------------------
+Resin/4.0.36 launching watchdog at 127.0.0.1:6600
+Resin/4.0.36 started -server 'default' with watchdog at 127.0.0.1:6600
+
+-----------------------------------------------------
+  Verifying URLs for spark
+-----------------------------------------------------
+VERIFYING JSON (/spark/json) ...
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 25
+Date: Tue, 10 Dec 2013 12:55:04 GMT
+
+{"message":"Hello world"}
+
+VERIFYING DB (/spark/db) ...
+HTTP/1.1 500 Internal Server Error
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 53
+Date: Tue, 10 Dec 2013 12:56:06 GMT
+
+<html><body><h2>500 Internal Error</h2></body></html>
+VERIFYING Query (/spark/db?queries=2) ...
+HTTP/1.1 500 Internal Server Error
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 53
+Date: Tue, 10 Dec 2013 12:56:37 GMT
+
+<html><body><h2>500 Internal Error</h2></body></html>
+VERIFYING Plaintext (/spark/plaintext) ...
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: text/plain; charset=utf-8
+Content-Length: 13
+Date: Tue, 10 Dec 2013 12:57:07 GMT
+
+Hello, World!
+
+
+-----------------------------------------------------
+  Benchmarking spark ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING Plaintext ... Complete
+
+-----------------------------------------------------
+  Stopping spark
+-----------------------------------------------------
+Resin/4.0.36 shutdown watchdog at 127.0.0.1:6600
+
+-----------------------------------------------------
+  Stopped spark
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through spark
+----------------------------------------------------

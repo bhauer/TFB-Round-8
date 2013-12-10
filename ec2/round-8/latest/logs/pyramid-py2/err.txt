@@ -1,0 +1,357 @@
+2013-12-10 08:01:31 [31581] [INFO] Starting gunicorn 18.0
+2013-12-10 08:01:31 [31581] [INFO] Listening at: http://0.0.0.0:6543 (31581)
+2013-12-10 08:01:31 [31581] [INFO] Using worker: sync
+2013-12-10 08:01:31 [31586] [INFO] Booting worker with pid: 31586
+2013-12-10 08:01:31 [31587] [INFO] Booting worker with pid: 31587
+2013-12-10 08:01:31 [31588] [INFO] Booting worker with pid: 31588
+2013-12-10 08:01:31 [31589] [INFO] Booting worker with pid: 31589
+2013-12-10 08:01:31 [31592] [INFO] Booting worker with pid: 31592
+2013-12-10 08:01:31 [31595] [INFO] Booting worker with pid: 31595
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 25, in test_2
+    result = DBSession.query(World).filter(World.id == num).one()
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2310, in one
+    ret = list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+ProgrammingError: (ProgrammingError) relation "World" does not exist
+LINE 2: FROM "World" 
+             ^
+ 'SELECT "World".randomnumber AS "World_randomnumber", "World".id AS "World_id" \nFROM "World" \nWHERE "World".id = %(id_1)s' {'id_1': 4784}
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 25, in test_2
+    result = DBSession.query(World).filter(World.id == num).one()
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2310, in one
+    ret = list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+InternalError: (InternalError) current transaction is aborted, commands ignored until end of transaction block
+ 'SELECT "World".randomnumber AS "World_randomnumber", "World".id AS "World_id" \nFROM "World" \nWHERE "World".id = %(id_1)s' {'id_1': 9520}
+curl: (22) The requested URL returned error: 500
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 46, in test_3
+    for num in [randint(1, 10001) for _ in range(1, queries + 1)]
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2310, in one
+    ret = list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+InternalError: (InternalError) current transaction is aborted, commands ignored until end of transaction block
+ 'SELECT "World".randomnumber AS "World_randomnumber", "World".id AS "World_id" \nFROM "World" \nWHERE "World".id = %(id_1)s' {'id_1': 1286}
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 46, in test_3
+    for num in [randint(1, 10001) for _ in range(1, queries + 1)]
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2310, in one
+    ret = list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+InternalError: (InternalError) current transaction is aborted, commands ignored until end of transaction block
+ 'SELECT "World".randomnumber AS "World_randomnumber", "World".id AS "World_id" \nFROM "World" \nWHERE "World".id = %(id_1)s' {'id_1': 6472}
+curl: (22) The requested URL returned error: 500
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 56, in test_4
+    fortunes = [obj.__json__() for obj in DBSession.query(Fortune).all()]
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2241, in all
+    return list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+InternalError: (InternalError) current transaction is aborted, commands ignored until end of transaction block
+ 'SELECT "Fortune".id AS "Fortune_id", "Fortune".message AS "Fortune_message" \nFROM "Fortune"' {}
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 56, in test_4
+    fortunes = [obj.__json__() for obj in DBSession.query(Fortune).all()]
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2241, in all
+    return list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+InternalError: (InternalError) current transaction is aborted, commands ignored until end of transaction block
+ 'SELECT "Fortune".id AS "Fortune_id", "Fortune".message AS "Fortune_message" \nFROM "Fortune"' {}
+curl: (22) The requested URL returned error: 500
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 80, in test_5
+    for num in [randint(1, 10001) for _ in range(1, queries + 1)]
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2310, in one
+    ret = list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+InternalError: (InternalError) current transaction is aborted, commands ignored until end of transaction block
+ 'SELECT "World".randomnumber AS "World_randomnumber", "World".id AS "World_id" \nFROM "World" \nWHERE "World".id = %(id_1)s' {'id_1': 1324}
+2013-12-10 08:02:31 [31592] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/gunicorn-18.0-py2.7.egg/gunicorn/workers/sync.py", line 131, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/home/ubuntu/FrameworkBenchmarks/pyramid/frameworkbenchmarks/views.py", line 80, in test_5
+    for num in [randint(1, 10001) for _ in range(1, queries + 1)]
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2310, in one
+    ret = list(self)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2353, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/orm/query.py", line 2368, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 761, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/home/ubuntu/FrameworkBenchmarks/installs/py2/lib/python2.7/site-packages/SQLAlchemy-0.8.3-py2.7-linux-x86_64.egg/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+InternalError: (InternalError) current transaction is aborted, commands ignored until end of transaction block
+ 'SELECT "World".randomnumber AS "World_randomnumber", "World".id AS "World_id" \nFROM "World" \nWHERE "World".id = %(id_1)s' {'id_1': 5083}
+curl: (22) The requested URL returned error: 500
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+unable to connect to 10.254.7.165:6543 Connection timed out
+2013-12-10 08:17:56 [31581] [INFO] Handling signal: term
+2013-12-10 08:17:56 [31587] [INFO] Worker exiting (pid: 31587)
+2013-12-10 08:17:56 [31586] [INFO] Worker exiting (pid: 31586)
+2013-12-10 08:17:56 [31588] [INFO] Worker exiting (pid: 31588)
+2013-12-10 08:17:56 [31589] [INFO] Worker exiting (pid: 31589)
+2013-12-10 08:17:56 [31595] [INFO] Worker exiting (pid: 31595)
+2013-12-10 08:17:56 [31592] [INFO] Worker exiting (pid: 31592)
+2013-12-10 08:17:56 [31581] [INFO] Shutting down: Master

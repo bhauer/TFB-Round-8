@@ -1,0 +1,139 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Dec 10 12:29:32 UTC 2013
+
+  System load:  0.36               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.46ms   35.25ms 153.52ms   90.81%
+    Req/Sec   131.10     54.29   272.00     77.37%
+  5083 requests in 5.00s, 1.71MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:   1016.05
+Transfer/sec:    351.00KB
+
+---------------------------------------------------------
+ Running Warmup sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.11ms   62.77ms 657.56ms   97.22%
+    Req/Sec     1.87k   470.35     4.57k    73.56%
+  220502 requests in 15.00s, 67.66MB read
+  Non-2xx or 3xx responses: 214774
+Requests/sec:  14700.61
+Transfer/sec:      4.51MB
+
+---------------------------------------------------------
+ Concurrency: 8 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.90ms   40.70ms 156.59ms   89.66%
+    Req/Sec   132.09     55.87   315.00     71.39%
+  15471 requests in 15.01s, 4.63MB read
+Requests/sec:   1030.93
+Transfer/sec:    315.85KB
+
+---------------------------------------------------------
+ Concurrency: 16 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.11ms   13.19ms 225.85ms   98.04%
+    Req/Sec   131.50     31.12   214.00     69.53%
+  15645 requests in 15.01s, 4.68MB read
+Requests/sec:   1042.35
+Transfer/sec:    319.34KB
+
+---------------------------------------------------------
+ Concurrency: 32 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.59ms    9.62ms 217.60ms   90.84%
+    Req/Sec   133.37     22.64   192.00     68.62%
+  15950 requests in 15.01s, 4.77MB read
+Requests/sec:   1062.40
+Transfer/sec:    325.49KB
+
+---------------------------------------------------------
+ Concurrency: 64 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    61.05ms    9.94ms 161.89ms   71.63%
+    Req/Sec   130.96     15.59   171.00     64.52%
+  15745 requests in 15.01s, 4.71MB read
+Requests/sec:   1048.99
+Transfer/sec:    321.39KB
+
+---------------------------------------------------------
+ Concurrency: 128 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   120.34ms   18.04ms 259.01ms   71.33%
+    Req/Sec   133.15     13.74   182.00     70.61%
+  16065 requests in 15.02s, 4.81MB read
+Requests/sec:   1069.44
+Transfer/sec:    327.66KB
+
+---------------------------------------------------------
+ Concurrency: 256 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.03ms   62.22ms 798.17ms   97.35%
+    Req/Sec     1.83k   441.37     4.03k    70.23%
+  216487 requests in 14.99s, 66.43MB read
+  Non-2xx or 3xx responses: 210884
+Requests/sec:  14438.45
+Transfer/sec:      4.43MB

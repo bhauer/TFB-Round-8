@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.54ms    1.01ms   4.18ms   77.02%
+    Req/Sec   484.38    389.56     1.67k    87.43%
+  18410 requests in 5.00s, 3.13MB read
+Requests/sec:   3681.51
+Transfer/sec:    639.95KB
+
+---------------------------------------------------------
+ Running Warmup tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    63.01ms    3.06ms  98.97ms   92.08%
+    Req/Sec   508.15     36.60   666.00     77.96%
+  60639 requests in 15.02s, 10.29MB read
+Requests/sec:   4036.53
+Transfer/sec:    701.66KB
+
+---------------------------------------------------------
+ Concurrency: 8 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.90ms    7.82ms 100.01ms   99.36%
+    Req/Sec   542.85    268.35     1.11k    74.63%
+  60839 requests in 15.00s, 10.33MB read
+Requests/sec:   4055.66
+Transfer/sec:    704.99KB
+
+---------------------------------------------------------
+ Concurrency: 16 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.04ms    1.24ms   8.89ms   57.75%
+    Req/Sec   562.49    173.28     1.00k    59.74%
+  63044 requests in 15.00s, 10.70MB read
+Requests/sec:   4202.47
+Transfer/sec:    730.51KB
+
+---------------------------------------------------------
+ Concurrency: 32 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.56ms  329.51us  13.33ms   91.50%
+    Req/Sec   546.65     35.56   687.00     79.25%
+  63291 requests in 15.00s, 10.74MB read
+Requests/sec:   4218.43
+Transfer/sec:    733.28KB
+
+---------------------------------------------------------
+ Concurrency: 64 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.48ms    3.48ms  31.58ms   54.72%
+    Req/Sec   527.60     62.80   750.00     70.59%
+  62497 requests in 15.01s, 10.61MB read
+Requests/sec:   4163.43
+Transfer/sec:    723.72KB
+
+---------------------------------------------------------
+ Concurrency: 128 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.65ms    8.47ms  53.63ms   51.78%
+    Req/Sec   510.96     50.78   640.00     69.21%
+  60939 requests in 15.01s, 10.34MB read
+Requests/sec:   4060.55
+Transfer/sec:    705.84KB
+
+---------------------------------------------------------
+ Concurrency: 256 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    63.84ms   11.73ms 127.50ms   54.20%
+    Req/Sec   502.91     38.15   587.00     56.68%
+  60083 requests in 15.02s, 10.20MB read
+Requests/sec:   4000.68
+Transfer/sec:    695.43KB

@@ -1,0 +1,142 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Dec 10 03:33:59 UTC 2013
+
+  System load:  0.1                Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.63ms   13.41ms 116.56ms   89.01%
+    Req/Sec    49.39     15.56    88.00     62.91%
+  1785 requests in 5.03s, 320.37KB read
+Requests/sec:    354.76
+Transfer/sec:     63.67KB
+
+---------------------------------------------------------
+ Running Warmup nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   889.49ms  350.28ms   3.83s    83.23%
+    Req/Sec    34.80     10.86    54.00     65.97%
+  4223 requests in 15.06s, 757.89KB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec:    280.50
+Transfer/sec:     50.34KB
+
+---------------------------------------------------------
+ Concurrency: 8 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.69ms   17.10ms 149.58ms   88.61%
+    Req/Sec    48.22     18.61    95.00     61.97%
+  5413 requests in 15.03s, 0.95MB read
+Requests/sec:    360.25
+Transfer/sec:     64.65KB
+
+---------------------------------------------------------
+ Concurrency: 16 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   420.86ms    1.61s    7.82s    94.73%
+    Req/Sec    40.16     24.80   126.00     64.24%
+  5020 requests in 15.05s, 0.88MB read
+  Socket errors: connect 0, read 0, write 0, timeout 7
+Requests/sec:    333.49
+Transfer/sec:     59.85KB
+
+---------------------------------------------------------
+ Concurrency: 32 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   119.57ms  169.09ms   3.60s    98.00%
+    Req/Sec    33.10      9.89    61.00     59.12%
+  3916 requests in 15.05s, 702.79KB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+Requests/sec:    260.20
+Transfer/sec:     46.70KB
+
+---------------------------------------------------------
+ Concurrency: 64 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   250.66ms  166.84ms   2.13s    98.01%
+    Req/Sec    30.75      4.85    42.00     70.86%
+  3721 requests in 15.05s, 667.81KB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+Requests/sec:    247.29
+Transfer/sec:     44.38KB
+
+---------------------------------------------------------
+ Concurrency: 128 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   798.17ms  420.20ms   2.35s    75.63%
+    Req/Sec    41.12     53.49   190.00     83.65%
+  4366 requests in 15.12s, 783.59KB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:    288.81
+Transfer/sec:     51.83KB
+
+---------------------------------------------------------
+ Concurrency: 256 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   966.62ms  558.10ms   3.85s    87.26%
+    Req/Sec    32.63     13.24    70.00     70.06%
+  3797 requests in 15.20s, 681.40KB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+Requests/sec:    249.88
+Transfer/sec:     44.84KB

@@ -1,0 +1,105 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer ringojs-convenient
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.25ms   40.13ms  99.73ms   77.17%
+    Req/Sec   534.75    416.73     2.00k    56.18%
+  20561 requests in 5.00s, 2.84MB read
+Requests/sec:   4112.62
+Transfer/sec:    582.35KB
+
+---------------------------------------------------------
+ Running Warmup ringojs-convenient
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.76ms   64.75ms 563.94ms   89.10%
+    Req/Sec   771.58    107.25     1.09k    73.40%
+  92095 requests in 15.00s, 12.74MB read
+Requests/sec:   6139.66
+Transfer/sec:    869.39KB
+
+---------------------------------------------------------
+ Concurrency: 256 for ringojs-convenient
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   690.93ms  470.26ms   2.62s    68.88%
+    Req/Sec   779.18    147.09     1.35k    79.07%
+  88608 requests in 15.01s, 12.25MB read
+  Socket errors: connect 0, read 19, write 0, timeout 72
+Requests/sec:   5902.50
+Transfer/sec:    835.80KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for ringojs-convenient
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.60s   730.95ms   5.13s    67.86%
+    Req/Sec     1.02k   413.20     2.32k    76.53%
+  101697 requests in 15.02s, 14.06MB read
+  Socket errors: connect 0, read 108, write 0, timeout 2180
+Requests/sec:   6770.71
+Transfer/sec:      0.94MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for ringojs-convenient
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.70s     1.95s    8.31s    66.84%
+    Req/Sec   793.50    433.97     1.88k    61.54%
+  101845 requests in 15.03s, 14.08MB read
+  Socket errors: connect 0, read 766, write 0, timeout 21012
+Requests/sec:   6776.56
+Transfer/sec:      0.94MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for ringojs-convenient
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.90s     2.59s   12.33s    87.77%
+    Req/Sec     1.02k   621.89     2.93k    67.80%
+  91611 requests in 15.09s, 12.67MB read
+  Socket errors: connect 8203, read 2175, write 0, timeout 101968
+Requests/sec:   6070.69
+Transfer/sec:    859.62KB

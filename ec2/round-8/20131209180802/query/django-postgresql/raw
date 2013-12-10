@@ -1,0 +1,125 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Dec  9 21:38:21 UTC 2013
+
+  System load:  0.19               Processes:           77
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.83ms    5.51ms  34.86ms   69.10%
+    Req/Sec    99.91     41.62   238.00     65.66%
+  3625 requests in 5.01s, 848.05KB read
+Requests/sec:    724.27
+Transfer/sec:    169.44KB
+
+---------------------------------------------------------
+ Running Warmup django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   344.62ms   86.47ms 914.47ms   71.99%
+    Req/Sec    91.67     11.80   146.00     77.65%
+  10823 requests in 15.03s, 2.47MB read
+Requests/sec:    720.30
+Transfer/sec:    168.51KB
+
+---------------------------------------------------------
+ Queries: 1 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   261.96ms   59.68ms 706.42ms   72.31%
+    Req/Sec   121.21     14.13   178.00     74.76%
+  14368 requests in 15.03s, 2.85MB read
+Requests/sec:    956.13
+Transfer/sec:    194.01KB
+
+---------------------------------------------------------
+ Queries: 5 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   608.76ms  161.60ms   1.50s    78.25%
+    Req/Sec    52.38      7.60    87.00     74.77%
+  6186 requests in 15.09s, 1.98MB read
+Requests/sec:    409.97
+Transfer/sec:    134.08KB
+
+---------------------------------------------------------
+ Queries: 10 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.01s   237.15ms   2.31s    80.91%
+    Req/Sec    31.31      7.27    66.00     69.16%
+  3656 requests in 15.06s, 1.73MB read
+  Socket errors: connect 0, read 8, write 0, timeout 1
+Requests/sec:    242.78
+Transfer/sec:    117.41KB
+
+---------------------------------------------------------
+ Queries: 15 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.47s   479.36ms   3.75s    71.43%
+    Req/Sec    23.35     15.42    77.00     73.40%
+  2580 requests in 15.12s, 1.62MB read
+  Socket errors: connect 0, read 78, write 0, timeout 42
+Requests/sec:    170.65
+Transfer/sec:    109.81KB
+
+---------------------------------------------------------
+ Queries: 20 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.71s   683.70ms   4.48s    68.57%
+    Req/Sec    18.01      9.47    47.00     69.33%
+  1985 requests in 15.17s, 1.56MB read
+  Socket errors: connect 0, read 160, write 0, timeout 146
+Requests/sec:    130.85
+Transfer/sec:    105.63KB

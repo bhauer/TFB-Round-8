@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Dec  9 23:02:44 UTC 2013
+
+  System load:  0.52               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.30ms    2.94ms  38.03ms   99.16%
+    Req/Sec     0.98k   152.57     1.33k    80.90%
+  36971 requests in 5.01s, 5.53MB read
+Requests/sec:   7381.16
+Transfer/sec:      1.10MB
+
+---------------------------------------------------------
+ Running Warmup falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    51.51ms  186.02ms   1.94s    98.72%
+    Req/Sec     0.96k   252.67     1.71k    74.49%
+  114857 requests in 15.00s, 17.17MB read
+Requests/sec:   7657.76
+Transfer/sec:      1.14MB
+
+---------------------------------------------------------
+ Concurrency: 8 for falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.08ms  496.53us  12.81ms   95.53%
+    Req/Sec     0.98k   144.35     1.33k    80.11%
+  111034 requests in 15.00s, 16.60MB read
+Requests/sec:   7402.47
+Transfer/sec:      1.11MB
+
+---------------------------------------------------------
+ Concurrency: 16 for falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.93ms  114.30ms 576.22ms   95.82%
+    Req/Sec     1.05k   355.39     2.22k    76.79%
+  119422 requests in 15.00s, 17.86MB read
+Requests/sec:   7961.92
+Transfer/sec:      1.19MB
+
+---------------------------------------------------------
+ Concurrency: 32 for falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.33ms    5.62ms  79.59ms   90.69%
+    Req/Sec     1.09k   328.09     3.00k    72.29%
+  126282 requests in 15.00s, 18.88MB read
+Requests/sec:   8421.61
+Transfer/sec:      1.26MB
+
+---------------------------------------------------------
+ Concurrency: 64 for falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.57ms    8.89ms 112.08ms   88.46%
+    Req/Sec     1.12k   267.67     3.00k    72.85%
+  132441 requests in 14.99s, 19.80MB read
+Requests/sec:   8833.82
+Transfer/sec:      1.32MB
+
+---------------------------------------------------------
+ Concurrency: 128 for falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.80ms   16.84ms 192.00ms   88.28%
+    Req/Sec     1.10k   162.17     1.90k    71.64%
+  130478 requests in 15.00s, 19.51MB read
+Requests/sec:   8698.40
+Transfer/sec:      1.30MB
+
+---------------------------------------------------------
+ Concurrency: 256 for falcore
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.09ms   31.67ms 404.97ms   87.21%
+    Req/Sec     1.00k   126.36     1.44k    68.14%
+  119951 requests in 15.00s, 17.93MB read
+Requests/sec:   7998.55
+Transfer/sec:      1.20MB

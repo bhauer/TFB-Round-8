@@ -1,0 +1,142 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Dec 10 14:28:32 UTC 2013
+
+  System load:  0.09               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.33ms    1.06ms   7.29ms   55.74%
+    Req/Sec   202.80     57.27   333.00     81.21%
+  7577 requests in 5.00s, 1.33MB read
+Requests/sec:   1515.11
+Transfer/sec:    271.91KB
+
+---------------------------------------------------------
+ Running Warmup tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   212.97ms   57.00ms 342.45ms   47.94%
+    Req/Sec   150.53     13.30   186.00     65.56%
+  17872 requests in 15.04s, 3.13MB read
+  Non-2xx or 3xx responses: 3
+Requests/sec:   1188.53
+Transfer/sec:    213.32KB
+
+---------------------------------------------------------
+ Concurrency: 8 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.59ms    1.61ms   9.40ms   63.26%
+    Req/Sec   204.44     76.61   400.00     63.81%
+  22554 requests in 15.00s, 3.95MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:   1503.53
+Transfer/sec:    269.83KB
+
+---------------------------------------------------------
+ Concurrency: 16 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.56ms    3.12ms  17.55ms   75.50%
+    Req/Sec   202.68     48.20   291.00     61.17%
+  22771 requests in 15.00s, 3.99MB read
+  Non-2xx or 3xx responses: 5
+Requests/sec:   1517.72
+Transfer/sec:    272.40KB
+
+---------------------------------------------------------
+ Concurrency: 32 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.14ms    4.75ms  43.24ms   65.94%
+    Req/Sec   193.45     33.69   300.00     71.53%
+  22697 requests in 15.01s, 3.98MB read
+Requests/sec:   1512.55
+Transfer/sec:    271.45KB
+
+---------------------------------------------------------
+ Concurrency: 64 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.54ms   12.21ms  90.77ms   57.57%
+    Req/Sec   189.64     21.44   245.00     67.21%
+  22581 requests in 15.01s, 3.96MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:   1504.85
+Transfer/sec:    270.08KB
+
+---------------------------------------------------------
+ Concurrency: 128 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    94.09ms   30.01ms 195.94ms   49.73%
+    Req/Sec   170.11     17.20   222.00     72.75%
+  20212 requests in 15.02s, 3.54MB read
+  Non-2xx or 3xx responses: 2
+Requests/sec:   1346.12
+Transfer/sec:    241.60KB
+
+---------------------------------------------------------
+ Concurrency: 256 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   214.91ms   54.53ms 345.45ms   52.40%
+    Req/Sec   149.47     12.03   189.00     68.81%
+  17764 requests in 15.02s, 3.11MB read
+  Non-2xx or 3xx responses: 3
+Requests/sec:   1182.38
+Transfer/sec:    212.22KB

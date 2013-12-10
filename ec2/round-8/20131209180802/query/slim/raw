@@ -1,0 +1,132 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Dec 10 12:41:16 UTC 2013
+
+  System load:  0.19               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.13ms   17.64ms  80.30ms   79.17%
+    Req/Sec    58.17     24.10    99.00     66.20%
+  2191 requests in 5.01s, 1.07MB read
+  Non-2xx or 3xx responses: 238
+Requests/sec:    436.95
+Transfer/sec:    218.81KB
+
+---------------------------------------------------------
+ Running Warmup slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   685.53ms  484.37ms   2.53s    84.22%
+    Req/Sec    53.52     21.66    86.00     74.83%
+  6366 requests in 15.03s, 2.49MB read
+  Non-2xx or 3xx responses: 396
+Requests/sec:    423.47
+Transfer/sec:    169.62KB
+
+---------------------------------------------------------
+ Queries: 1 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   467.19ms  159.60ms   2.06s    93.45%
+    Req/Sec    70.08      1.59    74.00     66.67%
+  7676 requests in 15.03s, 2.26MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+  Non-2xx or 3xx responses: 250
+Requests/sec:    510.57
+Transfer/sec:    154.08KB
+
+---------------------------------------------------------
+ Queries: 5 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.27s   749.87ms   3.47s    68.10%
+    Req/Sec    28.50     15.81    61.00     66.17%
+  3625 requests in 15.09s, 3.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 96
+  Non-2xx or 3xx responses: 1320
+Requests/sec:    240.23
+Transfer/sec:    269.38KB
+
+---------------------------------------------------------
+ Queries: 10 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   830.22ms  254.67ms   2.22s    83.73%
+    Req/Sec    37.67      4.72    46.00     78.70%
+  4472 requests in 15.05s, 2.66MB read
+  Non-2xx or 3xx responses: 129
+Requests/sec:    297.10
+Transfer/sec:    180.77KB
+
+---------------------------------------------------------
+ Queries: 15 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.26s   597.61ms   4.57s    78.57%
+    Req/Sec    26.38      6.59    36.00     60.71%
+  3222 requests in 15.05s, 3.46MB read
+  Socket errors: connect 0, read 0, write 0, timeout 67
+  Non-2xx or 3xx responses: 695
+Requests/sec:    214.14
+Transfer/sec:    235.36KB
+
+---------------------------------------------------------
+ Queries: 20 for slim
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.23s   183.97ms   2.64s    82.14%
+    Req/Sec    25.30      4.00    34.00     76.56%
+  3047 requests in 15.10s, 2.72MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    201.76
+Transfer/sec:    184.33KB

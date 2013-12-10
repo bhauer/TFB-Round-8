@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Dec  9 22:34:37 UTC 2013
+
+  System load:  0.1                Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.44ms    0.88ms  11.89ms   90.60%
+    Req/Sec   442.32     81.26   777.00     76.12%
+  16395 requests in 5.00s, 3.17MB read
+Requests/sec:   3279.45
+Transfer/sec:    649.41KB
+
+---------------------------------------------------------
+ Running Warmup express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    71.27ms   22.37ms   1.23s    98.42%
+    Req/Sec   450.80     33.94   548.00     70.48%
+  53431 requests in 15.00s, 10.33MB read
+Requests/sec:   3561.07
+Transfer/sec:    705.18KB
+
+---------------------------------------------------------
+ Concurrency: 8 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.41ms    0.89ms  22.90ms   88.22%
+    Req/Sec   453.86     99.08     0.89k    68.70%
+  51504 requests in 15.00s, 9.96MB read
+Requests/sec:   3433.65
+Transfer/sec:    679.95KB
+
+---------------------------------------------------------
+ Concurrency: 16 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.90ms    5.06ms 102.89ms   96.88%
+    Req/Sec   461.55    126.37     0.93k    69.40%
+  53296 requests in 15.00s, 10.31MB read
+Requests/sec:   3552.97
+Transfer/sec:    703.58KB
+
+---------------------------------------------------------
+ Concurrency: 32 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.06ms   10.60ms 183.45ms   92.64%
+    Req/Sec   541.99    341.99     1.60k    69.89%
+  51360 requests in 15.00s, 9.93MB read
+Requests/sec:   3423.29
+Transfer/sec:    677.91KB
+
+---------------------------------------------------------
+ Concurrency: 64 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.76ms   15.62ms 350.28ms   98.91%
+    Req/Sec   480.88    106.62   814.00     67.61%
+  55450 requests in 15.00s, 10.72MB read
+Requests/sec:   3696.46
+Transfer/sec:    732.01KB
+
+---------------------------------------------------------
+ Concurrency: 128 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    34.36ms   10.75ms 366.54ms   98.29%
+    Req/Sec   469.00     63.01   721.00     75.11%
+  55078 requests in 15.00s, 10.65MB read
+Requests/sec:   3672.46
+Transfer/sec:    727.24KB
+
+---------------------------------------------------------
+ Concurrency: 256 for express-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/mysql-orm
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/mysql-orm
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    71.58ms   29.02ms 697.59ms   77.51%
+    Req/Sec   447.20     49.51   630.00     71.84%
+  53387 requests in 15.00s, 10.32MB read
+Requests/sec:   3559.30
+Transfer/sec:    704.83KB

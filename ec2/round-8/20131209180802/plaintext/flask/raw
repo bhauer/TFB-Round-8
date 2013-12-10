@@ -1,0 +1,112 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Dec  9 23:22:55 UTC 2013
+
+  System load:  1.04               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer flask
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.55ms    1.71ms  11.36ms   65.04%
+    Req/Sec   442.95    398.58     1.55k    86.88%
+  15960 requests in 5.00s, 2.48MB read
+Requests/sec:   3190.38
+Transfer/sec:    507.84KB
+
+---------------------------------------------------------
+ Running Warmup flask
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    71.05ms   10.72ms 161.86ms   81.28%
+    Req/Sec   451.00     53.46   727.00     77.30%
+  52831 requests in 15.01s, 8.21MB read
+Requests/sec:   3519.42
+Transfer/sec:    560.22KB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05s   237.26ms   2.22s    85.71%
+    Req/Sec   496.55    129.78     0.92k    73.91%
+  56085 requests in 15.14s, 8.72MB read
+  Socket errors: connect 0, read 5, write 0, timeout 4
+Requests/sec:   3703.77
+Transfer/sec:    589.62KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for flask
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.03s     2.74s   12.69s    82.05%
+    Req/Sec   602.52    411.27     1.64k    55.95%
+  55900 requests in 15.16s, 8.71MB read
+  Socket errors: connect 0, read 401, write 0, timeout 3829
+Requests/sec:   3686.46
+Transfer/sec:    588.03KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for flask
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.71s     4.19s   11.57s    49.91%
+    Req/Sec   518.49    284.37     1.13k    62.71%
+  52832 requests in 15.35s, 8.22MB read
+  Socket errors: connect 0, read 1693, write 0, timeout 23444
+Requests/sec:   3442.14
+Transfer/sec:    548.15KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for flask
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.254.7.165:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.37s     3.39s   13.24s    86.59%
+    Req/Sec     0.91k   623.78     2.37k    67.44%
+  52323 requests in 15.27s, 8.77MB read
+  Socket errors: connect 8203, read 4528, write 0, timeout 104286
+Requests/sec:   3426.27
+Transfer/sec:    587.83KB

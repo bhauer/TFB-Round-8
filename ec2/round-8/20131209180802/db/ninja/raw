@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Dec 10 03:01:00 UTC 2013
+
+  System load:  0.22               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.21ms    3.82ms  39.85ms   81.95%
+    Req/Sec   130.15     38.50   300.00     74.16%
+  4978 requests in 5.01s, 1.32MB read
+Requests/sec:    993.58
+Transfer/sec:    270.50KB
+
+---------------------------------------------------------
+ Running Warmup ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   188.81ms  251.86ms   3.41s    91.55%
+    Req/Sec   172.60     21.20   251.00     75.00%
+  20370 requests in 15.01s, 5.42MB read
+  Socket errors: connect 0, read 0, write 0, timeout 12
+Requests/sec:   1356.95
+Transfer/sec:    369.42KB
+
+---------------------------------------------------------
+ Concurrency: 8 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.75ms   24.36ms 123.82ms   93.51%
+    Req/Sec   250.39    114.44   545.00     71.54%
+  28814 requests in 15.00s, 7.66MB read
+Requests/sec:   1920.82
+Transfer/sec:    522.93KB
+
+---------------------------------------------------------
+ Concurrency: 16 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.28ms   22.60ms 178.76ms   98.13%
+    Req/Sec   394.31     86.87   692.00     71.02%
+  45463 requests in 15.00s, 12.09MB read
+Requests/sec:   3030.81
+Transfer/sec:    825.11KB
+
+---------------------------------------------------------
+ Concurrency: 32 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.31ms    8.50ms 111.17ms   97.93%
+    Req/Sec   423.47     69.47   708.00     77.32%
+  49784 requests in 15.00s, 13.24MB read
+Requests/sec:   3318.91
+Transfer/sec:      0.88MB
+
+---------------------------------------------------------
+ Concurrency: 64 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.96ms    6.31ms 151.67ms   87.85%
+    Req/Sec   455.38     46.00   755.00     76.91%
+  53993 requests in 15.00s, 14.35MB read
+Requests/sec:   3599.92
+Transfer/sec:      0.96MB
+
+---------------------------------------------------------
+ Concurrency: 128 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.98ms   28.17ms 645.70ms   89.77%
+    Req/Sec   449.71     26.15   540.00     78.39%
+  53187 requests in 15.00s, 14.14MB read
+Requests/sec:   3545.51
+Transfer/sec:      0.94MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/ninja/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/ninja/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    77.45ms   42.16ms 792.51ms   86.24%
+    Req/Sec   411.10     43.27   577.00     80.52%
+  49276 requests in 15.00s, 13.10MB read
+Requests/sec:   3285.54
+Transfer/sec:      0.87MB

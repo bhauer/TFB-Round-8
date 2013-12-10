@@ -1,0 +1,126 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Dec  9 23:32:24 UTC 2013
+
+  System load:  0.25               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/raw-updates?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/raw-updates?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.94ms    9.57ms  66.73ms   74.86%
+    Req/Sec    49.44     18.93    85.00     47.96%
+  1814 requests in 5.02s, 403.11KB read
+Requests/sec:    361.22
+Transfer/sec:     80.27KB
+
+---------------------------------------------------------
+ Running Warmup flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/raw-updates?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/raw-updates?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   833.49ms  158.22ms   1.78s    84.07%
+    Req/Sec    38.28     10.89    64.00     65.49%
+  4455 requests in 15.14s, 0.97MB read
+Requests/sec:    294.27
+Transfer/sec:     65.39KB
+
+---------------------------------------------------------
+ Queries: 1 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/raw-updates?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/raw-updates?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   413.10ms   74.12ms 889.70ms   89.46%
+    Req/Sec    77.21     12.54   160.00     85.37%
+  9076 requests in 15.06s, 1.66MB read
+Requests/sec:    602.85
+Transfer/sec:    112.90KB
+
+---------------------------------------------------------
+ Queries: 5 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/raw-updates?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/raw-updates?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.70s   580.36ms   3.56s    79.93%
+    Req/Sec    20.02     12.92    57.00     59.52%
+  2187 requests in 15.33s, 724.29KB read
+  Socket errors: connect 0, read 41, write 0, timeout 114
+Requests/sec:    142.70
+Transfer/sec:     47.26KB
+
+---------------------------------------------------------
+ Queries: 10 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/raw-updates?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/raw-updates?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.42s     1.95s    6.66s    62.10%
+    Req/Sec     9.94      9.43    38.00     71.43%
+  1099 requests in 15.76s, 593.38KB read
+  Socket errors: connect 0, read 242, write 0, timeout 579
+Requests/sec:     69.75
+Transfer/sec:     37.66KB
+
+---------------------------------------------------------
+ Queries: 15 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/raw-updates?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/raw-updates?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.52s     3.02s    9.54s    39.92%
+    Req/Sec     6.56      8.39    35.00     88.24%
+  761 requests in 15.57s, 570.90KB read
+  Socket errors: connect 0, read 328, write 0, timeout 833
+Requests/sec:     48.87
+Transfer/sec:     36.66KB
+
+---------------------------------------------------------
+ Queries: 20 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/raw-updates?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/raw-updates?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.01s     1.63s    7.82s    55.10%
+    Req/Sec     6.00      4.12    13.00     85.71%
+  495 requests in 16.01s, 464.25KB read
+  Socket errors: connect 0, read 251, write 0, timeout 1043
+Requests/sec:     30.93
+Transfer/sec:     29.00KB

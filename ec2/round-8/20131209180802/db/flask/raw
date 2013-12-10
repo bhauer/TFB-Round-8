@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Dec  9 23:14:35 UTC 2013
+
+  System load:  0.68               Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.84ms    8.50ms  83.98ms   89.96%
+    Req/Sec   154.55     61.37   333.00     74.65%
+  5067 requests in 5.00s, 0.93MB read
+Requests/sec:   1012.52
+Transfer/sec:    189.63KB
+
+---------------------------------------------------------
+ Running Warmup flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/dbs
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   241.88ms   68.10ms 632.37ms   68.84%
+    Req/Sec   132.26     13.81   182.00     73.76%
+  15695 requests in 15.05s, 2.87MB read
+Requests/sec:   1043.15
+Transfer/sec:    195.36KB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.92ms    5.45ms  87.43ms   84.10%
+    Req/Sec   141.36     67.23   333.00     64.58%
+  15179 requests in 15.00s, 2.78MB read
+Requests/sec:   1011.73
+Transfer/sec:    189.48KB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/dbs
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.97ms    8.74ms  51.72ms   70.37%
+    Req/Sec   142.51     49.78   322.00     68.56%
+  15721 requests in 15.01s, 2.88MB read
+Requests/sec:   1047.61
+Transfer/sec:    196.21KB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/dbs
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.45ms   18.97ms 177.52ms   78.31%
+    Req/Sec   134.57     39.47   270.00     62.91%
+  15271 requests in 15.01s, 2.79MB read
+Requests/sec:   1017.49
+Transfer/sec:    190.56KB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/dbs
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    62.21ms   31.48ms 231.70ms   62.46%
+    Req/Sec   131.68     21.15   195.00     64.60%
+  15394 requests in 15.01s, 2.82MB read
+Requests/sec:   1025.26
+Transfer/sec:    192.02KB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/dbs
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   122.63ms   46.66ms 402.31ms   66.28%
+    Req/Sec   129.95     13.99   165.00     71.30%
+  15466 requests in 15.03s, 2.83MB read
+Requests/sec:   1029.32
+Transfer/sec:    192.78KB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/dbs
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   261.49ms  114.37ms   1.04s    82.06%
+    Req/Sec   127.43     24.72   183.00     83.26%
+  15009 requests in 15.06s, 2.75MB read
+Requests/sec:    996.84
+Transfer/sec:    186.69KB

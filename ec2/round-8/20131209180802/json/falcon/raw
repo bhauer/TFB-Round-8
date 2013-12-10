@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Dec  9 22:44:24 UTC 2013
+
+  System load:  0.4                Processes:           71
+  Usage of /:   25.3% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.253.6.188
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+133 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.254.7.165:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.21ms    1.16ms   8.47ms   85.67%
+    Req/Sec     1.05k   611.31     2.78k    68.21%
+  39734 requests in 5.00s, 7.54MB read
+Requests/sec:   7948.77
+Transfer/sec:      1.51MB
+
+---------------------------------------------------------
+ Running Warmup falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.84ms    9.37ms 111.26ms   70.21%
+    Req/Sec     1.01k    91.42     1.45k    71.36%
+  120002 requests in 15.01s, 22.77MB read
+Requests/sec:   7996.72
+Transfer/sec:      1.52MB
+
+---------------------------------------------------------
+ Concurrency: 8 for falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.06ms  432.65us   5.55ms   67.46%
+    Req/Sec     1.08k   385.37     1.89k    58.21%
+  121973 requests in 15.00s, 23.15MB read
+Requests/sec:   8131.92
+Transfer/sec:      1.54MB
+
+---------------------------------------------------------
+ Concurrency: 16 for falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.58ms    3.06ms  20.07ms   85.96%
+    Req/Sec     1.07k   651.11     3.89k    79.01%
+  116628 requests in 15.00s, 22.13MB read
+Requests/sec:   7775.65
+Transfer/sec:      1.48MB
+
+---------------------------------------------------------
+ Concurrency: 32 for falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.30ms    4.50ms  45.19ms   75.01%
+    Req/Sec     1.03k   759.37     4.88k    88.28%
+  119585 requests in 15.00s, 22.69MB read
+Requests/sec:   7973.05
+Transfer/sec:      1.51MB
+
+---------------------------------------------------------
+ Concurrency: 64 for falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.56ms    5.60ms  28.32ms   77.40%
+    Req/Sec     1.06k   425.00     2.73k    83.74%
+  121554 requests in 15.00s, 23.07MB read
+Requests/sec:   8103.49
+Transfer/sec:      1.54MB
+
+---------------------------------------------------------
+ Concurrency: 128 for falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.04ms    9.50ms  64.80ms   64.40%
+    Req/Sec     1.02k   169.97     1.85k    73.21%
+  121658 requests in 15.00s, 23.09MB read
+Requests/sec:   8109.11
+Transfer/sec:      1.54MB
+
+---------------------------------------------------------
+ Concurrency: 256 for falcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.254.7.165:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.254.7.165:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.48ms    8.76ms  88.67ms   67.76%
+    Req/Sec     1.03k   107.06     1.48k    73.05%
+  119542 requests in 15.00s, 22.69MB read
+Requests/sec:   7967.95
+Transfer/sec:      1.51MB
