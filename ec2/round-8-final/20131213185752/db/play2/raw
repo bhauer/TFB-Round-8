@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 09:02:07 UTC 2013
+
+  System load:  0.36               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:9000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.32ms   14.37ms 112.02ms   91.18%
+    Req/Sec   140.25     64.06   275.00     61.07%
+  5381 requests in 5.00s, 624.21KB read
+Requests/sec:   1075.55
+Transfer/sec:    124.77KB
+
+---------------------------------------------------------
+ Running Warmup play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   163.05ms  179.52ms   1.51s    91.99%
+    Req/Sec   218.05     81.06   819.00     78.33%
+  25340 requests in 15.01s, 2.87MB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+Requests/sec:   1688.42
+Transfer/sec:    195.85KB
+
+---------------------------------------------------------
+ Concurrency: 8 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.75ms    9.32ms  59.95ms   96.12%
+    Req/Sec   258.93     78.63   454.00     81.68%
+  29608 requests in 15.00s, 3.35MB read
+Requests/sec:   1973.64
+Transfer/sec:    228.93KB
+
+---------------------------------------------------------
+ Concurrency: 16 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.61ms    3.94ms  46.74ms   80.79%
+    Req/Sec   286.53     76.82   562.00     72.97%
+  33392 requests in 15.00s, 3.78MB read
+Requests/sec:   2226.12
+Transfer/sec:    258.22KB
+
+---------------------------------------------------------
+ Concurrency: 32 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.64ms   13.13ms 188.31ms   89.51%
+    Req/Sec   301.98     82.78   666.00     67.71%
+  35841 requests in 15.00s, 4.06MB read
+Requests/sec:   2388.63
+Transfer/sec:    277.08KB
+
+---------------------------------------------------------
+ Concurrency: 64 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    26.48ms   24.52ms 264.44ms   91.19%
+    Req/Sec   306.71     49.15   465.00     67.06%
+  36416 requests in 15.01s, 4.13MB read
+Requests/sec:   2426.15
+Transfer/sec:    281.42KB
+
+---------------------------------------------------------
+ Concurrency: 128 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    53.40ms   46.10ms 459.55ms   88.68%
+    Req/Sec   307.06     34.33   404.00     70.79%
+  36790 requests in 15.02s, 4.17MB read
+Requests/sec:   2450.10
+Transfer/sec:    284.20KB
+
+---------------------------------------------------------
+ Concurrency: 256 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   104.66ms   81.83ms 779.51ms   88.99%
+    Req/Sec   304.37     44.79   619.00     82.04%
+  35898 requests in 15.01s, 4.07MB read
+Requests/sec:   2391.82
+Transfer/sec:    277.44KB

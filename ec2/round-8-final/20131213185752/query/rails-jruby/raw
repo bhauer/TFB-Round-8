@@ -1,0 +1,127 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 09:58:41 UTC 2013
+
+  System load:  0.05               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer rails-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/hello_world/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/hello_world/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.59ms    9.91ms  66.65ms   71.85%
+    Req/Sec    62.69     21.21   131.00     68.09%
+  2502 requests in 5.00s, 1.02MB read
+Requests/sec:    499.92
+Transfer/sec:    208.74KB
+
+---------------------------------------------------------
+ Running Warmup rails-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   532.90ms  205.44ms   1.20s    86.15%
+    Req/Sec    64.87     32.36   230.00     74.62%
+  7486 requests in 15.07s, 3.05MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:    496.79
+Transfer/sec:    207.43KB
+
+---------------------------------------------------------
+ Queries: 1 for rails-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   337.39ms   65.55ms 940.62ms   90.62%
+    Req/Sec    97.01     39.35   380.00     90.08%
+  10814 requests in 15.04s, 4.08MB read
+  Socket errors: connect 0, read 0, write 0, timeout 13
+Requests/sec:    719.09
+Transfer/sec:    277.93KB
+
+---------------------------------------------------------
+ Queries: 5 for rails-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   710.89ms  137.05ms 958.34ms   75.09%
+    Req/Sec    43.90     18.51   118.00     69.87%
+  4988 requests in 15.17s, 2.49MB read
+  Socket errors: connect 0, read 0, write 0, timeout 100
+Requests/sec:    328.82
+Transfer/sec:    168.23KB
+
+---------------------------------------------------------
+ Queries: 10 for rails-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.17s   213.76ms   1.33s    91.90%
+    Req/Sec    26.09     12.79    82.00     75.00%
+  3033 requests in 15.34s, 1.98MB read
+  Socket errors: connect 0, read 0, write 0, timeout 43
+Requests/sec:    197.67
+Transfer/sec:    131.81KB
+
+---------------------------------------------------------
+ Queries: 15 for rails-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.69s   290.77ms   2.41s    90.08%
+    Req/Sec    18.23     16.13    89.00     81.94%
+  2176 requests in 15.33s, 1.75MB read
+Requests/sec:    141.90
+Transfer/sec:    116.64KB
+
+---------------------------------------------------------
+ Queries: 20 for rails-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.03s   494.49ms   2.37s    88.27%
+    Req/Sec    14.70     12.30    48.00     63.21%
+  1693 requests in 15.93s, 1.62MB read
+  Socket errors: connect 0, read 0, write 0, timeout 233
+Requests/sec:    106.30
+Transfer/sec:    103.87KB

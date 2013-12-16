@@ -1,0 +1,119 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:9000/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:9000/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.95ms    5.17ms  40.66ms   94.25%
+    Req/Sec   209.21     67.05   416.00     77.76%
+  8057 requests in 5.00s, 1.16MB read
+Requests/sec:   1610.81
+Transfer/sec:    236.85KB
+
+---------------------------------------------------------
+ Running Warmup play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:9000/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   119.10ms  100.11ms   1.98s    93.26%
+    Req/Sec   261.99     51.51   619.00     81.94%
+  30767 requests in 15.02s, 4.42MB read
+Requests/sec:   2048.97
+Transfer/sec:    301.26KB
+
+---------------------------------------------------------
+ Queries: 1 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:9000/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    79.10ms   91.77ms 869.59ms   92.94%
+    Req/Sec   424.02    115.10     0.96k    75.47%
+  49671 requests in 15.01s, 5.63MB read
+  Socket errors: connect 0, read 0, write 0, timeout 25
+Requests/sec:   3309.92
+Transfer/sec:    383.96KB
+
+---------------------------------------------------------
+ Queries: 5 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:9000/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   277.69ms   98.14ms   1.19s    85.85%
+    Req/Sec   112.95     24.93   314.00     94.37%
+  13223 requests in 15.02s, 3.11MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:    880.14
+Transfer/sec:    212.21KB
+
+---------------------------------------------------------
+ Queries: 10 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:9000/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   536.31ms  121.45ms   1.22s    83.84%
+    Req/Sec    56.81      8.83   116.00     84.83%
+  6786 requests in 15.03s, 2.63MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:    451.40
+Transfer/sec:    178.87KB
+
+---------------------------------------------------------
+ Queries: 15 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:9000/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   805.39ms  140.37ms   1.58s    83.66%
+    Req/Sec    38.59      7.80    95.00     89.39%
+  4570 requests in 15.03s, 2.46MB read
+Requests/sec:    304.02
+Transfer/sec:    167.68KB
+
+---------------------------------------------------------
+ Queries: 20 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:9000/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:9000/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.06s   198.68ms   1.80s    76.77%
+    Req/Sec    29.13     12.41    76.00     71.43%
+  3395 requests in 15.07s, 2.34MB read
+  Socket errors: connect 0, read 0, write 0, timeout 59
+Requests/sec:    225.26
+Transfer/sec:    159.19KB

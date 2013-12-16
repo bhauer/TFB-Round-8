@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 05:25:53 UTC 2013
+
+  System load:  0.4                Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.76ms    2.85ms  30.65ms   71.32%
+    Req/Sec   120.23     31.46   238.00     59.11%
+  4717 requests in 5.00s, 1.22MB read
+Requests/sec:    942.51
+Transfer/sec:    248.97KB
+
+---------------------------------------------------------
+ Running Warmup php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   500.77ms  393.07ms   2.48s    82.74%
+    Req/Sec    80.60     33.80   130.00     65.97%
+  9574 requests in 15.01s, 2.41MB read
+  Non-2xx or 3xx responses: 954
+Requests/sec:    637.66
+Transfer/sec:    164.34KB
+
+---------------------------------------------------------
+ Queries: 1 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   991.07ms  358.65ms   2.36s    75.96%
+    Req/Sec    31.35      4.72    42.00     73.02%
+  3754 requests in 15.11s, 747.87KB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+  Non-2xx or 3xx responses: 3754
+Requests/sec:    248.41
+Transfer/sec:     49.49KB
+
+---------------------------------------------------------
+ Queries: 5 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   641.67ms  370.92ms   2.12s    81.38%
+    Req/Sec    58.29     19.43    82.00     67.86%
+  6717 requests in 15.05s, 2.18MB read
+  Non-2xx or 3xx responses: 1429
+Requests/sec:    446.36
+Transfer/sec:    148.59KB
+
+---------------------------------------------------------
+ Queries: 10 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   808.96ms  324.81ms   2.41s    82.71%
+    Req/Sec    41.81      7.64    50.00     84.21%
+  4877 requests in 15.03s, 2.35MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+  Non-2xx or 3xx responses: 727
+Requests/sec:    324.41
+Transfer/sec:    160.00KB
+
+---------------------------------------------------------
+ Queries: 15 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   989.23ms  185.60ms   1.39s    73.98%
+    Req/Sec    31.92      7.27    53.00     85.26%
+  3834 requests in 15.06s, 2.69MB read
+Requests/sec:    254.53
+Transfer/sec:    183.11KB
+
+---------------------------------------------------------
+ Queries: 20 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.24s   176.10ms   1.58s    56.60%
+    Req/Sec    25.17      1.79    31.00     62.26%
+  2967 requests in 15.09s, 2.59MB read
+Requests/sec:    196.56
+Transfer/sec:    175.76KB

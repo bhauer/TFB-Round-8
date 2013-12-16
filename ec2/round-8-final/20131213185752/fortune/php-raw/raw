@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.73ms    1.12ms  18.04ms   81.19%
+    Req/Sec   400.82     96.73   777.00     58.16%
+  15191 requests in 5.00s, 21.89MB read
+Requests/sec:   3037.89
+Transfer/sec:      4.38MB
+
+---------------------------------------------------------
+ Running Warmup php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    96.84ms   76.75ms 558.80ms   72.54%
+    Req/Sec   354.81     60.07   596.00     77.52%
+  41510 requests in 15.00s, 59.81MB read
+Requests/sec:   2767.87
+Transfer/sec:      3.99MB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.57ms   22.20ms 143.35ms   97.37%
+    Req/Sec   373.66    123.74   777.00     66.98%
+  42707 requests in 15.00s, 61.54MB read
+Requests/sec:   2847.01
+Transfer/sec:      4.10MB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.16ms    2.61ms  25.12ms   70.99%
+    Req/Sec   419.39    113.63     1.07k    73.78%
+  48794 requests in 15.00s, 70.31MB read
+Requests/sec:   3253.04
+Transfer/sec:      4.69MB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.29ms    6.22ms  42.49ms   70.11%
+    Req/Sec   416.73    104.21     0.88k    71.99%
+  49354 requests in 15.00s, 71.12MB read
+Requests/sec:   3290.21
+Transfer/sec:      4.74MB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.69ms   12.62ms  88.56ms   69.45%
+    Req/Sec   415.91     81.90   781.00     70.51%
+  49513 requests in 15.00s, 71.35MB read
+Requests/sec:   3300.19
+Transfer/sec:      4.76MB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.46ms   29.16ms 205.20ms   71.35%
+    Req/Sec   381.70     53.93   635.00     70.68%
+  45803 requests in 15.00s, 66.00MB read
+Requests/sec:   3053.65
+Transfer/sec:      4.40MB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortune.php
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    92.13ms   76.74ms   3.06s    84.05%
+    Req/Sec   352.52     77.71   716.00     76.23%
+  42511 requests in 15.00s, 61.26MB read
+  Socket errors: connect 0, read 0, write 0, timeout 13
+Requests/sec:   2833.90
+Transfer/sec:      4.08MB

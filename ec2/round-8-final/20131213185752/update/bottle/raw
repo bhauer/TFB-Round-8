@@ -1,0 +1,126 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec 13 19:52:48 UTC 2013
+
+  System load:  0.17               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/updates?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.17ms   11.39ms  84.79ms   90.33%
+    Req/Sec    55.39     21.00   105.00     58.44%
+  1999 requests in 5.01s, 430.57KB read
+Requests/sec:    398.92
+Transfer/sec:     85.93KB
+
+---------------------------------------------------------
+ Running Warmup bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/updates?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   674.38ms  138.56ms   1.42s    85.71%
+    Req/Sec    47.34     12.24   103.00     76.58%
+  5653 requests in 15.05s, 1.19MB read
+Requests/sec:    375.58
+Transfer/sec:     80.89KB
+
+---------------------------------------------------------
+ Queries: 1 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/updates?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/updates?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   525.56ms   99.40ms   1.13s    84.61%
+    Req/Sec    60.98     10.72   100.00     77.38%
+  7236 requests in 15.12s, 1.30MB read
+Requests/sec:    478.45
+Transfer/sec:     88.20KB
+
+---------------------------------------------------------
+ Queries: 5 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/updates?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/updates?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.12s   245.59ms   2.35s    85.87%
+    Req/Sec    28.16     10.24    68.00     76.40%
+  3263 requests in 15.45s, 0.99MB read
+  Socket errors: connect 0, read 10, write 0, timeout 1
+Requests/sec:    211.18
+Transfer/sec:     65.46KB
+
+---------------------------------------------------------
+ Queries: 10 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/updates?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/updates?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.95s   556.91ms   4.20s    82.81%
+    Req/Sec    16.75     14.95    57.00     57.81%
+  1791 requests in 15.51s, 858.17KB read
+  Socket errors: connect 0, read 155, write 0, timeout 168
+Requests/sec:    115.47
+Transfer/sec:     55.33KB
+
+---------------------------------------------------------
+ Queries: 15 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/updates?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/updates?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.64s     1.54s    5.26s    59.89%
+    Req/Sec    12.38      9.83    41.00     71.15%
+  1244 requests in 15.23s, 828.36KB read
+  Socket errors: connect 0, read 339, write 0, timeout 452
+Requests/sec:     81.67
+Transfer/sec:     54.38KB
+
+---------------------------------------------------------
+ Queries: 20 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/updates?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/updates?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.95s     1.42s    7.71s    66.52%
+    Req/Sec     9.88      6.20    25.00     81.25%
+  932 requests in 15.60s, 771.06KB read
+  Socket errors: connect 0, read 288, write 0, timeout 690
+Requests/sec:     59.74
+Transfer/sec:     49.43KB

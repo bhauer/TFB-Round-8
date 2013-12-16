@@ -1,0 +1,95 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: http-kit
+self.results['completed']: {u'cpoll_cppsp': '__run_test timeout (=3600 seconds)'}
+
+=====================================================
+  Beginning http-kit
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting http-kit
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 02:31:48 UTC 2013
+
+  System load:  0.9                Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+mysql start/running, process 22591
+mongodb start/running, process 22662
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+Compiling hello.handler
+Compiling hello.handler
+Created /home/ubuntu/FrameworkBenchmarks/http-kit/hello/target/hello-compojure.jar
+Created /home/ubuntu/FrameworkBenchmarks/http-kit/hello/target/http-kit-standalone.jar
+http-kit server listens at :8080
+
+-----------------------------------------------------
+  Verifying URLs for http-kit
+-----------------------------------------------------
+VERIFYING JSON (/http-kit/json) ...
+HTTP/1.1 200 OK
+Content-Length: 27
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 Dec 2013 02:33:28 GMT
+Server: http-kit
+
+{"message":"Hello, World!"}
+
+VERIFYING DB (/http-kit/db/1) ...
+HTTP/1.1 200 OK
+Content-Length: 23
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 Dec 2013 02:33:28 GMT
+Server: http-kit
+
+[{"randomnumber":5206}]
+
+VERIFYING Query (/http-kit/db/2) ...
+HTTP/1.1 200 OK
+Content-Length: 45
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 Dec 2013 02:33:28 GMT
+Server: http-kit
+
+[{"randomnumber":7163},{"randomnumber":9725}]
+
+
+-----------------------------------------------------
+  Benchmarking http-kit ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+
+-----------------------------------------------------
+  Stopping http-kit
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped http-kit
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through http-kit
+----------------------------------------------------

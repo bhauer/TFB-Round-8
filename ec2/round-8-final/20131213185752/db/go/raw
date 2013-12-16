@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 19:47:37 UTC 2013
+
+  System load:  1.2                Processes:           71
+  Usage of /:   25.6% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.96ms  277.65us   3.85ms   88.31%
+    Req/Sec     1.08k   110.95     1.44k    64.09%
+  41119 requests in 5.00s, 5.48MB read
+Requests/sec:   8227.64
+Transfer/sec:      1.10MB
+
+---------------------------------------------------------
+ Running Warmup go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    66.61ms  260.29ms   2.03s    97.83%
+    Req/Sec     1.14k   422.80     3.89k    72.75%
+  130414 requests in 15.00s, 17.38MB read
+Requests/sec:   8694.16
+Transfer/sec:      1.16MB
+
+---------------------------------------------------------
+ Concurrency: 8 for go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.14ms   18.79ms 167.60ms   98.66%
+    Req/Sec     1.06k   179.66     1.44k    91.69%
+  121267 requests in 15.05s, 16.17MB read
+Requests/sec:   8058.23
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Concurrency: 16 for go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.57ms   22.91ms 201.31ms   98.63%
+    Req/Sec     1.17k   321.30     2.33k    73.14%
+  132930 requests in 15.00s, 17.72MB read
+Requests/sec:   8862.23
+Transfer/sec:      1.18MB
+
+---------------------------------------------------------
+ Concurrency: 32 for go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.91ms    4.41ms  78.18ms   89.60%
+    Req/Sec     1.17k   346.20     3.13k    72.31%
+  134793 requests in 15.00s, 17.97MB read
+Requests/sec:   8986.45
+Transfer/sec:      1.20MB
+
+---------------------------------------------------------
+ Concurrency: 64 for go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.94ms    7.87ms 132.67ms   89.05%
+    Req/Sec     1.21k   270.72     3.04k    73.34%
+  142310 requests in 15.00s, 18.97MB read
+Requests/sec:   9488.07
+Transfer/sec:      1.26MB
+
+---------------------------------------------------------
+ Concurrency: 128 for go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.61ms   15.48ms 214.21ms   88.99%
+    Req/Sec     1.19k   168.51     2.17k    73.52%
+  141920 requests in 15.00s, 18.92MB read
+Requests/sec:   9462.95
+Transfer/sec:      1.26MB
+
+---------------------------------------------------------
+ Concurrency: 256 for go
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.60ms   27.26ms 368.45ms   83.54%
+    Req/Sec     1.15k   137.11     1.67k    69.90%
+  137121 requests in 15.00s, 18.28MB read
+Requests/sec:   9140.09
+Transfer/sec:      1.22MB

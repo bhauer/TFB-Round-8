@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.04ms    4.87ms  40.24ms   67.11%
+    Req/Sec    65.97     17.53   113.00     70.07%
+  2553 requests in 5.01s, 0.94MB read
+Requests/sec:    509.42
+Transfer/sec:    192.03KB
+
+---------------------------------------------------------
+ Running Warmup play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   279.29ms   66.55ms 896.81ms   76.04%
+    Req/Sec   114.17     35.83   305.00     76.77%
+  13397 requests in 15.10s, 4.93MB read
+  Socket errors: connect 0, read 0, write 0, timeout 18
+Requests/sec:    886.99
+Transfer/sec:    334.35KB
+
+---------------------------------------------------------
+ Concurrency: 8 for play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.40ms   21.42ms 158.35ms   97.93%
+    Req/Sec   240.39     62.98   400.00     86.61%
+  27372 requests in 15.00s, 10.08MB read
+Requests/sec:   1824.48
+Transfer/sec:    687.74KB
+
+---------------------------------------------------------
+ Concurrency: 16 for play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.51ms    0.86ms  17.43ms   94.09%
+    Req/Sec   242.21     27.90   352.00     81.49%
+  28220 requests in 15.00s, 10.39MB read
+Requests/sec:   1880.74
+Transfer/sec:    708.95KB
+
+---------------------------------------------------------
+ Concurrency: 32 for play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    69.76ms  195.31ms 799.61ms   93.32%
+    Req/Sec   219.57     62.98   305.00     90.37%
+  26042 requests in 15.01s, 9.59MB read
+Requests/sec:   1735.43
+Transfer/sec:    654.18KB
+
+---------------------------------------------------------
+ Concurrency: 64 for play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    34.54ms    2.15ms  49.12ms   85.92%
+    Req/Sec   233.19     24.70   303.00     64.22%
+  27801 requests in 15.01s, 10.23MB read
+Requests/sec:   1852.22
+Transfer/sec:    698.20KB
+
+---------------------------------------------------------
+ Concurrency: 128 for play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    71.20ms   25.16ms 270.12ms   98.43%
+    Req/Sec   231.83     29.05   323.00     92.16%
+  27678 requests in 15.01s, 10.19MB read
+Requests/sec:   1843.87
+Transfer/sec:    695.05KB
+
+---------------------------------------------------------
+ Concurrency: 256 for play1
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   136.15ms   17.82ms 346.21ms   89.85%
+    Req/Sec   232.15     36.17   507.00     89.45%
+  27619 requests in 15.01s, 10.17MB read
+Requests/sec:   1839.77
+Transfer/sec:    693.51KB

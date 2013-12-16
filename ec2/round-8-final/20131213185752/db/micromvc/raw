@@ -1,0 +1,142 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 03:36:25 UTC 2013
+
+  System load:  0.03               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.53ms   13.84ms 105.84ms   97.94%
+    Req/Sec   137.14     40.52   277.00     76.35%
+  5371 requests in 5.00s, 1.20MB read
+Requests/sec:   1073.50
+Transfer/sec:    246.10KB
+
+---------------------------------------------------------
+ Running Warmup micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   251.50ms   90.65ms 692.32ms   72.21%
+    Req/Sec   128.33     13.82   179.00     76.61%
+  15145 requests in 15.04s, 3.39MB read
+Requests/sec:   1007.25
+Transfer/sec:    230.95KB
+
+---------------------------------------------------------
+ Concurrency: 8 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.48ms   42.31ms 157.37ms   74.69%
+    Req/Sec    78.66     61.91   250.00     46.24%
+  9459 requests in 15.02s, 13.61MB read
+  Non-2xx or 3xx responses: 1658
+Requests/sec:    629.89
+Transfer/sec:      0.91MB
+
+---------------------------------------------------------
+ Concurrency: 16 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    78.71ms   36.37ms 231.10ms   70.02%
+    Req/Sec    25.69      6.24    44.00     65.20%
+  3133 requests in 15.02s, 22.43MB read
+  Non-2xx or 3xx responses: 3133
+Requests/sec:    208.54
+Transfer/sec:      1.49MB
+
+---------------------------------------------------------
+ Concurrency: 32 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   153.75ms   59.10ms 354.08ms   73.76%
+    Req/Sec    26.84      3.83    43.00     64.71%
+  3260 requests in 15.07s, 23.33MB read
+  Non-2xx or 3xx responses: 3260
+Requests/sec:    216.37
+Transfer/sec:      1.55MB
+
+---------------------------------------------------------
+ Concurrency: 64 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   296.19ms  109.79ms 659.53ms   70.07%
+    Req/Sec    26.25      3.45    33.00     67.11%
+  3162 requests in 15.06s, 22.63MB read
+  Non-2xx or 3xx responses: 3162
+Requests/sec:    209.93
+Transfer/sec:      1.50MB
+
+---------------------------------------------------------
+ Concurrency: 128 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   404.68ms  288.03ms   1.68s    59.88%
+    Req/Sec    66.52     55.75   238.00     83.72%
+  7391 requests in 15.09s, 15.16MB read
+  Non-2xx or 3xx responses: 1947
+Requests/sec:    489.84
+Transfer/sec:      1.00MB
+
+---------------------------------------------------------
+ Concurrency: 256 for micromvc
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   247.21ms  100.21ms   1.48s    77.57%
+    Req/Sec   125.09     16.18   184.00     78.28%
+  14987 requests in 15.01s, 3.36MB read
+  Socket errors: connect 0, read 0, write 0, timeout 32
+Requests/sec:    998.35
+Transfer/sec:    228.91KB

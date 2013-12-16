@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 14:38:13 UTC 2013
+
+  System load:  0.11               Processes:           327
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 10%                IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.43ms    7.61ms  74.43ms   91.99%
+    Req/Sec   200.71     73.48   466.00     68.71%
+  7627 requests in 5.00s, 1.74MB read
+Requests/sec:   1525.05
+Transfer/sec:    355.55KB
+
+---------------------------------------------------------
+ Running Warmup start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   122.07ms  282.06ms   3.12s    95.14%
+    Req/Sec   255.74     47.84   446.00     71.23%
+  30671 requests in 15.00s, 6.98MB read
+  Socket errors: connect 0, read 0, write 0, timeout 70
+Requests/sec:   2044.37
+Transfer/sec:    476.65KB
+
+---------------------------------------------------------
+ Concurrency: 8 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.49ms    2.91ms  38.24ms   82.64%
+    Req/Sec   250.94     80.15   600.00     71.59%
+  29120 requests in 15.00s, 6.63MB read
+Requests/sec:   1941.19
+Transfer/sec:    452.57KB
+
+---------------------------------------------------------
+ Concurrency: 16 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.00ms   23.44ms 184.72ms   98.16%
+    Req/Sec   260.17     66.80   560.00     76.20%
+  30650 requests in 15.00s, 6.98MB read
+Requests/sec:   2043.11
+Transfer/sec:    476.33KB
+
+---------------------------------------------------------
+ Concurrency: 32 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.48ms    7.78ms  73.89ms   69.68%
+    Req/Sec   282.68     38.42   431.00     70.26%
+  33636 requests in 15.01s, 7.66MB read
+Requests/sec:   2241.45
+Transfer/sec:    522.57KB
+
+---------------------------------------------------------
+ Concurrency: 64 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.15ms   28.17ms 383.78ms   87.90%
+    Req/Sec   277.64     41.21   429.00     71.03%
+  33184 requests in 15.00s, 7.56MB read
+Requests/sec:   2211.83
+Transfer/sec:    515.67KB
+
+---------------------------------------------------------
+ Concurrency: 128 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    57.02ms   65.02ms   1.23s    92.38%
+    Req/Sec   275.66     41.95   430.00     71.77%
+  32916 requests in 15.00s, 7.49MB read
+Requests/sec:   2194.33
+Transfer/sec:    511.61KB
+
+---------------------------------------------------------
+ Concurrency: 256 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.74s     1.22s    2.77s    65.18%
+    Req/Sec   267.05    164.26     1.10k    67.91%
+  32367 requests in 15.01s, 7.37MB read
+Requests/sec:   2156.88
+Transfer/sec:    502.88KB

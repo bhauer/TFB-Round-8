@@ -1,0 +1,131 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.37ms    6.95ms  39.58ms   93.80%
+    Req/Sec     1.35k   791.56     3.18k    67.52%
+  48639 requests in 5.00s, 7.79MB read
+Requests/sec:   9730.00
+Transfer/sec:      1.56MB
+
+---------------------------------------------------------
+ Running Warmup undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.66ms    5.34ms 261.53ms   81.41%
+    Req/Sec     5.64k     1.28k   16.61k    87.12%
+  633388 requests in 15.00s, 101.48MB read
+  Socket errors: connect 0, read 0, write 0, timeout 60
+Requests/sec:  42227.79
+Transfer/sec:      6.77MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.44ms   17.37ms 146.90ms   98.57%
+    Req/Sec     2.83k   397.86     3.33k    97.12%
+  321025 requests in 15.00s, 51.43MB read
+Requests/sec:  21403.70
+Transfer/sec:      3.43MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.43ms   10.86ms 122.68ms   99.20%
+    Req/Sec     4.40k   768.35     6.11k    74.47%
+  499158 requests in 15.00s, 79.97MB read
+Requests/sec:  33277.07
+Transfer/sec:      5.33MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.84ms   81.44ms 459.37ms   96.73%
+    Req/Sec     4.75k     1.41k    8.78k    78.16%
+  540338 requests in 15.00s, 86.57MB read
+Requests/sec:  36027.76
+Transfer/sec:      5.77MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.58ms    3.04ms  38.38ms   91.38%
+    Req/Sec     5.42k     1.23k   12.40k    71.25%
+  614198 requests in 15.00s, 98.41MB read
+Requests/sec:  40952.08
+Transfer/sec:      6.56MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.14ms   91.09ms 503.34ms   96.56%
+    Req/Sec     5.45k     1.72k   12.60k    78.41%
+  617145 requests in 15.00s, 98.88MB read
+Requests/sec:  41150.47
+Transfer/sec:      6.59MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.82ms    6.85ms 335.03ms   88.02%
+    Req/Sec     5.51k     1.17k   14.11k    78.29%
+  632511 requests in 15.00s, 101.34MB read
+  Socket errors: connect 0, read 0, write 0, timeout 50
+Requests/sec:  42174.83
+Transfer/sec:      6.76MB

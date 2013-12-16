@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer gemini
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.74ms   15.37ms 101.91ms   97.62%
+    Req/Sec     2.75k   489.27     3.33k    96.07%
+  103880 requests in 5.00s, 15.16MB read
+Requests/sec:  20780.52
+Transfer/sec:      3.03MB
+
+---------------------------------------------------------
+ Running Warmup gemini
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.32ms    7.78ms 610.64ms   96.41%
+    Req/Sec     3.21k   510.19    13.56k    93.64%
+  377164 requests in 15.00s, 55.03MB read
+Requests/sec:  25144.98
+Transfer/sec:      3.67MB
+
+---------------------------------------------------------
+ Concurrency: 256 for gemini
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    98.45ms   46.96ms 634.16ms   89.80%
+    Req/Sec     5.28k   634.46     8.73k    81.14%
+  632232 requests in 15.00s, 92.25MB read
+Requests/sec:  42151.32
+Transfer/sec:      6.15MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for gemini
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   261.51ms  837.40ms  13.89s    97.06%
+    Req/Sec     8.51k     4.42k   16.68k    52.10%
+  498758 requests in 15.24s, 72.77MB read
+  Socket errors: connect 0, read 544, write 0, timeout 4070
+Requests/sec:  32732.68
+Transfer/sec:      4.78MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for gemini
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.50s     3.52s   14.93s    87.40%
+    Req/Sec     3.58k     2.19k    8.28k    64.52%
+  270055 requests in 15.13s, 39.40MB read
+  Socket errors: connect 0, read 698, write 0, timeout 25246
+Requests/sec:  17846.61
+Transfer/sec:      2.60MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for gemini
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.95s     5.26s   14.73s    46.67%
+    Req/Sec     4.67k     2.94k   11.56k    75.80%
+  533192 requests in 15.06s, 77.80MB read
+  Socket errors: connect 8203, read 7399, write 0, timeout 101195
+Requests/sec:  35404.26
+Transfer/sec:      5.17MB

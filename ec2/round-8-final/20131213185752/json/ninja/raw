@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 04:04:49 UTC 2013
+
+  System load:  0.29               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.70ms   22.24ms 124.39ms   95.85%
+    Req/Sec   548.82    277.06     2.10k    80.69%
+  19863 requests in 5.00s, 5.19MB read
+Requests/sec:   3973.12
+Transfer/sec:      1.04MB
+
+---------------------------------------------------------
+ Running Warmup ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   199.43ms  749.28ms   4.69s    93.01%
+    Req/Sec     2.03k     1.04k    7.33k    77.09%
+  186575 requests in 15.00s, 48.75MB read
+  Socket errors: connect 0, read 0, write 0, timeout 179
+Requests/sec:  12441.17
+Transfer/sec:      3.25MB
+
+---------------------------------------------------------
+ Concurrency: 8 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.25ms   39.63ms 212.03ms   96.35%
+    Req/Sec     1.94k   524.07     2.89k    83.44%
+  220014 requests in 15.00s, 57.49MB read
+Requests/sec:  14668.85
+Transfer/sec:      3.83MB
+
+---------------------------------------------------------
+ Concurrency: 16 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.03ms  362.90us  10.15ms   84.33%
+    Req/Sec     2.08k   361.83     5.00k    66.18%
+  235720 requests in 15.00s, 61.60MB read
+Requests/sec:  15715.86
+Transfer/sec:      4.11MB
+
+---------------------------------------------------------
+ Concurrency: 32 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.08ms  681.88us  18.62ms   90.14%
+    Req/Sec     2.04k   261.71     4.80k    75.78%
+  232555 requests in 15.00s, 60.77MB read
+Requests/sec:  15504.84
+Transfer/sec:      4.05MB
+
+---------------------------------------------------------
+ Concurrency: 64 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.13ms    1.07ms  27.26ms   83.76%
+    Req/Sec     2.04k   206.32     3.22k    72.67%
+  231931 requests in 15.00s, 60.61MB read
+Requests/sec:  15463.23
+Transfer/sec:      4.04MB
+
+---------------------------------------------------------
+ Concurrency: 128 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.34ms    2.64ms  79.16ms   90.80%
+    Req/Sec     1.99k   228.19     5.47k    89.40%
+  232174 requests in 15.00s, 60.67MB read
+Requests/sec:  15479.97
+Transfer/sec:      4.05MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/ninja/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/ninja/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.85ms   53.45ms 525.11ms   97.78%
+    Req/Sec     1.97k   546.31     9.89k    91.61%
+  226058 requests in 15.00s, 59.07MB read
+Requests/sec:  15073.89
+Transfer/sec:      3.94MB

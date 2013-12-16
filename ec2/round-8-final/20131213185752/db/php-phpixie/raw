@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 05:45:41 UTC 2013
+
+  System load:  0.1                Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.46ms   13.03ms  94.29ms   87.94%
+    Req/Sec    98.33     34.70   171.00     68.32%
+  3663 requests in 5.00s, 832.49KB read
+Requests/sec:    732.07
+Transfer/sec:    166.38KB
+
+---------------------------------------------------------
+ Running Warmup php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   314.60ms  238.65ms   3.61s    90.30%
+    Req/Sec    99.07      9.54   133.00     74.45%
+  11786 requests in 15.02s, 2.62MB read
+  Socket errors: connect 0, read 0, write 0, timeout 31
+Requests/sec:    784.93
+Transfer/sec:    178.44KB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.23ms   14.08ms  89.54ms   92.48%
+    Req/Sec   102.14     40.46   227.00     70.47%
+  12101 requests in 15.00s, 2.69MB read
+Requests/sec:    806.49
+Transfer/sec:    183.30KB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   110.40ms   86.99ms 364.38ms   77.99%
+    Req/Sec    26.22     21.54   270.00     80.47%
+  3508 requests in 15.03s, 22.88MB read
+  Non-2xx or 3xx responses: 2721
+Requests/sec:    233.39
+Transfer/sec:      1.52MB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   166.06ms   91.60ms 493.54ms   68.67%
+    Req/Sec    23.42      4.64    37.00     75.54%
+  2858 requests in 15.06s, 23.85MB read
+  Non-2xx or 3xx responses: 2858
+Requests/sec:    189.76
+Transfer/sec:      1.58MB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   303.76ms  250.28ms   1.51s    79.69%
+    Req/Sec    21.12      3.77    29.00     64.06%
+  2514 requests in 15.04s, 21.06MB read
+  Non-2xx or 3xx responses: 2514
+Requests/sec:    167.18
+Transfer/sec:      1.40MB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.45s     1.10s    2.51s    68.06%
+    Req/Sec    47.29     48.88   238.00     85.09%
+  5532 requests in 15.08s, 16.78MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+  Non-2xx or 3xx responses: 1912
+Requests/sec:    366.73
+Transfer/sec:      1.11MB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-phpixie
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.54s     1.30s    3.04s    45.33%
+    Req/Sec    75.39     54.92   266.00     68.98%
+  8790 requests in 15.01s, 9.63MB read
+  Socket errors: connect 0, read 0, write 0, timeout 23
+  Non-2xx or 3xx responses: 946
+Requests/sec:    585.69
+Transfer/sec:    657.28KB

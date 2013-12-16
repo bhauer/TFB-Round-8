@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 17:38:52 UTC 2013
+
+  System load:  1.31               Processes:           71
+  Usage of /:   25.6% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.00ms    5.09ms  24.66ms   82.74%
+    Req/Sec   396.64    326.58     1.22k    50.47%
+  15520 requests in 6.00s, 2.31MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:   2586.24
+Transfer/sec:    393.43KB
+
+---------------------------------------------------------
+ Running Warmup vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.86ms   21.59ms 468.70ms   93.92%
+    Req/Sec     1.39k   263.11     2.39k    78.35%
+  164152 requests in 15.00s, 24.39MB read
+  Socket errors: connect 0, read 0, write 0, timeout 67
+Requests/sec:  10945.13
+Transfer/sec:      1.63MB
+
+---------------------------------------------------------
+ Concurrency: 8 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.92ms    4.43ms  10.93ms   74.67%
+    Req/Sec   646.30    641.40     1.55k    18.93%
+  78317 requests in 16.00s, 11.63MB read
+  Socket errors: connect 0, read 0, write 0, timeout 27
+Requests/sec:   4894.08
+Transfer/sec:    744.50KB
+
+---------------------------------------------------------
+ Concurrency: 16 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.45ms   37.66ms 171.26ms   93.08%
+    Req/Sec     1.15k   679.99     2.60k    63.53%
+  135658 requests in 16.00s, 20.15MB read
+  Socket errors: connect 0, read 0, write 0, timeout 32
+Requests/sec:   8478.27
+Transfer/sec:      1.26MB
+
+---------------------------------------------------------
+ Concurrency: 32 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.37ms   23.88ms 211.04ms   98.63%
+    Req/Sec     1.41k   587.76     3.45k    66.69%
+  158205 requests in 15.00s, 23.50MB read
+  Socket errors: connect 0, read 0, write 0, timeout 36
+Requests/sec:  10547.89
+Transfer/sec:      1.57MB
+
+---------------------------------------------------------
+ Concurrency: 64 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.06ms   24.35ms 181.20ms   97.40%
+    Req/Sec     1.46k   359.19     2.36k    75.51%
+  172222 requests in 15.00s, 25.59MB read
+  Socket errors: connect 0, read 0, write 0, timeout 60
+Requests/sec:  11482.53
+Transfer/sec:      1.71MB
+
+---------------------------------------------------------
+ Concurrency: 128 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.05ms   12.02ms 195.25ms   93.18%
+    Req/Sec     1.53k   228.43     2.24k    69.67%
+  179377 requests in 15.00s, 26.65MB read
+  Socket errors: connect 0, read 0, write 0, timeout 43
+Requests/sec:  11960.22
+Transfer/sec:      1.78MB
+
+---------------------------------------------------------
+ Concurrency: 256 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.54ms   21.75ms 507.62ms   93.13%
+    Req/Sec     1.53k   211.79     2.54k    77.83%
+  179462 requests in 15.00s, 26.66MB read
+  Socket errors: connect 0, read 0, write 0, timeout 48
+Requests/sec:  11966.91
+Transfer/sec:      1.78MB

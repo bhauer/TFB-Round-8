@@ -1,0 +1,147 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 15:32:00 UTC 2013
+
+  System load:  0.02               Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.40ms   80.17ms 221.27ms   87.50%
+    Req/Sec    11.50      0.53    12.00    100.00%
+  361 requests in 5.03s, 450.21KB read
+  Non-2xx or 3xx responses: 177
+Requests/sec:     71.82
+Transfer/sec:     89.57KB
+
+---------------------------------------------------------
+ Running Warmup symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.23s     2.03s    8.99s    61.65%
+    Req/Sec    16.53      5.43    25.00     52.63%
+  1784 requests in 15.36s, 2.15MB read
+  Socket errors: connect 0, read 0, write 0, timeout 685
+  Non-2xx or 3xx responses: 886
+Requests/sec:    116.15
+Transfer/sec:    143.52KB
+
+---------------------------------------------------------
+ Concurrency: 8 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    79.29ms   95.75ms 625.58ms   94.30%
+    Req/Sec    14.87      5.28    31.00     67.01%
+  1858 requests in 15.06s, 2.24MB read
+  Non-2xx or 3xx responses: 924
+Requests/sec:    123.34
+Transfer/sec:    152.24KB
+
+---------------------------------------------------------
+ Concurrency: 16 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   137.41ms   95.45ms 422.28ms   65.65%
+    Req/Sec    15.03      3.56    27.00     71.37%
+  1845 requests in 15.11s, 2.22MB read
+  Non-2xx or 3xx responses: 918
+Requests/sec:    122.13
+Transfer/sec:    150.69KB
+
+---------------------------------------------------------
+ Concurrency: 32 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   285.46ms  214.83ms 936.23ms   60.98%
+    Req/Sec    15.01      3.12    25.00     74.39%
+  1869 requests in 15.15s, 2.27MB read
+  Non-2xx or 3xx responses: 922
+Requests/sec:    123.33
+Transfer/sec:    153.14KB
+
+---------------------------------------------------------
+ Concurrency: 64 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   506.16ms  430.41ms   1.67s    52.94%
+    Req/Sec    15.12      3.62    26.00     72.55%
+  1858 requests in 15.11s, 2.24MB read
+  Non-2xx or 3xx responses: 924
+Requests/sec:    123.00
+Transfer/sec:    151.83KB
+
+---------------------------------------------------------
+ Concurrency: 128 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.03s   829.13ms   3.16s    57.02%
+    Req/Sec    15.53      2.78    22.00     73.68%
+  1880 requests in 15.18s, 2.27MB read
+  Socket errors: connect 0, read 0, write 0, timeout 58
+  Non-2xx or 3xx responses: 932
+Requests/sec:    123.85
+Transfer/sec:    153.23KB
+
+---------------------------------------------------------
+ Concurrency: 256 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/fortunes-raw
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/fortunes-raw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.84s     1.76s    5.84s    59.91%
+    Req/Sec    16.29      6.77    28.00     58.06%
+  1804 requests in 15.11s, 2.19MB read
+  Socket errors: connect 0, read 0, write 0, timeout 732
+  Non-2xx or 3xx responses: 890
+Requests/sec:    119.36
+Transfer/sec:    148.19KB

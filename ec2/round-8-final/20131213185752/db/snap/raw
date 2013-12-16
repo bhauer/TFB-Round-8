@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 13:51:30 UTC 2013
+
+  System load:  0.09               Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.97ms  546.15us   7.96ms   84.26%
+    Req/Sec   356.48     61.19   555.00     79.59%
+  13511 requests in 5.00s, 2.37MB read
+Requests/sec:   2701.51
+Transfer/sec:    484.82KB
+
+---------------------------------------------------------
+ Running Warmup snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8000/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   108.03ms   22.12ms 242.89ms   75.42%
+    Req/Sec   301.94     52.19   617.00     78.83%
+  35541 requests in 15.00s, 6.23MB read
+Requests/sec:   2369.32
+Transfer/sec:    425.22KB
+
+---------------------------------------------------------
+ Concurrency: 8 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.33ms   28.48ms 207.87ms   97.95%
+    Req/Sec   333.13    104.92   666.00     59.11%
+  37463 requests in 15.00s, 6.57MB read
+Requests/sec:   2497.54
+Transfer/sec:    448.23KB
+
+---------------------------------------------------------
+ Concurrency: 16 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8000/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.10ms    2.86ms  54.56ms   98.76%
+    Req/Sec   349.83     56.72   538.00     76.35%
+  40374 requests in 15.00s, 7.08MB read
+Requests/sec:   2691.46
+Transfer/sec:    483.03KB
+
+---------------------------------------------------------
+ Concurrency: 32 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8000/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.35ms    2.82ms  37.65ms   63.32%
+    Req/Sec   332.98     49.94   571.00     73.78%
+  39229 requests in 15.00s, 6.88MB read
+Requests/sec:   2614.73
+Transfer/sec:    469.25KB
+
+---------------------------------------------------------
+ Concurrency: 64 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8000/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.63ms    3.38ms  46.99ms   87.93%
+    Req/Sec   328.75     25.39   415.00     70.87%
+  39143 requests in 15.00s, 6.86MB read
+Requests/sec:   2609.34
+Transfer/sec:    468.29KB
+
+---------------------------------------------------------
+ Concurrency: 128 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8000/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    50.65ms   16.47ms 206.17ms   85.36%
+    Req/Sec   320.04     34.55   401.00     86.19%
+  38227 requests in 15.00s, 6.70MB read
+Requests/sec:   2548.08
+Transfer/sec:    457.30KB
+
+---------------------------------------------------------
+ Concurrency: 256 for snap
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8000/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   111.97ms   23.12ms 192.62ms   74.55%
+    Req/Sec   285.13     31.17   418.00     81.55%
+  33629 requests in 15.01s, 5.89MB read
+Requests/sec:   2240.85
+Transfer/sec:    402.17KB
