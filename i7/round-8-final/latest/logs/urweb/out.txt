@@ -1,0 +1,300 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: urweb
+self.results['completed']: {}
+
+=====================================================
+  Beginning urweb
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting urweb
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 07:46:55 PST 2013
+
+  System load:  1.14               Processes:           120
+  Usage of /:   7.9% of 131.33GB   Users logged in:     0
+  Memory usage: 17%                IP address for eth0: 172.16.98.118
+  Swap usage:   2%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+110 packages can be updated.
+56 updates are security updates.
+
+mysql start/running, process 9083
+mongodb start/running, process 9144
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+
+-----------------------------------------------------
+  Verifying URLs for urweb
+-----------------------------------------------------
+VERIFYING JSON (/json) ...
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 27
+Content-script-type: text/javascript
+Date: Sun, 15 Dec 2013 07:47:55 GMT
+Server: Ur/Web
+Content-length: 27
+
+{"message":"Hello, World!"}
+
+VERIFYING DB (/db) ...
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 31
+Content-script-type: text/javascript
+Date: Sun, 15 Dec 2013 07:47:55 GMT
+Server: Ur/Web
+Content-length: 31
+
+{"id":8705,"randomNumber":8335}
+
+VERIFYING Query (/queries?queries=2) ...
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 65
+Content-script-type: text/javascript
+Date: Sun, 15 Dec 2013 07:47:55 GMT
+Server: Ur/Web
+Content-length: 65
+
+[{"id":8389,"randomNumber":1872},{"id":8321,"randomNumber":6206}]
+
+VERIFYING Fortune (/fortunes) ...
+HTTP/1.1 200 OK
+Content-type: text/html; charset=utf-8
+Content-script-type: text/javascript
+Date: Sun, 15 Dec 2013 07:47:55 GMT
+Server: Ur/Web
+Content-length: 1444
+
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title>Fortunes</title></head>
+<body><table>
+<tr><th>id</th><th>message</th></tr>
+<tr>
+<td>11</td><td>&lt;script>alert("This should not be displayed in a browser alert box.")&lt;/script></td>
+</tr><tr>
+<td>4</td><td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td>
+</tr><tr>
+<td>5</td><td>A computer program does what you tell it to do, not what you want it to do.</td>
+</tr><tr>
+<td>2</td><td>A computer scientist is someone who fixes things that aren't broken.</td>
+</tr><tr>
+<td>8</td><td>A list is only as strong as its weakest link. — Donald Knuth</td>
+</tr><tr>
+<td>0</td><td>Additional fortune added at request time</td>
+</tr><tr>
+<td>3</td><td>After enough decimal places, nobody gives a damn.</td>
+</tr><tr>
+<td>7</td><td>Any program that runs right is obsolete.</td>
+</tr><tr>
+<td>10</td><td>Computers make very fast, very accurate mistakes.</td>
+</tr><tr>
+<td>6</td><td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td>
+</tr><tr>
+<td>9</td><td>Feature: A bug with seniority.</td>
+</tr><tr>
+<td>1</td><td>fortune: No such file or directory</td>
+</tr><tr>
+<td>12</td><td>フレームワークのベンチマーク</td>
+</tr>
+</table></body>
+</html>
+
+VERIFYING Update (/updates?queries=2) ...
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 65
+Content-script-type: text/javascript
+Date: Sun, 15 Dec 2013 07:47:55 GMT
+Server: Ur/Web
+Content-length: 65
+
+[{"id":8504,"randomNumber":8227},{"id":6355,"randomNumber":3589}]
+
+VERIFYING Plaintext (/plaintext) ...
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 13
+Content-script-type: text/javascript
+Date: Sun, 15 Dec 2013 07:47:55 GMT
+Server: Ur/Web
+Content-length: 13
+
+Hello, World!
+
+
+-----------------------------------------------------
+  Benchmarking urweb ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Database connection initialized.
+Listening on port 8080....
+Database connection initialized.
+Database connection initialized.
+Database connection initialized.
+Database connection initialized.
+Database connection initialized.
+Database connection initialized.
+Database connection initialized.
+Database connection initialized.
+Database connection initialized.
+Accepted connection.
+Handling connection with thread #5.
+Serving URI /json....
+Handling connection with thread #5.
+Connection closed.
+Accepted connection.
+Handling connection with thread #2.
+Serving URI /json....
+Handling connection with thread #2.
+Connection closed.
+Accepted connection.
+Handling connection with thread #1.
+Serving URI /db....
+Handling connection with thread #1.
+Connection closed.
+Accepted connection.
+Handling connection with thread #3.
+Serving URI /db....
+Handling connection with thread #3.
+Connection closed.
+Accepted connection.
+Handling connection with thread #0.
+Serving URI /queries....
+Handling connection with thread #0.
+Connection closed.
+Accepted connection.
+Handling connection with thread #6.
+Serving URI /queries....
+Handling connection with thread #6.
+Connection closed.
+Accepted connection.
+Handling connection with thread #7.
+Serving URI /fortunes....
+Handling connection with thread #7.
+Connection closed.
+Accepted connection.
+Handling connection with thread #4.
+Serving URI /fortunes....
+Handling connection with thread #4.
+Connection closed.
+Accepted connection.
+Handling connection with thread #5.
+Serving URI /updates....
+Handling connection with thread #5.
+Connection closed.
+Accepted connection.
+Handling connection with thread #2.
+Serving URI /updates....
+Handling connection with thread #2.
+Connection closed.
+
+[ 115MB of this ]
+
+Serving URI /plaintext....
+Accepted connection.
+Accepted connection.
+Handling connection with thread #4.
+Serving URI /plaintext....
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Handling connection with thread #2.
+Serving URI /plaintext....
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Handling connection with thread #5.
+Serving URI /plaintext....
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Handling connection with thread #0.
+Serving URI /plaintext....
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Handling connection with thread #6.
+Serving URI /plaintext....
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Accepted connection.
+Complete
+
+-----------------------------------------------------
+  Stopping urweb
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped urweb
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through urweb
+----------------------------------------------------

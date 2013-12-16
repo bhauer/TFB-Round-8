@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 02:49:01 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/mysql/updates/2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/mysql/updates/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    61.51ms   93.61ms 204.36ms   69.97%
+    Req/Sec     7.46     42.40   357.00     96.79%
+  577 requests in 6.00s, 5.12MB read
+  Socket errors: connect 0, read 3, write 0, timeout 16
+  Non-2xx or 3xx responses: 42
+Requests/sec:     96.13
+Transfer/sec:      0.85MB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/updates/2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/updates/2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   404.85ms  727.01ms   2.88s    89.04%
+    Req/Sec    68.07     42.86   240.00     73.31%
+  8518 requests in 16.00s, 55.96MB read
+  Socket errors: connect 0, read 117, write 0, timeout 1147
+  Non-2xx or 3xx responses: 2783
+Requests/sec:    532.26
+Transfer/sec:      3.50MB
+
+---------------------------------------------------------
+ Queries: 1 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/updates/1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/updates/1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   607.14ms  760.74ms   2.58s    84.64%
+    Req/Sec    56.36     44.08   224.00     63.68%
+  7174 requests in 16.00s, 39.69MB read
+  Socket errors: connect 0, read 100, write 0, timeout 1250
+  Non-2xx or 3xx responses: 3142
+Requests/sec:    448.26
+Transfer/sec:      2.48MB
+
+---------------------------------------------------------
+ Queries: 5 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/updates/5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/updates/5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   296.60ms  444.23ms   2.86s    86.57%
+    Req/Sec    66.17     34.83   210.00     75.54%
+  8392 requests in 16.00s, 45.44MB read
+  Socket errors: connect 0, read 108, write 0, timeout 1075
+  Non-2xx or 3xx responses: 3858
+Requests/sec:    524.40
+Transfer/sec:      2.84MB
+
+---------------------------------------------------------
+ Queries: 10 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/updates/10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/updates/10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   417.58ms  624.36ms   2.52s    82.81%
+    Req/Sec    61.06     35.65   183.00     72.46%
+  7693 requests in 16.00s, 50.11MB read
+  Socket errors: connect 0, read 136, write 0, timeout 1162
+  Non-2xx or 3xx responses: 2695
+Requests/sec:    480.80
+Transfer/sec:      3.13MB
+
+---------------------------------------------------------
+ Queries: 15 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/updates/15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/updates/15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   479.36ms  740.17ms   3.29s    82.29%
+    Req/Sec    57.54     36.53   161.00     66.67%
+  7269 requests in 16.00s, 48.92MB read
+  Socket errors: connect 0, read 149, write 0, timeout 1209
+  Non-2xx or 3xx responses: 2476
+Requests/sec:    454.28
+Transfer/sec:      3.06MB
+
+---------------------------------------------------------
+ Queries: 20 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/updates/20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/updates/20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   244.66ms  326.70ms   1.79s    86.43%
+    Req/Sec    67.02     19.64   133.00     71.22%
+  7973 requests in 15.01s, 50.85MB read
+  Socket errors: connect 0, read 115, write 0, timeout 799
+  Non-2xx or 3xx responses: 3064
+Requests/sec:    531.03
+Transfer/sec:      3.39MB

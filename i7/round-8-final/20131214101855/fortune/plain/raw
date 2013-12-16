@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 22:12:10 PST 2013
+
+  System load:  0.17               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   622.21us   87.92us   1.25ms   70.53%
+    Req/Sec     1.68k    90.16     2.00k    64.63%
+  62224 requests in 5.00s, 84.09MB read
+Requests/sec:  12445.23
+Transfer/sec:     16.82MB
+
+---------------------------------------------------------
+ Running Warmup plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.99ms   15.28ms 935.67ms   99.79%
+    Req/Sec     2.35k   267.09     3.45k    80.71%
+  276008 requests in 15.00s, 372.99MB read
+Requests/sec:  18402.86
+Transfer/sec:     24.87MB
+
+---------------------------------------------------------
+ Concurrency: 8 for plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   627.84us  194.89us  10.86ms   97.62%
+    Req/Sec     1.67k   103.66     2.00k    64.55%
+  189866 requests in 15.00s, 256.58MB read
+Requests/sec:  12657.74
+Transfer/sec:     17.11MB
+
+---------------------------------------------------------
+ Concurrency: 16 for plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.86ms  275.46us  11.29ms   85.38%
+    Req/Sec     2.45k   179.30     3.11k    75.55%
+  277852 requests in 15.00s, 375.48MB read
+Requests/sec:  18523.67
+Transfer/sec:     25.03MB
+
+---------------------------------------------------------
+ Concurrency: 32 for plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.75ms  752.46us  13.10ms   69.82%
+    Req/Sec     2.45k   353.71     3.78k    70.10%
+  279084 requests in 15.00s, 377.14MB read
+Requests/sec:  18605.51
+Transfer/sec:     25.14MB
+
+---------------------------------------------------------
+ Concurrency: 64 for plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.48ms    1.69ms  16.85ms   59.65%
+    Req/Sec     2.44k   277.38     3.33k    73.32%
+  278571 requests in 15.00s, 376.45MB read
+Requests/sec:  18572.30
+Transfer/sec:     25.10MB
+
+---------------------------------------------------------
+ Concurrency: 128 for plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.92ms    3.68ms  24.76ms   58.59%
+    Req/Sec     2.38k   196.90     3.12k    71.41%
+  277686 requests in 15.00s, 375.25MB read
+Requests/sec:  18512.17
+Transfer/sec:     25.02MB
+
+---------------------------------------------------------
+ Concurrency: 256 for plain
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:9080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.28ms   26.89ms   1.46s    99.94%
+    Req/Sec     2.37k   284.41     4.10k    80.42%
+  276866 requests in 15.00s, 374.14MB read
+Requests/sec:  18458.13
+Transfer/sec:     24.94MB

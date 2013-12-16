@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 21:55:25 PST 2013
+
+  System load:  0.04               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    77.79ms   93.83ms 406.05ms   92.40%
+    Req/Sec    17.42      8.96    38.00     58.19%
+  753 requests in 6.00s, 308.85KB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    125.49
+Transfer/sec:     51.47KB
+
+---------------------------------------------------------
+ Running Warmup phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.25s   152.56ms   1.57s    78.74%
+    Req/Sec    24.86     10.53    54.00     80.00%
+  2993 requests in 15.27s, 1.20MB read
+  Socket errors: connect 0, read 0, write 0, timeout 12
+Requests/sec:    196.02
+Transfer/sec:     80.40KB
+
+---------------------------------------------------------
+ Concurrency: 8 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   869.82ms    1.38s    3.42s    77.86%
+    Req/Sec     6.44      7.11    21.00     77.10%
+  869 requests in 16.00s, 356.40KB read
+  Socket errors: connect 0, read 0, write 0, timeout 22
+Requests/sec:     54.31
+Transfer/sec:     22.27KB
+
+---------------------------------------------------------
+ Concurrency: 16 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.66s     1.94s    4.06s    60.80%
+    Req/Sec    11.87     10.92    34.00     38.69%
+  1495 requests in 15.16s, 613.12KB read
+  Socket errors: connect 0, read 0, write 0, timeout 23
+Requests/sec:     98.64
+Transfer/sec:     40.45KB
+
+---------------------------------------------------------
+ Concurrency: 32 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   238.16ms  605.58ms   3.43s    96.67%
+    Req/Sec    17.13      5.62    25.00     46.67%
+  1919 requests in 15.10s, 787.09KB read
+  Socket errors: connect 0, read 0, write 0, timeout 32
+Requests/sec:    127.05
+Transfer/sec:     52.11KB
+
+---------------------------------------------------------
+ Concurrency: 64 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   193.76ms  234.57ms   1.20s    92.51%
+    Req/Sec    53.27     21.32   100.00     70.59%
+  6406 requests in 15.01s, 2.57MB read
+  Socket errors: connect 0, read 0, write 0, timeout 13
+Requests/sec:    426.86
+Transfer/sec:    175.06KB
+
+---------------------------------------------------------
+ Concurrency: 128 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05s     2.05s    6.26s    82.29%
+    Req/Sec    37.08     29.74    79.00     37.50%
+  3518 requests in 15.48s, 1.41MB read
+  Socket errors: connect 0, read 0, write 0, timeout 390
+Requests/sec:    227.28
+Transfer/sec:     93.22KB
+
+---------------------------------------------------------
+ Concurrency: 256 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.78s     2.07s    4.98s    75.39%
+    Req/Sec    51.90     92.34   436.00     78.38%
+  6573 requests in 16.00s, 2.63MB read
+  Socket errors: connect 0, read 0, write 0, timeout 787
+Requests/sec:    410.76
+Transfer/sec:    168.47KB

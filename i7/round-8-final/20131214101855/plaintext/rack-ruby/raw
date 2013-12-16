@@ -1,0 +1,108 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 00:12:58 PST 2013
+
+  System load:  0.94               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   290.94us  271.85us   6.92ms   99.61%
+    Req/Sec     3.63k   448.02     4.78k    83.55%
+  137300 requests in 5.00s, 25.40MB read
+Requests/sec:  27461.71
+Transfer/sec:      5.08MB
+
+---------------------------------------------------------
+ Running Warmup rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.97ms    2.71ms  38.23ms   79.85%
+    Req/Sec    11.53k     2.21k   23.33k    71.48%
+  1327345 requests in 15.00s, 291.03MB read
+  Non-2xx or 3xx responses: 372859
+Requests/sec:  88490.24
+Transfer/sec:     19.40MB
+
+---------------------------------------------------------
+ Concurrency: 256 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    48.15ms   19.45ms 113.79ms   62.66%
+    Req/Sec    10.62k   845.05    13.89k    70.45%
+  1268072 requests in 15.00s, 262.33MB read
+  Non-2xx or 3xx responses: 227614
+Requests/sec:  84556.51
+Transfer/sec:     17.49MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   175.91ms  927.07ms  13.43s    99.43%
+    Req/Sec    15.97k     2.62k   20.00k    79.85%
+  1921586 requests in 15.00s, 494.81MB read
+  Socket errors: connect 0, read 82, write 0, timeout 172
+  Non-2xx or 3xx responses: 1141838
+Requests/sec: 128101.77
+Transfer/sec:     32.99MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   180.65ms  789.02ms  14.37s    98.99%
+    Req/Sec    17.94k     8.43k   41.34k    63.16%
+  1878209 requests in 15.00s, 480.17MB read
+  Socket errors: connect 0, read 671, write 0, timeout 16346
+  Non-2xx or 3xx responses: 1087630
+Requests/sec: 125186.27
+Transfer/sec:     32.00MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.37s     7.19s   14.84s    57.60%
+    Req/Sec    14.55k     5.44k   58.20k    86.03%
+  1910078 requests in 15.01s, 491.88MB read
+  Socket errors: connect 11, read 2025, write 0, timeout 88198
+  Non-2xx or 3xx responses: 1135225
+Requests/sec: 127240.96
+Transfer/sec:     32.77MB

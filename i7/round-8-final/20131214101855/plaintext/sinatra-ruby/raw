@@ -1,0 +1,108 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 04:00:01 PST 2013
+
+  System load:  1.38               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer sinatra-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.02ms    4.83ms  21.51ms   92.90%
+    Req/Sec     1.33k   497.84     2.00k    79.29%
+  50307 requests in 5.00s, 10.70MB read
+Requests/sec:  10061.71
+Transfer/sec:      2.14MB
+
+---------------------------------------------------------
+ Running Warmup sinatra-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.72ms   14.47ms 673.36ms   97.97%
+    Req/Sec    21.61k     4.84k   40.89k    69.42%
+  2438627 requests in 15.00s, 744.92MB read
+  Non-2xx or 3xx responses: 2398072
+Requests/sec: 162611.51
+Transfer/sec:     49.67MB
+
+---------------------------------------------------------
+ Concurrency: 256 for sinatra-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.08ms   25.36ms 159.42ms   85.01%
+    Req/Sec    25.65k     3.14k   35.21k    66.63%
+  3058593 requests in 15.00s, 0.91GB read
+  Non-2xx or 3xx responses: 2993490
+Requests/sec: 203918.14
+Transfer/sec:     62.20MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for sinatra-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    55.56ms  445.04ms  13.25s    99.47%
+    Req/Sec    25.60k     6.22k   39.43k    74.56%
+  3057939 requests in 15.00s, 0.91GB read
+  Socket errors: connect 0, read 23, write 0, timeout 1262
+  Non-2xx or 3xx responses: 2991800
+Requests/sec: 203859.77
+Transfer/sec:     62.18MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for sinatra-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    84.28ms  417.60ms  14.15s    97.35%
+    Req/Sec    36.52k     8.14k   60.62k    69.92%
+  4273103 requests in 15.00s, 1.28GB read
+  Socket errors: connect 0, read 1295, write 0, timeout 13391
+  Non-2xx or 3xx responses: 4273103
+Requests/sec: 284810.61
+Transfer/sec:     87.45MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for sinatra-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.05s     6.83s   14.61s    63.61%
+    Req/Sec    35.71k     6.47k   65.83k    69.90%
+  4230060 requests in 15.02s, 1.27GB read
+  Socket errors: connect 11, read 5630, write 0, timeout 82328
+  Non-2xx or 3xx responses: 4230060
+Requests/sec: 281674.70
+Transfer/sec:     86.49MB

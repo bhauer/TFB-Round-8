@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 05:15:39 PST 2013
+
+  System load:  0.29               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.10ms    3.31ms  17.18ms   93.08%
+    Req/Sec   757.07    249.44     1.22k    82.39%
+  27900 requests in 5.01s, 50.61MB read
+Requests/sec:   5571.70
+Transfer/sec:     10.11MB
+
+---------------------------------------------------------
+ Running Warmup stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.69ms   74.83ms   1.23s    95.44%
+    Req/Sec     1.18k   215.10     1.98k    68.74%
+  140594 requests in 15.00s, 255.02MB read
+Requests/sec:   9373.34
+Transfer/sec:     17.00MB
+
+---------------------------------------------------------
+ Concurrency: 8 for stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.85ms    2.94ms  17.55ms   94.72%
+    Req/Sec   796.92    240.75     1.33k    81.27%
+  90870 requests in 15.00s, 164.82MB read
+Requests/sec:   6057.80
+Transfer/sec:     10.99MB
+
+---------------------------------------------------------
+ Concurrency: 16 for stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.76ms    3.66ms  24.39ms   93.26%
+    Req/Sec     0.94k   306.73     2.00k    74.25%
+  106704 requests in 15.00s, 193.54MB read
+Requests/sec:   7112.93
+Transfer/sec:     12.90MB
+
+---------------------------------------------------------
+ Concurrency: 32 for stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.41ms    4.90ms  56.23ms   88.13%
+    Req/Sec     1.00k   241.57     1.95k    69.83%
+  116566 requests in 15.00s, 211.43MB read
+Requests/sec:   7770.32
+Transfer/sec:     14.09MB
+
+---------------------------------------------------------
+ Concurrency: 64 for stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.75ms    8.81ms 104.21ms   87.49%
+    Req/Sec     1.06k   203.57     1.93k    69.34%
+  125196 requests in 15.00s, 227.09MB read
+Requests/sec:   8346.86
+Transfer/sec:     15.14MB
+
+---------------------------------------------------------
+ Concurrency: 128 for stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.67ms   23.84ms 318.58ms   93.02%
+    Req/Sec     1.12k   194.09     1.91k    69.72%
+  133484 requests in 15.00s, 242.12MB read
+Requests/sec:   8898.24
+Transfer/sec:     16.14MB
+
+---------------------------------------------------------
+ Concurrency: 256 for stream-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.81ms   66.19ms 955.45ms   94.61%
+    Req/Sec     1.17k   195.75     1.81k    69.46%
+  139720 requests in 15.00s, 253.43MB read
+Requests/sec:   9314.55
+Transfer/sec:     16.90MB

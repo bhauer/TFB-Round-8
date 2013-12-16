@@ -1,0 +1,108 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 03:39:18 PST 2013
+
+  System load:  0.04               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer silex-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.21ms    1.36ms  14.37ms   74.15%
+    Req/Sec   344.11     91.02   666.00     62.94%
+  13041 requests in 5.00s, 3.02MB read
+Requests/sec:   2606.99
+Transfer/sec:    618.53KB
+
+---------------------------------------------------------
+ Running Warmup silex-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    88.17ms  139.84ms   3.22s    94.02%
+    Req/Sec   356.07     47.54   500.00     75.53%
+  42686 requests in 15.00s, 9.89MB read
+  Socket errors: connect 0, read 0, write 0, timeout 7
+Requests/sec:   2844.81
+Transfer/sec:    675.00KB
+
+---------------------------------------------------------
+ Concurrency: 256 for silex-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.44s   484.18ms   3.74s    74.20%
+    Req/Sec   362.66     25.36   489.00     77.55%
+  43131 requests in 15.01s, 9.99MB read
+  Socket errors: connect 0, read 0, write 0, timeout 42
+Requests/sec:   2873.98
+Transfer/sec:    681.92KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for silex-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.48s     4.30s   14.78s    84.74%
+    Req/Sec   354.92     55.43   473.00     66.13%
+  43459 requests in 15.01s, 10.09MB read
+  Socket errors: connect 0, read 13, write 0, timeout 4468
+  Non-2xx or 3xx responses: 195
+Requests/sec:   2895.94
+Transfer/sec:    688.27KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for silex-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.88s     3.92s   14.91s    82.63%
+    Req/Sec   311.57     50.30   438.00     73.21%
+  37925 requests in 15.01s, 8.80MB read
+  Socket errors: connect 0, read 453076, write 0, timeout 22318
+  Non-2xx or 3xx responses: 105
+Requests/sec:   2527.43
+Transfer/sec:    600.36KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for silex-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.33s     2.87s   14.90s    91.77%
+    Req/Sec   297.49     53.55   457.00     84.62%
+  35794 requests in 15.01s, 8.31MB read
+  Socket errors: connect 11, read 605895, write 0, timeout 46240
+  Non-2xx or 3xx responses: 218
+Requests/sec:   2384.62
+Transfer/sec:    567.23KB

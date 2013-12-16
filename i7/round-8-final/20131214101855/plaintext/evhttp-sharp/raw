@@ -1,0 +1,102 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 14:26:04 PST 2013
+
+  System load:  0.81               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8085/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8085/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   247.39us   98.67us   4.10ms   88.20%
+    Req/Sec     4.16k   523.12     5.67k    63.45%
+  157483 requests in 5.00s, 20.13MB read
+Requests/sec:  31501.06
+Transfer/sec:      4.03MB
+
+---------------------------------------------------------
+ Running Warmup evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8085/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.47ms    1.23ms  13.52ms   69.47%
+    Req/Sec    13.72k     1.25k   19.11k    69.03%
+  1560200 requests in 15.00s, 199.38MB read
+Requests/sec: 104016.00
+Transfer/sec:     13.29MB
+
+---------------------------------------------------------
+ Concurrency: 256 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8085/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    44.42ms    4.65ms  67.87ms   89.29%
+    Req/Sec    11.58k   483.05    13.35k    69.91%
+  1378945 requests in 15.00s, 176.22MB read
+Requests/sec:  91929.89
+Transfer/sec:     11.75MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8085/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   151.46ms   46.61ms 312.33ms   69.43%
+    Req/Sec    13.47k   646.44    16.54k    76.64%
+  1612411 requests in 15.00s, 206.05MB read
+Requests/sec: 107495.60
+Transfer/sec:     13.74MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8085/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   624.15ms  134.51ms   1.57s    68.62%
+    Req/Sec    12.86k     0.97k   15.70k    92.59%
+  1541854 requests in 15.00s, 197.04MB read
+  Socket errors: connect 0, read 0, write 0, timeout 66
+Requests/sec: 102771.55
+Transfer/sec:     13.13MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for evhttp-sharp
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8085/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8085/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.62s   825.69ms   5.16s    83.80%
+    Req/Sec    12.38k   743.61    17.50k    87.78%
+  1481601 requests in 15.01s, 189.34MB read
+  Socket errors: connect 11, read 0, write 0, timeout 26669
+Requests/sec:  98686.08
+Transfer/sec:     12.61MB

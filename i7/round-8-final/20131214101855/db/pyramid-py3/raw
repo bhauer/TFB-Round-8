@@ -1,0 +1,138 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 23:53:41 PST 2013
+
+  System load:  0.27               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:6543/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.39ms    2.12ms  52.20ms   99.19%
+    Req/Sec   440.07     75.49   666.00     71.95%
+  16596 requests in 5.00s, 3.04MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:   3318.26
+Transfer/sec:    621.50KB
+
+---------------------------------------------------------
+ Running Warmup pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.98ms  217.23ms  13.64s    99.88%
+    Req/Sec   508.96     82.33   716.00     73.53%
+  57566 requests in 15.00s, 10.53MB read
+  Socket errors: connect 0, read 0, write 0, timeout 321
+  Non-2xx or 3xx responses: 4
+Requests/sec:   3838.02
+Transfer/sec:    718.83KB
+
+---------------------------------------------------------
+ Concurrency: 8 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  24524 requests in 15.00s, 4.49MB read
+  Socket errors: connect 0, read 0, write 0, timeout 24
+Requests/sec:   1634.79
+Transfer/sec:    306.18KB
+
+---------------------------------------------------------
+ Concurrency: 16 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.49ms    3.59ms  46.28ms   91.39%
+    Req/Sec   482.22    132.00     0.91k    66.97%
+  55443 requests in 15.00s, 10.14MB read
+  Non-2xx or 3xx responses: 4
+Requests/sec:   3695.83
+Transfer/sec:    692.20KB
+
+---------------------------------------------------------
+ Concurrency: 32 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.31ms    2.44ms  22.02ms   78.13%
+    Req/Sec   490.76     55.52   680.00     68.08%
+  57600 requests in 15.00s, 10.54MB read
+  Non-2xx or 3xx responses: 6
+Requests/sec:   3839.38
+Transfer/sec:    719.10KB
+
+---------------------------------------------------------
+ Concurrency: 64 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.57ms    2.35ms  29.51ms   76.84%
+    Req/Sec   485.36     34.44   611.00     67.22%
+  57488 requests in 15.00s, 10.51MB read
+  Non-2xx or 3xx responses: 6
+Requests/sec:   3832.12
+Transfer/sec:    717.73KB
+
+---------------------------------------------------------
+ Concurrency: 128 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    33.42ms    2.93ms 151.47ms   84.60%
+    Req/Sec   480.75     20.38   542.00     68.35%
+  57327 requests in 15.01s, 10.49MB read
+  Non-2xx or 3xx responses: 12
+Requests/sec:   3819.95
+Transfer/sec:    715.48KB
+
+---------------------------------------------------------
+ Concurrency: 256 for pyramid-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.81ms  323.50ms  13.92s    99.82%
+    Req/Sec   482.78    128.17   833.00     70.93%
+  57480 requests in 15.00s, 10.51MB read
+  Socket errors: connect 0, read 0, write 0, timeout 260
+  Non-2xx or 3xx responses: 5
+Requests/sec:   3831.33
+Transfer/sec:    717.59KB

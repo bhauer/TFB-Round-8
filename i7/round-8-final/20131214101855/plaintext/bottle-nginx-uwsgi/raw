@@ -1,0 +1,108 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 11:39:40 PST 2013
+
+  System load:  1.1                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   328.51us   66.60us 641.00us   67.43%
+    Req/Sec     3.15k   192.19     3.89k    72.89%
+  117889 requests in 5.00s, 17.98MB read
+Requests/sec:  23578.89
+Transfer/sec:      3.60MB
+
+---------------------------------------------------------
+ Running Warmup bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.43ms    2.50ms  74.01ms   74.36%
+    Req/Sec     9.74k     1.34k   20.67k    75.99%
+  1109552 requests in 15.00s, 187.53MB read
+  Non-2xx or 3xx responses: 114098
+Requests/sec:  73974.23
+Transfer/sec:     12.50MB
+
+---------------------------------------------------------
+ Concurrency: 256 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.38ms   19.21ms 127.64ms   68.35%
+    Req/Sec    13.22k     1.83k   18.54k    67.60%
+  1565864 requests in 15.00s, 348.77MB read
+  Non-2xx or 3xx responses: 685999
+Requests/sec: 104388.05
+Transfer/sec:     23.25MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   116.83ms  255.69ms   6.87s    98.85%
+    Req/Sec    15.48k     3.03k   22.78k    72.43%
+  1752958 requests in 15.00s, 427.40MB read
+  Socket errors: connect 0, read 33, write 0, timeout 634
+  Non-2xx or 3xx responses: 998663
+Requests/sec: 116865.86
+Transfer/sec:     28.49MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   141.22ms  354.81ms  13.81s    98.54%
+    Req/Sec    15.94k     7.43k   50.40k    57.97%
+  1645917 requests in 15.00s, 389.58MB read
+  Socket errors: connect 0, read 821, write 0, timeout 17079
+  Non-2xx or 3xx responses: 864521
+Requests/sec: 109706.25
+Transfer/sec:     25.97MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for bottle-nginx-uwsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   786.79ms    2.89s   14.96s    95.33%
+    Req/Sec    14.32k     6.49k   54.78k    80.23%
+  1636683 requests in 15.01s, 384.53MB read
+  Socket errors: connect 11, read 2868, write 0, timeout 88822
+  Non-2xx or 3xx responses: 841808
+Requests/sec: 109020.41
+Transfer/sec:     25.61MB

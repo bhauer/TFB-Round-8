@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 02:46:41 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.74ms    6.45ms  30.09ms   94.44%
+    Req/Sec   111.52    190.43   600.00     76.31%
+  3942 requests in 6.00s, 5.38MB read
+  Socket errors: connect 0, read 0, write 0, timeout 12
+  Non-2xx or 3xx responses: 103
+Requests/sec:    656.98
+Transfer/sec:      0.90MB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   783.06ms  520.38ms   1.42s    56.81%
+    Req/Sec   113.42    176.44   703.00     74.02%
+  15605 requests in 16.00s, 17.09MB read
+  Socket errors: connect 0, read 58, write 0, timeout 1642
+  Non-2xx or 3xx responses: 4300
+Requests/sec:    975.02
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.00ms    2.81ms  50.86ms   69.32%
+    Req/Sec    57.26    143.73   666.00     86.12%
+  6253 requests in 16.01s, 8.57MB read
+  Socket errors: connect 0, read 1, write 0, timeout 50
+  Non-2xx or 3xx responses: 122
+Requests/sec:    390.66
+Transfer/sec:    548.58KB
+
+---------------------------------------------------------
+ Concurrency: 16 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.30ms   20.51ms  71.21ms   89.48%
+    Req/Sec    63.73    154.46   636.00     85.10%
+  8205 requests in 16.00s, 11.03MB read
+  Socket errors: connect 0, read 3, write 0, timeout 103
+  Non-2xx or 3xx responses: 362
+Requests/sec:    512.77
+Transfer/sec:    706.13KB
+
+---------------------------------------------------------
+ Concurrency: 32 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.77ms    2.98ms   7.45ms   51.59%
+    Req/Sec     4.68     43.94   518.00     98.82%
+  1907 requests in 16.00s, 1.90MB read
+  Socket errors: connect 0, read 6, write 0, timeout 224
+  Non-2xx or 3xx responses: 702
+Requests/sec:    119.17
+Transfer/sec:    121.32KB
+
+---------------------------------------------------------
+ Concurrency: 64 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.40ms   12.29ms  42.58ms   60.02%
+    Req/Sec    56.16    142.06   779.00     86.41%
+  8241 requests in 16.00s, 10.29MB read
+  Socket errors: connect 0, read 22, write 0, timeout 434
+  Non-2xx or 3xx responses: 1085
+Requests/sec:    515.06
+Transfer/sec:    658.85KB
+
+---------------------------------------------------------
+ Concurrency: 128 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   956.46ms    2.65s    9.17s    90.59%
+    Req/Sec    78.93    160.37   802.00     81.55%
+  11593 requests in 16.00s, 13.85MB read
+  Socket errors: connect 0, read 45, write 0, timeout 871
+  Non-2xx or 3xx responses: 2097
+Requests/sec:    724.47
+Transfer/sec:      0.87MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/mysql/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mysql/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   705.66ms  492.46ms   1.06s    66.16%
+    Req/Sec   117.35    171.85   588.00     74.04%
+  14073 requests in 16.00s, 15.45MB read
+  Socket errors: connect 0, read 62, write 0, timeout 1655
+  Non-2xx or 3xx responses: 3823
+Requests/sec:    879.31
+Transfer/sec:      0.97MB

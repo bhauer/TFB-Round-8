@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 10:57:48 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   310.59ms  510.77ms   1.16s    73.50%
+    Req/Sec   234.95    277.29   700.00     73.29%
+  5658 requests in 6.00s, 1.73MB read
+  Socket errors: connect 0, read 0, write 0, timeout 10
+  Non-2xx or 3xx responses: 17
+Requests/sec:    942.42
+Transfer/sec:    295.64KB
+
+---------------------------------------------------------
+ Running Warmup aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.35s     1.12s    3.00s    49.34%
+    Req/Sec   137.67    209.52     1.16k    80.82%
+  18145 requests in 16.00s, 5.61MB read
+  Socket errors: connect 0, read 140, write 0, timeout 1586
+  Non-2xx or 3xx responses: 1700
+Requests/sec:   1133.78
+Transfer/sec:    358.89KB
+
+---------------------------------------------------------
+ Concurrency: 8 for aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.49ms  125.71ms   1.00s    98.39%
+    Req/Sec    71.25    191.38   777.00     87.63%
+  9239 requests in 16.00s, 2.83MB read
+  Socket errors: connect 0, read 5, write 0, timeout 49
+  Non-2xx or 3xx responses: 62
+Requests/sec:    577.38
+Transfer/sec:    181.06KB
+
+---------------------------------------------------------
+ Concurrency: 16 for aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.22ms   96.28ms 998.97ms   99.06%
+    Req/Sec    77.97    199.48   777.00     86.53%
+  9009 requests in 16.00s, 2.76MB read
+  Socket errors: connect 0, read 5, write 0, timeout 104
+  Non-2xx or 3xx responses: 57
+Requests/sec:    563.00
+Transfer/sec:    176.70KB
+
+---------------------------------------------------------
+ Concurrency: 32 for aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   130.41ms  327.71ms 998.61ms   87.55%
+    Req/Sec   101.25    223.20     1.28k    82.52%
+  10351 requests in 16.00s, 3.18MB read
+  Socket errors: connect 0, read 8, write 0, timeout 213
+  Non-2xx or 3xx responses: 142
+Requests/sec:    646.82
+Transfer/sec:    203.18KB
+
+---------------------------------------------------------
+ Concurrency: 64 for aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    55.25ms   44.75ms 103.86ms   36.38%
+    Req/Sec    72.84    191.61     1.16k    87.36%
+  10101 requests in 16.00s, 3.10MB read
+  Socket errors: connect 0, read 27, write 0, timeout 436
+  Non-2xx or 3xx responses: 294
+Requests/sec:    631.25
+Transfer/sec:    198.67KB
+
+---------------------------------------------------------
+ Concurrency: 128 for aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   288.81ms  142.34ms 398.98ms   80.59%
+    Req/Sec    87.98    190.47     0.91k    83.69%
+  12295 requests in 16.00s, 3.79MB read
+  Socket errors: connect 0, read 50, write 0, timeout 877
+  Non-2xx or 3xx responses: 878
+Requests/sec:    768.28
+Transfer/sec:    242.69KB
+
+---------------------------------------------------------
+ Concurrency: 256 for aspnet-mono-servicestack
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/json/servicestack
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json/servicestack
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   804.13ms  425.22ms   1.08s    77.37%
+    Req/Sec    91.39    183.14   752.00     82.64%
+  14339 requests in 16.00s, 4.44MB read
+  Socket errors: connect 0, read 148, write 0, timeout 1679
+  Non-2xx or 3xx responses: 1767
+Requests/sec:    896.08
+Transfer/sec:    283.94KB

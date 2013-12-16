@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 03:13:40 PST 2013
+
+  System load:  0.04               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   583.58us    1.90ms  28.85ms   99.32%
+    Req/Sec     2.41k   390.30     3.22k    84.50%
+  87436 requests in 5.00s, 13.57MB read
+Requests/sec:  17488.58
+Transfer/sec:      2.71MB
+
+---------------------------------------------------------
+ Running Warmup servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    60.27ms  450.86ms   4.11s    98.42%
+    Req/Sec     6.40k     2.78k   19.33k    70.54%
+  733163 requests in 15.00s, 113.82MB read
+  Socket errors: connect 0, read 0, write 0, timeout 16
+Requests/sec:  48879.98
+Transfer/sec:      7.59MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   459.74us  542.04us  13.24ms   99.81%
+    Req/Sec     2.37k   179.63     3.00k    85.43%
+  269147 requests in 15.00s, 41.78MB read
+Requests/sec:  17943.44
+Transfer/sec:      2.79MB
+
+---------------------------------------------------------
+ Concurrency: 16 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   543.07us    1.01ms  15.34ms   99.52%
+    Req/Sec     4.37k   444.80     5.33k    89.90%
+  496294 requests in 15.00s, 77.04MB read
+Requests/sec:  33087.73
+Transfer/sec:      5.14MB
+
+---------------------------------------------------------
+ Concurrency: 32 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   690.36us    2.35ms  28.22ms   98.94%
+    Req/Sec     9.06k     1.50k   12.33k    84.74%
+  1027801 requests in 15.00s, 159.55MB read
+Requests/sec:  68521.58
+Transfer/sec:     10.64MB
+
+---------------------------------------------------------
+ Concurrency: 64 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.23ms    4.67ms  38.78ms   98.13%
+    Req/Sec    13.18k     2.66k   19.33k    87.91%
+  1493421 requests in 15.00s, 231.84MB read
+Requests/sec:  99563.40
+Transfer/sec:     15.46MB
+
+---------------------------------------------------------
+ Concurrency: 128 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.37ms    7.60ms  60.54ms   97.42%
+    Req/Sec    13.04k     2.71k   22.89k    88.94%
+  1481325 requests in 15.00s, 229.96MB read
+Requests/sec:  98767.03
+Transfer/sec:     15.33MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/servlet/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.22ms   29.19ms 206.12ms   97.46%
+    Req/Sec    11.87k     2.84k   24.67k    83.62%
+  1349906 requests in 15.00s, 209.56MB read
+Requests/sec:  89995.04
+Transfer/sec:     13.97MB

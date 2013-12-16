@@ -1,0 +1,139 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 05:46:55 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.07ms   11.33ms  48.39ms   81.36%
+    Req/Sec    91.51     24.61   181.00     70.85%
+  3586 requests in 5.01s, 1.00MB read
+  Non-2xx or 3xx responses: 1782
+Requests/sec:    716.14
+Transfer/sec:    205.36KB
+
+---------------------------------------------------------
+ Running Warmup symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   367.47ms  374.57ms   2.36s    85.11%
+    Req/Sec    88.94      8.87   112.00     74.70%
+  10824 requests in 15.03s, 3.03MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+  Non-2xx or 3xx responses: 5385
+Requests/sec:    720.28
+Transfer/sec:    206.60KB
+
+---------------------------------------------------------
+ Concurrency: 8 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.87ms   11.44ms  63.97ms   81.93%
+    Req/Sec    92.60     28.15   181.00     69.63%
+  11042 requests in 15.01s, 3.09MB read
+  Non-2xx or 3xx responses: 5487
+Requests/sec:    735.69
+Transfer/sec:    210.96KB
+
+---------------------------------------------------------
+ Concurrency: 16 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.25ms   33.30ms 312.63ms   57.54%
+    Req/Sec    64.70     29.69   159.00     65.31%
+  7904 requests in 15.01s, 3.45MB read
+  Non-2xx or 3xx responses: 5727
+Requests/sec:    526.59
+Transfer/sec:    235.04KB
+
+---------------------------------------------------------
+ Concurrency: 32 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    78.29ms   97.84ms 930.88ms   87.61%
+    Req/Sec    68.28     31.13   176.00     71.15%
+  8330 requests in 15.05s, 3.32MB read
+  Non-2xx or 3xx responses: 5759
+Requests/sec:    553.44
+Transfer/sec:    226.11KB
+
+---------------------------------------------------------
+ Concurrency: 64 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   127.01ms  174.68ms   2.37s    88.57%
+    Req/Sec    68.56     29.49   166.00     73.54%
+  8245 requests in 15.02s, 3.30MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+  Non-2xx or 3xx responses: 5815
+Requests/sec:    549.09
+Transfer/sec:    224.78KB
+
+---------------------------------------------------------
+ Concurrency: 128 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   297.82ms  300.29ms   1.87s    84.66%
+    Req/Sec    58.37     21.17   127.00     77.84%
+  7151 requests in 15.06s, 3.24MB read
+  Non-2xx or 3xx responses: 5603
+Requests/sec:    474.73
+Transfer/sec:    220.45KB
+
+---------------------------------------------------------
+ Concurrency: 256 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/db-raw
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db-raw
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   469.81ms  480.24ms   2.10s    83.39%
+    Req/Sec    71.10     24.79   108.00     59.35%
+  8313 requests in 15.04s, 3.25MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+  Non-2xx or 3xx responses: 5651
+Requests/sec:    552.75
+Transfer/sec:    221.07KB

@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 02:26:10 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   929.20ms  603.05ms   1.45s    70.61%
+    Req/Sec   116.32    225.76   818.00     80.07%
+  4988 requests in 6.00s, 1.32MB read
+  Socket errors: connect 0, read 1, write 0, timeout 11
+  Non-2xx or 3xx responses: 38
+Requests/sec:    831.07
+Transfer/sec:    225.25KB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   758.51ms  541.85ms   1.58s    56.89%
+    Req/Sec   162.57    244.37     1.12k    77.71%
+  21870 requests in 16.00s, 5.99MB read
+  Socket errors: connect 0, read 134, write 0, timeout 1584
+  Non-2xx or 3xx responses: 3320
+Requests/sec:   1366.86
+Transfer/sec:    383.08KB
+
+---------------------------------------------------------
+ Concurrency: 8 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.54ms   99.57ms 998.21ms   99.09%
+    Req/Sec    78.28    211.75     0.89k    87.75%
+  9737 requests in 16.00s, 2.57MB read
+  Socket errors: connect 0, read 0, write 0, timeout 48
+  Non-2xx or 3xx responses: 35
+Requests/sec:    608.53
+Transfer/sec:    164.78KB
+
+---------------------------------------------------------
+ Concurrency: 16 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   308.07us    2.10ms  53.50ms   99.08%
+    Req/Sec   109.90    293.25     1.78k    86.30%
+  11747 requests in 16.00s, 3.11MB read
+  Socket errors: connect 0, read 5, write 0, timeout 103
+  Non-2xx or 3xx responses: 139
+Requests/sec:    734.13
+Transfer/sec:    199.16KB
+
+---------------------------------------------------------
+ Concurrency: 32 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    77.63ms   43.15ms 107.38ms   76.17%
+    Req/Sec    83.14    212.03     1.20k    86.65%
+  10320 requests in 16.00s, 2.75MB read
+  Socket errors: connect 0, read 18, write 0, timeout 214
+  Non-2xx or 3xx responses: 375
+Requests/sec:    644.96
+Transfer/sec:    175.93KB
+
+---------------------------------------------------------
+ Concurrency: 64 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.56ms    6.35ms  22.61ms   61.95%
+    Req/Sec    86.08    212.20     1.00k    85.86%
+  11177 requests in 16.00s, 2.99MB read
+  Socket errors: connect 0, read 29, write 0, timeout 434
+  Non-2xx or 3xx responses: 570
+Requests/sec:    698.54
+Transfer/sec:    191.66KB
+
+---------------------------------------------------------
+ Concurrency: 128 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    85.77ms   43.75ms 117.66ms   78.97%
+    Req/Sec   111.25    226.71     0.93k    82.12%
+  14700 requests in 16.00s, 3.96MB read
+  Socket errors: connect 0, read 78, write 0, timeout 874
+  Non-2xx or 3xx responses: 1342
+Requests/sec:    918.71
+Transfer/sec:    253.43KB
+
+---------------------------------------------------------
+ Concurrency: 256 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   671.54ms  476.07ms   1.04s    63.21%
+    Req/Sec   129.20    235.58     0.87k    79.81%
+  16989 requests in 16.00s, 4.66MB read
+  Socket errors: connect 0, read 137, write 0, timeout 1706
+  Non-2xx or 3xx responses: 2690
+Requests/sec:   1061.56
+Transfer/sec:    298.02KB

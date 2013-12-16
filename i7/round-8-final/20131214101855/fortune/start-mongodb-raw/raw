@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 04:51:57 PST 2013
+
+  System load:  1.15               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   277.22us  105.75us   1.67ms   73.60%
+    Req/Sec     3.76k   434.69     5.55k    67.43%
+  139758 requests in 5.00s, 43.98MB read
+  Non-2xx or 3xx responses: 139758
+Requests/sec:  27953.20
+Transfer/sec:      8.80MB
+
+---------------------------------------------------------
+ Running Warmup start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.45ms    1.58ms  35.58ms   78.46%
+    Req/Sec     9.66k   785.23    22.36k    73.95%
+  1105053 requests in 15.00s, 347.72MB read
+  Non-2xx or 3xx responses: 1105053
+Requests/sec:  73688.32
+Transfer/sec:     23.19MB
+
+---------------------------------------------------------
+ Concurrency: 8 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   272.52us  103.82us   1.85ms   75.00%
+    Req/Sec     3.81k   429.96     5.89k    73.09%
+  431947 requests in 15.00s, 135.92MB read
+  Non-2xx or 3xx responses: 431947
+Requests/sec:  28797.19
+Transfer/sec:      9.06MB
+
+---------------------------------------------------------
+ Concurrency: 16 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   301.45us  133.71us   3.20ms   78.50%
+    Req/Sec     6.89k   775.91    10.22k    69.17%
+  778161 requests in 15.00s, 244.86MB read
+  Non-2xx or 3xx responses: 778161
+Requests/sec:  51878.55
+Transfer/sec:     16.32MB
+
+---------------------------------------------------------
+ Concurrency: 32 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   418.28us  236.81us   4.92ms   84.49%
+    Req/Sec    10.03k     1.35k   14.44k    70.14%
+  1116589 requests in 15.00s, 351.35MB read
+  Non-2xx or 3xx responses: 1116589
+Requests/sec:  74442.92
+Transfer/sec:     23.42MB
+
+---------------------------------------------------------
+ Concurrency: 64 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.89ms  742.73us  15.79ms   93.06%
+    Req/Sec    10.58k     2.34k   16.33k    82.79%
+  1171249 requests in 15.00s, 368.55MB read
+  Non-2xx or 3xx responses: 1171249
+Requests/sec:  78088.66
+Transfer/sec:     24.57MB
+
+---------------------------------------------------------
+ Concurrency: 128 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.88ms    1.45ms  17.59ms   92.19%
+    Req/Sec     9.81k     2.00k   14.28k    88.51%
+  1115042 requests in 15.00s, 350.86MB read
+  Non-2xx or 3xx responses: 1115042
+Requests/sec:  74340.13
+Transfer/sec:     23.39MB
+
+---------------------------------------------------------
+ Concurrency: 256 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes-mongo
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.37ms    4.00ms  32.07ms   92.25%
+    Req/Sec     9.05k     2.97k   43.56k    92.17%
+  1040852 requests in 15.00s, 327.52MB read
+  Non-2xx or 3xx responses: 1040852
+Requests/sec:  69392.97
+Transfer/sec:     21.84MB

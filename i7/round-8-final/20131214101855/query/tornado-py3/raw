@@ -1,0 +1,127 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 06:36:18 PST 2013
+
+  System load:  0.1                Processes:           121
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 3%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.99ms  334.12us   4.24ms   77.89%
+    Req/Sec   529.62     68.89   777.00     60.92%
+  20083 requests in 5.00s, 4.24MB read
+  Non-2xx or 3xx responses: 8
+Requests/sec:   4016.16
+Transfer/sec:    869.02KB
+
+---------------------------------------------------------
+ Running Warmup tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   318.35ms  321.73ms 768.38ms   68.97%
+    Req/Sec   226.81    242.30   659.00     65.30%
+  30015 requests in 16.00s, 6.41MB read
+  Socket errors: connect 0, read 0, write 0, timeout 926
+  Non-2xx or 3xx responses: 2203
+Requests/sec:   1875.67
+Transfer/sec:    410.35KB
+
+---------------------------------------------------------
+ Queries: 1 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    99.00ms   75.77ms 162.28ms   63.61%
+    Req/Sec   212.77    335.23     0.98k    85.57%
+  21933 requests in 16.00s, 3.92MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1693
+  Non-2xx or 3xx responses: 589
+Requests/sec:   1370.67
+Transfer/sec:    251.17KB
+
+---------------------------------------------------------
+ Queries: 5 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    85.51ms   41.08ms 491.51ms   92.67%
+    Req/Sec   240.23     73.89   375.00     52.13%
+  28944 requests in 15.01s, 9.05MB read
+  Socket errors: connect 0, read 0, write 0, timeout 521
+  Non-2xx or 3xx responses: 795
+Requests/sec:   1928.43
+Transfer/sec:    617.43KB
+
+---------------------------------------------------------
+ Queries: 10 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   203.01ms  556.05ms   6.03s    99.09%
+    Req/Sec   141.26     43.28   214.00     65.61%
+  16717 requests in 15.06s, 7.63MB read
+  Socket errors: connect 0, read 0, write 0, timeout 397
+  Non-2xx or 3xx responses: 2006
+Requests/sec:   1110.32
+Transfer/sec:    518.70KB
+
+---------------------------------------------------------
+ Queries: 15 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   181.63ms  375.80ms   6.57s    99.56%
+    Req/Sec    66.71     41.23   155.00     68.22%
+  7920 requests in 15.07s, 4.43MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1034
+  Non-2xx or 3xx responses: 1859
+Requests/sec:    525.41
+Transfer/sec:    300.77KB
+
+---------------------------------------------------------
+ Queries: 20 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   412.04ms   88.43ms 503.06ms   86.99%
+    Req/Sec     1.77      6.29    38.00     92.47%
+  431 requests in 16.01s, 186.15KB read
+  Socket errors: connect 0, read 0, write 0, timeout 1871
+  Non-2xx or 3xx responses: 299
+Requests/sec:     26.93
+Transfer/sec:     11.63KB

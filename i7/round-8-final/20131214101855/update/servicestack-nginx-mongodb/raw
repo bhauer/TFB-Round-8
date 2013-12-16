@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Dec 15 02:38:35 PST 2013
+
+  System load:  0.0                Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/mongodb/updates/2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/mongodb/updates/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  11 requests in 6.00s, 50.85KB read
+  Socket errors: connect 0, read 1, write 0, timeout 18
+  Non-2xx or 3xx responses: 6
+Requests/sec:      1.83
+Transfer/sec:      8.47KB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mongodb/updates/2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mongodb/updates/2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   543.01ms  134.05ms 668.26ms   73.55%
+    Req/Sec     1.13      5.70    50.00     95.24%
+  314 requests in 16.01s, 1.54MB read
+  Socket errors: connect 0, read 6, write 0, timeout 1835
+  Non-2xx or 3xx responses: 172
+Requests/sec:     19.62
+Transfer/sec:     98.79KB
+
+---------------------------------------------------------
+ Queries: 1 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mongodb/updates/1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mongodb/updates/1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   731.63ms  233.91ms   1.09s    66.71%
+    Req/Sec     1.15      7.44    76.00     97.42%
+  309 requests in 16.01s, 1.48MB read
+  Socket errors: connect 0, read 2, write 0, timeout 1861
+  Non-2xx or 3xx responses: 165
+Requests/sec:     19.30
+Transfer/sec:     94.78KB
+
+---------------------------------------------------------
+ Queries: 5 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mongodb/updates/5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mongodb/updates/5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   463.22ms  130.18ms 604.40ms   74.08%
+    Req/Sec     1.34      6.44    48.00     95.21%
+  349 requests in 16.00s, 1.78MB read
+  Socket errors: connect 0, read 6, write 0, timeout 1860
+  Non-2xx or 3xx responses: 180
+Requests/sec:     21.81
+Transfer/sec:    114.16KB
+
+---------------------------------------------------------
+ Queries: 10 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mongodb/updates/10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mongodb/updates/10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    56.67ms   78.12ms 839.80ms   98.50%
+    Req/Sec     3.37     45.80     0.90k    99.33%
+  341 requests in 16.01s, 1.94MB read
+  Socket errors: connect 0, read 8, write 0, timeout 1844
+  Non-2xx or 3xx responses: 160
+Requests/sec:     21.30
+Transfer/sec:    123.82KB
+
+---------------------------------------------------------
+ Queries: 15 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mongodb/updates/15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mongodb/updates/15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   784.78ms  210.23ms 908.15ms   90.93%
+    Req/Sec     1.16      5.17    38.00     94.59%
+  332 requests in 16.01s, 1.90MB read
+  Socket errors: connect 0, read 3, write 0, timeout 1861
+  Non-2xx or 3xx responses: 152
+Requests/sec:     20.74
+Transfer/sec:    121.46KB
+
+---------------------------------------------------------
+ Queries: 20 for servicestack-nginx-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/mongodb/updates/20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/mongodb/updates/20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   920.46ms  311.43ms   1.19s    83.96%
+    Req/Sec     1.81      6.47    34.00     92.26%
+  360 requests in 16.01s, 2.15MB read
+  Socket errors: connect 0, read 9, write 0, timeout 1824
+  Non-2xx or 3xx responses: 167
+Requests/sec:     22.49
+Transfer/sec:    137.41KB

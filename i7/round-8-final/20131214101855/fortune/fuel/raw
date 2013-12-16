@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 16:40:32 PST 2013
+
+  System load:  0.04               Processes:           116
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+77 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.58ms    4.13ms  31.37ms   76.87%
+    Req/Sec    82.48     17.58   131.00     64.25%
+  3253 requests in 5.01s, 2.97MB read
+  Non-2xx or 3xx responses: 3253
+Requests/sec:    649.70
+Transfer/sec:    608.43KB
+
+---------------------------------------------------------
+ Running Warmup fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   299.97ms  170.95ms   1.32s    76.36%
+    Req/Sec   110.58     23.56   149.00     58.27%
+  13006 requests in 15.02s, 19.20MB read
+  Non-2xx or 3xx responses: 5035
+Requests/sec:    865.76
+Transfer/sec:      1.28MB
+
+---------------------------------------------------------
+ Concurrency: 8 for fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.99ms    6.50ms  86.55ms   93.21%
+    Req/Sec   101.10     31.29   200.00     67.08%
+  11990 requests in 15.01s, 17.72MB read
+  Non-2xx or 3xx responses: 4616
+Requests/sec:    799.01
+Transfer/sec:      1.18MB
+
+---------------------------------------------------------
+ Concurrency: 16 for fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.56ms    6.90ms  65.23ms   76.92%
+    Req/Sec   119.04     28.85   236.00     72.27%
+  14215 requests in 15.01s, 23.60MB read
+  Non-2xx or 3xx responses: 2648
+Requests/sec:    947.19
+Transfer/sec:      1.57MB
+
+---------------------------------------------------------
+ Concurrency: 32 for fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    45.39ms   22.93ms 199.44ms   72.33%
+    Req/Sec    91.86     22.72   172.00     69.57%
+  11157 requests in 15.01s, 11.44MB read
+  Non-2xx or 3xx responses: 9813
+Requests/sec:    743.35
+Transfer/sec:    780.17KB
+
+---------------------------------------------------------
+ Concurrency: 64 for fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    87.41ms   46.57ms 393.29ms   68.95%
+    Req/Sec    89.51      9.71   117.00     69.89%
+  10747 requests in 15.02s, 9.83MB read
+  Non-2xx or 3xx responses: 10747
+Requests/sec:    715.49
+Transfer/sec:    670.05KB
+
+---------------------------------------------------------
+ Concurrency: 128 for fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   144.39ms   80.78ms 505.41ms   71.69%
+    Req/Sec   111.09     23.24   159.00     59.04%
+  13174 requests in 15.02s, 19.23MB read
+  Non-2xx or 3xx responses: 5334
+Requests/sec:    876.90
+Transfer/sec:      1.28MB
+
+---------------------------------------------------------
+ Concurrency: 256 for fuel
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   315.54ms  187.87ms   1.32s    72.69%
+    Req/Sec   105.65     22.37   144.00     59.20%
+  12454 requests in 15.03s, 16.98MB read
+  Non-2xx or 3xx responses: 6351
+Requests/sec:    828.87
+Transfer/sec:      1.13MB
