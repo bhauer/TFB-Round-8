@@ -1,0 +1,111 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 16:12:27 UTC 2013
+
+  System load:  0.11               Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer tornado
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.96ms  320.23us   2.51ms   60.66%
+    Req/Sec   553.81    101.37   777.00     46.90%
+  20694 requests in 5.00s, 2.80MB read
+Requests/sec:   4138.70
+Transfer/sec:    573.92KB
+
+---------------------------------------------------------
+ Running Warmup tornado
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    62.24ms   10.76ms 127.99ms   59.72%
+    Req/Sec   516.66     47.52   653.00     69.53%
+  61070 requests in 15.02s, 8.27MB read
+Requests/sec:   4066.32
+Transfer/sec:    563.88KB
+
+---------------------------------------------------------
+ Concurrency: 256 for tornado
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   864.58ms  323.73ms   1.31s    48.96%
+    Req/Sec   585.79     87.72   744.00     59.22%
+  70263 requests in 15.00s, 9.52MB read
+Requests/sec:   4682.66
+Transfer/sec:    649.35KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for tornado
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.57s   189.74ms   4.07s    69.47%
+    Req/Sec   563.75     10.98   581.00     62.50%
+  67479 requests in 15.04s, 9.14MB read
+  Socket errors: connect 0, read 28, write 0, timeout 2656
+Requests/sec:   4487.79
+Transfer/sec:    622.33KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for tornado
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  63730 requests in 15.02s, 8.63MB read
+  Socket errors: connect 0, read 791, write 0, timeout 22700
+Requests/sec:   4243.89
+Transfer/sec:    588.51KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for tornado
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  49342 requests in 15.03s, 6.68MB read
+  Socket errors: connect 8203, read 775, write 0, timeout 109055
+Requests/sec:   3283.00
+Transfer/sec:    455.26KB

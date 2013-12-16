@@ -1,0 +1,111 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec 13 23:54:45 UTC 2013
+
+  System load:  0.15               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer falcon-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.52ms    8.21ms  77.89ms   98.83%
+    Req/Sec     1.71k   481.84     3.00k    63.65%
+  63729 requests in 5.00s, 6.38MB read
+Requests/sec:  12748.13
+Transfer/sec:      1.28MB
+
+---------------------------------------------------------
+ Running Warmup falcon-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.91ms   19.74ms 502.88ms   90.41%
+    Req/Sec     1.92k   688.95     3.92k    66.30%
+  208479 requests in 15.00s, 20.88MB read
+Requests/sec:  13894.95
+Transfer/sec:      1.39MB
+
+---------------------------------------------------------
+ Concurrency: 256 for falcon-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   235.67ms  130.19ms 810.52ms   77.93%
+    Req/Sec     2.25k   267.12     2.81k    67.33%
+  265204 requests in 15.00s, 26.56MB read
+Requests/sec:  17680.02
+Transfer/sec:      1.77MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for falcon-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   998.48ms  341.98ms   2.53s    65.87%
+    Req/Sec     1.98k   316.02     2.91k    87.39%
+  237392 requests in 15.01s, 23.77MB read
+  Socket errors: connect 0, read 12, write 0, timeout 138
+Requests/sec:  15815.28
+Transfer/sec:      1.58MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for falcon-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.71s   993.46ms   6.39s    62.58%
+    Req/Sec     1.87k   181.12     2.25k    78.95%
+  221646 requests in 15.01s, 22.19MB read
+  Socket errors: connect 0, read 485, write 0, timeout 13417
+Requests/sec:  14765.59
+Transfer/sec:      1.48MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for falcon-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.88s     1.78s   12.56s    72.20%
+    Req/Sec     1.91k   446.79     2.46k    75.00%
+  215714 requests in 15.03s, 21.60MB read
+  Socket errors: connect 8203, read 971, write 0, timeout 97226
+Requests/sec:  14347.47
+Transfer/sec:      1.44MB

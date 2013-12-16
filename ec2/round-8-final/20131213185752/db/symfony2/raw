@@ -1,0 +1,147 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 15:15:51 UTC 2013
+
+  System load:  0.04               Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    67.43ms   73.96ms 222.57ms   75.76%
+    Req/Sec    11.54      3.20    21.00     61.62%
+  488 requests in 5.05s, 138.81KB read
+  Non-2xx or 3xx responses: 240
+Requests/sec:     96.69
+Transfer/sec:     27.50KB
+
+---------------------------------------------------------
+ Running Warmup symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.87s     2.21s    9.13s    73.77%
+    Req/Sec    15.79     17.56    89.00     90.91%
+  1835 requests in 16.01s, 522.82KB read
+  Socket errors: connect 0, read 0, write 0, timeout 743
+  Non-2xx or 3xx responses: 914
+Requests/sec:    114.64
+Transfer/sec:     32.66KB
+
+---------------------------------------------------------
+ Concurrency: 8 for symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    64.47ms   60.22ms 316.06ms   54.88%
+    Req/Sec    14.82      4.42    26.00     69.84%
+  1854 requests in 15.07s, 528.19KB read
+  Non-2xx or 3xx responses: 924
+Requests/sec:    123.03
+Transfer/sec:     35.05KB
+
+---------------------------------------------------------
+ Concurrency: 16 for symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   126.97ms  117.55ms 581.31ms   57.73%
+    Req/Sec    14.86      3.18    25.00     68.64%
+  1859 requests in 15.12s, 529.31KB read
+  Non-2xx or 3xx responses: 922
+Requests/sec:    122.96
+Transfer/sec:     35.01KB
+
+---------------------------------------------------------
+ Concurrency: 32 for symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   255.59ms  220.09ms 850.45ms   57.22%
+    Req/Sec    14.84      3.06    22.00     71.66%
+  1853 requests in 15.13s, 528.08KB read
+  Non-2xx or 3xx responses: 925
+Requests/sec:    122.49
+Transfer/sec:     34.91KB
+
+---------------------------------------------------------
+ Concurrency: 64 for symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   556.44ms  466.00ms   2.03s    57.41%
+    Req/Sec    15.30      3.34    24.00     68.89%
+  1882 requests in 15.34s, 536.18KB read
+  Non-2xx or 3xx responses: 937
+Requests/sec:    122.66
+Transfer/sec:     34.94KB
+
+---------------------------------------------------------
+ Concurrency: 128 for symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.17s     2.20s    6.62s    86.10%
+    Req/Sec    15.21     11.39    58.00     71.50%
+  1833 requests in 15.20s, 521.84KB read
+  Socket errors: connect 0, read 0, write 0, timeout 78
+  Non-2xx or 3xx responses: 907
+Requests/sec:    120.62
+Transfer/sec:     34.34KB
+
+---------------------------------------------------------
+ Concurrency: 256 for symfony2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.34s     2.36s    9.27s    84.02%
+    Req/Sec    15.22     10.71    49.00     61.02%
+  1778 requests in 16.00s, 506.14KB read
+  Socket errors: connect 0, read 0, write 0, timeout 734
+  Non-2xx or 3xx responses: 879
+Requests/sec:    111.11
+Transfer/sec:     31.63KB

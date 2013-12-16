@@ -1,0 +1,111 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 14:03:15 UTC 2013
+
+  System load:  0.24               Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/spark/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   455.74us  285.60us   8.94ms   93.44%
+    Req/Sec     2.32k   417.77     3.11k    73.52%
+  85619 requests in 5.00s, 12.41MB read
+Requests/sec:  17127.27
+Transfer/sec:      2.48MB
+
+---------------------------------------------------------
+ Running Warmup spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/spark/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.38ms   31.22ms 534.96ms   97.95%
+    Req/Sec     2.38k   590.31    12.10k    91.46%
+  274104 requests in 15.00s, 39.73MB read
+Requests/sec:  18274.72
+Transfer/sec:      2.65MB
+
+---------------------------------------------------------
+ Concurrency: 256 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.253.40.204:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/spark/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   159.12ms  158.91ms 988.30ms   87.22%
+    Req/Sec     3.28k   440.76     6.13k    77.33%
+  391391 requests in 15.01s, 56.74MB read
+Requests/sec:  26083.70
+Transfer/sec:      3.78MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.253.40.204:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/spark/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   278.87ms    1.24s   13.20s    98.58%
+    Req/Sec     6.43k     5.28k   15.74k    41.54%
+  363834 requests in 16.03s, 52.74MB read
+  Socket errors: connect 0, read 0, write 0, timeout 5750
+Requests/sec:  22692.27
+Transfer/sec:      3.29MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.253.40.204:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/spark/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.12s     5.96s   14.85s    74.88%
+    Req/Sec     2.87k     1.72k    7.58k    63.64%
+  368574 requests in 15.01s, 53.43MB read
+  Socket errors: connect 0, read 924, write 0, timeout 23319
+Requests/sec:  24554.62
+Transfer/sec:      3.56MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for spark
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.253.40.204:8080/spark/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/spark/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.68s     4.96s   14.59s    60.70%
+    Req/Sec     2.53k     2.04k   10.69k    76.84%
+  329947 requests in 15.11s, 47.83MB read
+  Socket errors: connect 8203, read 2848, write 0, timeout 106443
+Requests/sec:  21836.68
+Transfer/sec:      3.17MB

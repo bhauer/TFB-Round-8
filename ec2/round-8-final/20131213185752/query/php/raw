@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 05:04:51 UTC 2013
+
+  System load:  0.79               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/dborm.php?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/dborm.php?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.52ms    8.98ms  62.67ms   79.33%
+    Req/Sec    60.18     16.46   109.00     70.11%
+  2291 requests in 5.01s, 595.25KB read
+  Non-2xx or 3xx responses: 306
+Requests/sec:    457.60
+Transfer/sec:    118.89KB
+
+---------------------------------------------------------
+ Running Warmup php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/dborm.php?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/dborm.php?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   545.31ms  140.87ms   2.06s    81.96%
+    Req/Sec    58.31      3.89    69.00     70.34%
+  6985 requests in 15.04s, 1.83MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:    464.58
+Transfer/sec:    124.57KB
+
+---------------------------------------------------------
+ Queries: 1 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/dborm.php?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/dborm.php?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   470.35ms  113.58ms   1.39s    70.64%
+    Req/Sec    66.79      7.85    89.00     80.00%
+  7960 requests in 15.03s, 1.80MB read
+Requests/sec:    529.45
+Transfer/sec:    122.43KB
+
+---------------------------------------------------------
+ Queries: 5 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/dborm.php?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/dborm.php?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   931.21ms  351.17ms   2.53s    73.43%
+    Req/Sec    34.91      8.93    53.00     69.00%
+  4298 requests in 15.03s, 1.28MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+  Non-2xx or 3xx responses: 1850
+Requests/sec:    286.02
+Transfer/sec:     87.08KB
+
+---------------------------------------------------------
+ Queries: 10 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/dborm.php?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/dborm.php?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05s   383.32ms   3.31s    85.49%
+    Req/Sec    30.55      5.71    41.00     71.88%
+  3700 requests in 15.06s, 1.84MB read
+  Socket errors: connect 0, read 0, write 0, timeout 19
+  Non-2xx or 3xx responses: 579
+Requests/sec:    245.67
+Transfer/sec:    124.86KB
+
+---------------------------------------------------------
+ Queries: 15 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/dborm.php?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/dborm.php?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.23s   216.30ms   3.38s    79.89%
+    Req/Sec    26.24      2.26    34.00     77.78%
+  3069 requests in 15.11s, 2.24MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    203.15
+Transfer/sec:    152.10KB
+
+---------------------------------------------------------
+ Queries: 20 for php
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/dborm.php?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/dborm.php?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.48s   203.42ms   2.08s    64.29%
+    Req/Sec    20.93      2.43    29.00     72.41%
+  2506 requests in 15.15s, 2.28MB read
+Requests/sec:    165.46
+Transfer/sec:    154.40KB

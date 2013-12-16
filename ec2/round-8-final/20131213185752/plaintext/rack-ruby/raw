@@ -1,0 +1,116 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 09:49:26 UTC 2013
+
+  System load:  0.04               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.16ms    9.61ms  77.01ms   96.76%
+    Req/Sec   784.68    338.68     2.22k    73.48%
+  29518 requests in 5.00s, 5.46MB read
+Requests/sec:   5904.39
+Transfer/sec:      1.09MB
+
+---------------------------------------------------------
+ Running Warmup rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    26.82ms   21.40ms 180.19ms   74.84%
+    Req/Sec     1.33k   349.78     3.51k    80.95%
+  153732 requests in 15.00s, 31.15MB read
+  Non-2xx or 3xx responses: 22243
+Requests/sec:  10248.71
+Transfer/sec:      2.08MB
+
+---------------------------------------------------------
+ Concurrency: 256 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   330.26ms  158.10ms 775.44ms   64.34%
+    Req/Sec     1.56k   169.12     2.48k    81.20%
+  188034 requests in 15.00s, 42.71MB read
+  Non-2xx or 3xx responses: 64925
+Requests/sec:  12535.55
+Transfer/sec:      2.85MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   974.13ms  557.23ms   5.16s    72.51%
+    Req/Sec     1.77k   300.28     2.91k    72.95%
+  211610 requests in 15.00s, 52.92MB read
+  Socket errors: connect 0, read 494, write 0, timeout 594
+  Non-2xx or 3xx responses: 112909
+Requests/sec:  14107.57
+Transfer/sec:      3.53MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.75s     3.69s    9.84s    46.92%
+    Req/Sec     1.41k     0.87k    5.80k    73.72%
+  167981 requests in 15.00s, 37.38MB read
+  Socket errors: connect 0, read 2915, write 0, timeout 18097
+  Non-2xx or 3xx responses: 51649
+Requests/sec:  11202.00
+Transfer/sec:      2.49MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for rack-ruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.11s     4.23s   13.77s    83.34%
+    Req/Sec     1.66k   538.26     3.20k    77.22%
+  196317 requests in 15.03s, 48.89MB read
+  Socket errors: connect 8203, read 7314, write 0, timeout 98390
+  Non-2xx or 3xx responses: 103038
+Requests/sec:  13061.93
+Transfer/sec:      3.25MB

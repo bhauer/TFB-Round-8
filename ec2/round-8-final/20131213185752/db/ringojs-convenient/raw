@@ -1,0 +1,138 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 11:21:38 UTC 2013
+
+  System load:  0.16               Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    26.55ms   54.62ms 229.29ms   89.02%
+    Req/Sec   146.38     86.54   344.00     63.78%
+  5595 requests in 5.00s, 1.01MB read
+Requests/sec:   1118.60
+Transfer/sec:    206.23KB
+
+---------------------------------------------------------
+ Running Warmup ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   557.45ms  790.48ms   2.03s    77.83%
+    Req/Sec   225.75    126.87     0.92k    69.62%
+  25368 requests in 15.00s, 4.57MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:   1691.18
+Transfer/sec:    311.78KB
+
+---------------------------------------------------------
+ Concurrency: 8 for ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.57ms   29.13ms 142.36ms   89.27%
+    Req/Sec   318.23    172.12   777.00     60.71%
+  36267 requests in 15.00s, 6.53MB read
+Requests/sec:   2417.69
+Transfer/sec:    445.72KB
+
+---------------------------------------------------------
+ Concurrency: 16 for ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.77ms   40.04ms 243.05ms   93.16%
+    Req/Sec   314.17    174.19     1.05k    67.03%
+  36844 requests in 15.00s, 6.63MB read
+Requests/sec:   2456.17
+Transfer/sec:    452.81KB
+
+---------------------------------------------------------
+ Concurrency: 32 for ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.31ms   26.90ms 254.15ms   90.73%
+    Req/Sec   318.26    128.79     1.25k    72.29%
+  37921 requests in 15.00s, 6.83MB read
+Requests/sec:   2528.04
+Transfer/sec:    466.05KB
+
+---------------------------------------------------------
+ Concurrency: 64 for ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.51ms   34.31ms 274.22ms   88.83%
+    Req/Sec   320.74     68.07   621.00     70.41%
+  38395 requests in 15.00s, 6.91MB read
+Requests/sec:   2559.00
+Transfer/sec:    471.78KB
+
+---------------------------------------------------------
+ Concurrency: 128 for ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    51.43ms   35.79ms 277.01ms   76.67%
+    Req/Sec   325.67     32.36   472.00     75.24%
+  38932 requests in 15.01s, 7.01MB read
+Requests/sec:   2594.09
+Transfer/sec:    478.24KB
+
+---------------------------------------------------------
+ Concurrency: 256 for ringojs-convenient
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   100.00ms   74.47ms 785.75ms   82.50%
+    Req/Sec   331.30     81.99     0.90k    91.72%
+  38738 requests in 15.01s, 6.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:   2580.66
+Transfer/sec:    475.75KB

@@ -1,0 +1,139 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 14:59:50 UTC 2013
+
+  System load:  0.27               Processes:           327
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 10%                IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.56ms   14.75ms  95.95ms   89.70%
+    Req/Sec   131.50     58.44   324.00     69.63%
+  4989 requests in 5.02s, 1.12MB read
+Requests/sec:    994.62
+Transfer/sec:    228.21KB
+
+---------------------------------------------------------
+ Running Warmup stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   132.56ms  354.00ms   3.04s    93.39%
+    Req/Sec   280.79     83.74   490.00     66.67%
+  33322 requests in 15.01s, 7.47MB read
+  Socket errors: connect 0, read 0, write 0, timeout 53
+Requests/sec:   2220.67
+Transfer/sec:    509.55KB
+
+---------------------------------------------------------
+ Concurrency: 8 for stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.31ms    3.38ms  44.54ms   93.97%
+    Req/Sec   359.38    112.08     0.88k    74.25%
+  41562 requests in 15.00s, 9.31MB read
+Requests/sec:   2770.89
+Transfer/sec:    635.76KB
+
+---------------------------------------------------------
+ Concurrency: 16 for stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.49ms    3.01ms  53.93ms   74.52%
+    Req/Sec   379.56     70.84   772.00     70.31%
+  44581 requests in 15.00s, 9.99MB read
+Requests/sec:   2971.85
+Transfer/sec:    681.87KB
+
+---------------------------------------------------------
+ Concurrency: 32 for stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.68ms   13.16ms 442.71ms   94.99%
+    Req/Sec   392.41     76.85     0.90k    80.84%
+  46517 requests in 15.00s, 10.42MB read
+Requests/sec:   3101.16
+Transfer/sec:    711.54KB
+
+---------------------------------------------------------
+ Concurrency: 64 for stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.00ms   37.94ms 866.43ms   93.36%
+    Req/Sec   392.39     76.28   680.00     70.77%
+  46761 requests in 15.01s, 10.48MB read
+Requests/sec:   3115.93
+Transfer/sec:    714.94KB
+
+---------------------------------------------------------
+ Concurrency: 128 for stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    43.26ms  104.09ms   2.98s    98.72%
+    Req/Sec   388.61     69.10   666.00     72.68%
+  46316 requests in 15.00s, 10.38MB read
+  Socket errors: connect 0, read 0, write 0, timeout 17
+Requests/sec:   3087.39
+Transfer/sec:    708.40KB
+
+---------------------------------------------------------
+ Concurrency: 256 for stream-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    72.04ms  210.09ms   3.71s    96.90%
+    Req/Sec   371.86     69.29   587.00     67.16%
+  44724 requests in 15.00s, 10.02MB read
+  Socket errors: connect 0, read 0, write 0, timeout 162
+Requests/sec:   2981.23
+Transfer/sec:    684.06KB

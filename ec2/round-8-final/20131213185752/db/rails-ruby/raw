@@ -1,0 +1,138 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 10:08:34 UTC 2013
+
+  System load:  0.2                Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.79ms   65.53ms 286.64ms   90.70%
+    Req/Sec    83.16     33.86   172.00     76.40%
+  3244 requests in 5.01s, 1.28MB read
+Requests/sec:    648.08
+Transfer/sec:    262.49KB
+
+---------------------------------------------------------
+ Running Warmup rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   102.84ms  328.33ms   1.76s    92.22%
+    Req/Sec     1.56k   667.21     4.47k    73.94%
+  185862 requests in 15.00s, 57.35MB read
+  Non-2xx or 3xx responses: 182707
+Requests/sec:  12392.35
+Transfer/sec:      3.82MB
+
+---------------------------------------------------------
+ Concurrency: 8 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    33.67ms   66.02ms 242.59ms   89.81%
+    Req/Sec    82.26     35.20   200.00     75.43%
+  9787 requests in 15.05s, 3.87MB read
+Requests/sec:    650.20
+Transfer/sec:    263.33KB
+
+---------------------------------------------------------
+ Concurrency: 16 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.38ms   18.77ms 285.77ms   98.15%
+    Req/Sec    84.27     21.86   142.00     69.78%
+  10074 requests in 15.02s, 3.98MB read
+Requests/sec:    670.69
+Transfer/sec:    271.63KB
+
+---------------------------------------------------------
+ Concurrency: 32 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    50.92ms   15.89ms 288.66ms   92.45%
+    Req/Sec    79.27     14.18   115.00     68.21%
+  9549 requests in 15.02s, 3.78MB read
+Requests/sec:    635.95
+Transfer/sec:    257.57KB
+
+---------------------------------------------------------
+ Concurrency: 64 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    98.30ms   19.70ms 353.25ms   84.25%
+    Req/Sec    81.64     11.48   111.00     67.47%
+  9856 requests in 15.02s, 3.90MB read
+Requests/sec:    656.30
+Transfer/sec:    265.82KB
+
+---------------------------------------------------------
+ Concurrency: 128 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   196.30ms   35.62ms 420.92ms   89.43%
+    Req/Sec    81.54      9.74   104.00     71.54%
+  9841 requests in 15.02s, 3.89MB read
+Requests/sec:    655.40
+Transfer/sec:    265.47KB
+
+---------------------------------------------------------
+ Concurrency: 256 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/hello_world/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.08ms   84.92ms   1.31s    98.38%
+    Req/Sec     1.76k   451.57     4.18k    70.57%
+  208068 requests in 15.00s, 64.17MB read
+  Non-2xx or 3xx responses: 204795
+Requests/sec:  13873.54
+Transfer/sec:      4.28MB

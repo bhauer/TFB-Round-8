@@ -1,0 +1,147 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 02:49:23 UTC 2013
+
+  System load:  0.02               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   132.73ms  321.92ms   1.41s    92.14%
+    Req/Sec    36.76     34.37   169.00     75.00%
+  1378 requests in 5.02s, 852.31KB read
+  Non-2xx or 3xx responses: 683
+Requests/sec:    274.71
+Transfer/sec:    169.91KB
+
+---------------------------------------------------------
+ Running Warmup laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   679.97ms  710.57ms   3.28s    82.11%
+    Req/Sec    44.50     13.55    77.00     71.96%
+  5276 requests in 15.15s, 3.18MB read
+  Socket errors: connect 0, read 0, write 0, timeout 35
+  Non-2xx or 3xx responses: 2618
+Requests/sec:    348.28
+Transfer/sec:    215.27KB
+
+---------------------------------------------------------
+ Concurrency: 8 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   493.24ms  506.46ms   1.30s    83.49%
+    Req/Sec    45.26     60.97   325.00     82.30%
+  5526 requests in 15.03s, 3.34MB read
+  Non-2xx or 3xx responses: 2738
+Requests/sec:    367.70
+Transfer/sec:    227.41KB
+
+---------------------------------------------------------
+ Concurrency: 16 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   288.80ms  411.75ms   1.44s    76.34%
+    Req/Sec    45.29     47.99   280.00     84.42%
+  5554 requests in 15.06s, 3.35MB read
+  Non-2xx or 3xx responses: 2756
+Requests/sec:    368.91
+Transfer/sec:    228.02KB
+
+---------------------------------------------------------
+ Concurrency: 32 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   139.35ms  235.82ms   1.64s    87.44%
+    Req/Sec    43.63     25.89   159.00     72.95%
+  5460 requests in 15.06s, 3.30MB read
+  Non-2xx or 3xx responses: 2710
+Requests/sec:    362.56
+Transfer/sec:    224.09KB
+
+---------------------------------------------------------
+ Concurrency: 64 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   178.78ms  212.40ms   1.60s    84.21%
+    Req/Sec    43.49     10.48    87.00     69.38%
+  5341 requests in 15.01s, 3.24MB read
+  Non-2xx or 3xx responses: 2615
+Requests/sec:    355.73
+Transfer/sec:    221.28KB
+
+---------------------------------------------------------
+ Concurrency: 128 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   365.43ms  347.20ms   2.01s    58.57%
+    Req/Sec    43.42     10.15    78.00     77.14%
+  5242 requests in 15.03s, 3.16MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+  Non-2xx or 3xx responses: 2607
+Requests/sec:    348.70
+Transfer/sec:    215.31KB
+
+---------------------------------------------------------
+ Concurrency: 256 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   841.29ms  972.31ms   4.14s    90.26%
+    Req/Sec    44.75     20.76   160.00     82.12%
+  5218 requests in 15.08s, 3.15MB read
+  Socket errors: connect 0, read 0, write 0, timeout 24
+  Non-2xx or 3xx responses: 2584
+Requests/sec:    346.00
+Transfer/sec:    214.05KB

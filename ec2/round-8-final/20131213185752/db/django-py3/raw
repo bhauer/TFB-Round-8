@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec 13 22:45:29 UTC 2013
+
+  System load:  0.15               Processes:           71
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.99ms    5.93ms  32.65ms   68.69%
+    Req/Sec   114.22     52.93   277.00     66.37%
+  3933 requests in 5.01s, 798.09KB read
+Requests/sec:    785.81
+Transfer/sec:    159.46KB
+
+---------------------------------------------------------
+ Running Warmup django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   319.78ms   69.50ms 692.62ms   72.05%
+    Req/Sec    99.71     13.46   143.00     77.78%
+  11940 requests in 15.01s, 2.37MB read
+Requests/sec:    795.39
+Transfer/sec:    161.40KB
+
+---------------------------------------------------------
+ Concurrency: 8 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.18ms    6.05ms  39.81ms   69.37%
+    Req/Sec   110.91     51.44   318.00     62.87%
+  11806 requests in 15.01s, 2.34MB read
+Requests/sec:    786.72
+Transfer/sec:    159.64KB
+
+---------------------------------------------------------
+ Concurrency: 16 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.75ms   12.02ms  88.15ms   67.60%
+    Req/Sec   102.65     38.62   267.00     69.56%
+  11853 requests in 15.01s, 2.35MB read
+Requests/sec:    789.52
+Transfer/sec:    160.20KB
+
+---------------------------------------------------------
+ Concurrency: 32 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.90ms   17.90ms 143.30ms   70.52%
+    Req/Sec   102.31     24.19   180.00     68.17%
+  12059 requests in 15.01s, 2.39MB read
+Requests/sec:    803.22
+Transfer/sec:    162.99KB
+
+---------------------------------------------------------
+ Concurrency: 64 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    79.82ms   24.99ms 233.27ms   71.27%
+    Req/Sec   100.34     10.41   126.00     74.36%
+  11934 requests in 15.02s, 2.36MB read
+Requests/sec:    794.73
+Transfer/sec:    161.26KB
+
+---------------------------------------------------------
+ Concurrency: 128 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   165.12ms   46.49ms 467.27ms   70.53%
+    Req/Sec    97.41      7.65   118.00     70.53%
+  11750 requests in 15.06s, 2.33MB read
+Requests/sec:    780.26
+Transfer/sec:    158.32KB
+
+---------------------------------------------------------
+ Concurrency: 256 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   321.64ms   70.62ms 738.33ms   68.85%
+    Req/Sec    99.45     15.36   169.00     80.93%
+  11784 requests in 15.04s, 2.33MB read
+Requests/sec:    783.75
+Transfer/sec:    159.02KB

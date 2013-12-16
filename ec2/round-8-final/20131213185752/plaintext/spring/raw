@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.12ms   40.29ms 130.02ms   85.90%
+    Req/Sec   457.75    295.87     1.67k    64.17%
+  17220 requests in 5.04s, 2.34MB read
+Requests/sec:   3419.31
+Transfer/sec:    474.79KB
+
+---------------------------------------------------------
+ Running Warmup spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    49.59ms   51.42ms 481.72ms   89.65%
+    Req/Sec   696.01    158.47     1.49k    86.93%
+  81397 requests in 15.00s, 11.04MB read
+Requests/sec:   5426.82
+Transfer/sec:    753.41KB
+
+---------------------------------------------------------
+ Concurrency: 256 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   597.98ms  395.23ms   2.43s    70.60%
+    Req/Sec   794.15    128.69     1.16k    76.92%
+  95648 requests in 15.02s, 12.97MB read
+Requests/sec:   6367.54
+Transfer/sec:      0.86MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.88s     1.41s    8.64s    80.81%
+    Req/Sec     0.95k   382.65     2.46k    70.33%
+  93133 requests in 15.07s, 12.62MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2763
+Requests/sec:   6178.53
+Transfer/sec:    857.43KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.57s     4.62s   14.80s    75.68%
+    Req/Sec   596.95    378.52     1.68k    66.42%
+  70680 requests in 15.06s, 9.57MB read
+  Socket errors: connect 0, read 821, write 0, timeout 22342
+Requests/sec:   4693.41
+Transfer/sec:    650.87KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://10.253.40.204:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.40s     2.63s   14.75s    93.05%
+    Req/Sec   563.24    390.87     1.94k    70.21%
+  56802 requests in 15.04s, 7.69MB read
+  Socket errors: connect 8203, read 2558, write 0, timeout 103563
+Requests/sec:   3777.68
+Transfer/sec:    523.90KB

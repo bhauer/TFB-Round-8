@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Dec 14 16:00:27 UTC 2013
+
+  System load:  0.11               Processes:           71
+  Usage of /:   25.5% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.06ms    4.29ms  41.32ms   88.54%
+    Req/Sec   166.79     67.61   458.00     68.80%
+  6356 requests in 5.01s, 1.20MB read
+Requests/sec:   1268.75
+Transfer/sec:    246.30KB
+
+---------------------------------------------------------
+ Running Warmup tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   147.38ms  249.79ms   2.53s    91.76%
+    Req/Sec   224.95     33.56   300.00     68.95%
+  26754 requests in 15.00s, 5.08MB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+Requests/sec:   1783.07
+Transfer/sec:    346.87KB
+
+---------------------------------------------------------
+ Concurrency: 8 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.43ms   24.18ms 181.38ms   98.04%
+    Req/Sec   355.77     98.24   555.00     85.22%
+  40623 requests in 15.00s, 7.70MB read
+Requests/sec:   2708.06
+Transfer/sec:    525.69KB
+
+---------------------------------------------------------
+ Concurrency: 16 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.33ms   25.64ms 187.96ms   97.83%
+    Req/Sec   459.58    132.25   846.00     74.35%
+  53127 requests in 15.00s, 10.07MB read
+Requests/sec:   3541.76
+Transfer/sec:    687.62KB
+
+---------------------------------------------------------
+ Concurrency: 32 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.46ms   14.45ms 213.68ms   93.05%
+    Req/Sec   465.85    157.27     1.13k    69.85%
+  54835 requests in 15.00s, 10.40MB read
+Requests/sec:   3655.58
+Transfer/sec:    709.81KB
+
+---------------------------------------------------------
+ Concurrency: 64 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.88ms   32.33ms 441.07ms   92.47%
+    Req/Sec   459.33    139.65     1.12k    72.46%
+  54605 requests in 15.00s, 10.36MB read
+Requests/sec:   3640.40
+Transfer/sec:    707.17KB
+
+---------------------------------------------------------
+ Concurrency: 128 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.33ms   43.49ms 439.13ms   90.55%
+    Req/Sec   458.47     75.11   775.00     72.84%
+  54749 requests in 15.00s, 10.39MB read
+Requests/sec:   3650.03
+Transfer/sec:    709.34KB
+
+---------------------------------------------------------
+ Concurrency: 256 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://10.253.40.204:8080/tapestry/hellodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/tapestry/hellodb
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    74.09ms   60.23ms   1.43s    90.41%
+    Req/Sec   426.56     34.51   535.00     72.20%
+  51201 requests in 15.00s, 9.72MB read
+Requests/sec:   3412.85
+Transfer/sec:    663.75KB

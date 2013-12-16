@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Dec 13 22:39:45 UTC 2013
+
+  System load:  0.15               Processes:           77
+  Usage of /:   25.4% of 19.69GB   Users logged in:     0
+  Memory usage: 4%                 IP address for eth0: 10.232.38.44
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+135 packages can be updated.
+65 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.253.40.204:8080/update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.253.40.204:8080/update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    60.05ms   67.86ms 294.07ms   90.28%
+    Req/Sec    19.43      9.16    42.00     63.89%
+  763 requests in 5.03s, 178.49KB read
+Requests/sec:    151.81
+Transfer/sec:     35.51KB
+
+---------------------------------------------------------
+ Running Warmup django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/update?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.50s   486.21ms   3.15s    77.70%
+    Req/Sec    23.10     17.80   101.00     67.29%
+  2626 requests in 15.51s, 616.86KB read
+  Socket errors: connect 0, read 15, write 0, timeout 24
+Requests/sec:    169.32
+Transfer/sec:     39.77KB
+
+---------------------------------------------------------
+ Queries: 1 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/update?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   937.07ms  421.36ms   1.90s    76.32%
+    Req/Sec    40.26     21.88    89.00     63.16%
+  4541 requests in 15.08s, 0.90MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:    301.16
+Transfer/sec:     61.11KB
+
+---------------------------------------------------------
+ Queries: 5 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/update?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.96s     1.45s    7.50s    73.71%
+    Req/Sec    11.39     12.65    72.00     88.00%
+  1151 requests in 15.17s, 423.75KB read
+  Socket errors: connect 0, read 280, write 0, timeout 592
+Requests/sec:     75.85
+Transfer/sec:     27.93KB
+
+---------------------------------------------------------
+ Queries: 10 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/update?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.47s     2.41s    7.89s    72.53%
+    Req/Sec     6.79      9.55    46.00     87.18%
+  654 requests in 16.01s, 362.02KB read
+  Socket errors: connect 0, read 272, write 0, timeout 868
+Requests/sec:     40.85
+Transfer/sec:     22.61KB
+
+---------------------------------------------------------
+ Queries: 15 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/update?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.35s     2.23s    9.98s    57.14%
+    Req/Sec     4.00      3.35    10.00     66.67%
+  313 requests in 16.01s, 227.55KB read
+  Socket errors: connect 0, read 164, write 0, timeout 1295
+Requests/sec:     19.55
+Transfer/sec:     14.21KB
+
+---------------------------------------------------------
+ Queries: 20 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://10.253.40.204:8080/update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.253.40.204:8080/update?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  190 requests in 16.01s, 167.35KB read
+  Socket errors: connect 0, read 98, write 0, timeout 1450
+Requests/sec:     11.87
+Transfer/sec:     10.45KB
